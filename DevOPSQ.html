@@ -680,4 +680,21 @@
                 </div>
             </div>
 
-            <div class="question-
+                            <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all question elements
+    var questions = document.querySelectorAll('.question');
+    questions.forEach(function(q) {
+        q.addEventListener('click', function() {
+            // Toggle "active" class on the clicked question
+            q.classList.toggle('active');
+            // Toggle "active" class on the corresponding answer
+            var ans = q.nextElementSibling;
+            if (ans && ans.classList.contains('answer')) {
+                ans.classList.toggle('active');
+            }
+        });
+    });
+});
+</script>
+ </body>       
