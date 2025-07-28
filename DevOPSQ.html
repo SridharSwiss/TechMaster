@@ -679,80 +679,231 @@
                     </ul>
                 </div>
             </div>
-<script>
-function scrollToSection(sectionId) {
-    var section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-</script>
-                            <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Select all question elements
-    var questions = document.querySelectorAll('.question');
-    questions.forEach(function(q) {
-        q.addEventListener('click', function() {
-            // Toggle "active" class on the clicked question
-            q.classList.toggle('active');
-            // Toggle "active" class on the corresponding answer
-            var ans = q.nextElementSibling;
-if (ans && ans.classList.contains('answer')) {
-    ans.classList.toggle('show');
-}
-            }
-        });
-    });
-});
-</script>
- <!-- Place this at the bottom, before </body> -->
-<script>
-function scrollToSection(sectionId) {
-    var section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-        // Optionally collapse all answers on navigation
-        document.querySelectorAll('.answer.show').forEach(function(ans){
-            ans.classList.remove('show');
-            if(ans.previousElementSibling) {
-                let icon = ans.previousElementSibling.querySelector('.toggle-icon');
-                if(icon) icon.textContent = '+';
-            }
-        });
-    }
-}
 
-function toggleAnswer(elem) {
-    var ans = elem.nextElementSibling;
-    var icon = elem.querySelector('.toggle-icon');
-    if (ans && ans.classList.contains('answer')) {
-        var isShown = ans.classList.contains('show');
-        // Hide all other answers
-        document.querySelectorAll('.answer.show').forEach(function(a){
-            a.classList.remove('show');
-            if(a.previousElementSibling) {
-                let otherIcon = a.previousElementSibling.querySelector('.toggle-icon');
-                if(otherIcon) otherIcon.textContent = '+';
+            <div class="question-card" data-category="advanced">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <span><span class="question-number">Q16</span>Explain Jenkins Pipeline and difference between Declarative and Scripted pipelines.</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> Jenkins Pipeline is a suite of plugins for implementing continuous delivery pipelines as code.</p>
+                    <p><strong>Declarative Pipeline:</strong></p>
+                    <ul>
+                        <li>Structured syntax with predefined sections</li>
+                        <li>Easier to read and write</li>
+                        <li>Better validation and error handling</li>
+                        <li>Uses <code>pipeline</code> block with <code>agent</code>, <code>stages</code>, <code>steps</code></li>
+                    </ul>
+                    <p><strong>Scripted Pipeline:</strong></p>
+                    <ul>
+                        <li>Groovy-based programming approach</li>
+                        <li>More flexibility and control</li>
+                        <li>Uses <code>node</code> blocks</li>
+                        <li>Better for complex logic and conditionals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section" id="monitoring">
+            <div class="section-title">📊 Monitoring & Logging</div>
+
+            <div class="question-card" data-category="intermediate">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <span><span class="question-number">Q17</span>Why is monitoring important in DevOps and what should be monitored?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> Monitoring is crucial for maintaining system reliability, performance, and user experience in DevOps environments.</p>
+                    <p><strong>What to monitor:</strong></p>
+                    <ul>
+                        <li><strong>Infrastructure:</strong> CPU, memory, disk, network metrics</li>
+                        <li><strong>Application:</strong> Response times, error rates, throughput</li>
+                        <li><strong>Business:</strong> User activity, conversion rates, revenue</li>
+                        <li><strong>Security:</strong> Failed logins, suspicious activities</li>
+                        <li><strong>Logs:</strong> Application logs, system logs, security logs</li>
+                    </ul>
+                    <p><strong>Benefits:</strong> Early problem detection, performance optimization, capacity planning, improved user experience</p>
+                </div>
+            </div>
+
+            <div class="question-card" data-category="advanced">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <span><span class="question-number">Q18</span>What is the ELK Stack and how is it used for logging?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> ELK Stack is a collection of three open-source tools for centralized logging and log analysis.</p>
+                    <p><strong>Components:</strong></p>
+                    <ul>
+                        <li><strong>Elasticsearch:</strong> Distributed search and analytics engine for storing and indexing logs</li>
+                        <li><strong>Logstash:</strong> Data processing pipeline that ingests, transforms, and sends logs to Elasticsearch</li>
+                        <li><strong>Kibana:</strong> Visualization platform for creating dashboards and analyzing log data</li>
+                    </ul>
+                    <p><strong>Workflow:</strong> Applications → Logstash (collect/process) → Elasticsearch (store/index) → Kibana (visualize/analyze)</p>
+                    <p><strong>Benefits:</strong> Centralized logging, real-time analysis, powerful search capabilities, custom dashboards</p>
+                </div>
+            </div>
+
+            <div class="question-card" data-category="advanced">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <span><span class="question-number">Q19</span>Explain Prometheus and Grafana for monitoring.</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> Prometheus and Grafana form a powerful monitoring stack.</p>
+                    <p><strong>Prometheus:</strong></p>
+                    <ul>
+                        <li>Time-series database for metrics collection</li>
+                        <li>Pull-based monitoring model</li>
+                        <li>PromQL query language</li>
+                        <li>Built-in alerting capabilities</li>
+                        <li>Service discovery for dynamic environments</li>
+                    </ul>
+                    <p><strong>Grafana:</strong></p>
+                    <ul>
+                        <li>Visualization and dashboarding platform</li>
+                        <li>Supports multiple data sources</li>
+                        <li>Rich set of visualization options</li>
+                        <li>Alerting and notification features</li>
+                        <li>Template variables for dynamic dashboards</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="question-card" data-category="basic">
+                <div class="question" onclick="toggleAnswer(this)">
+                    <span><span class="question-number">Q20</span>What are the different types of testing in DevOps pipeline?</span>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="answer">
+                    <p><strong>Answer:</strong> DevOps pipelines incorporate various types of automated testing:</p>
+                    <ul>
+                        <li><strong>Unit Tests:</strong> Test individual components or functions</li>
+                        <li><strong>Integration Tests:</strong> Test interaction between components</li>
+                        <li><strong>API Tests:</strong> Test application programming interfaces</li>
+                        <li><strong>Security Tests:</strong> Scan for vulnerabilities and security issues</li>
+                        <li><strong>Performance Tests:</strong> Test application under load conditions</li>
+                        <li><strong>Smoke Tests:</strong> Basic tests to verify core functionality</li>
+                        <li><strong>Regression Tests:</strong> Ensure new changes don't break existing features</li>
+                        <li><strong>Acceptance Tests:</strong> Validate business requirements</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🚀 <strong>Ready to ace your DevOps interview?</strong></p>
+            <p>This comprehensive guide covers 200+ questions across all DevOps domains. Practice regularly and stay updated with latest trends!</p>
+            <p>© 2025 DevOps Interview Guide. Happy Learning! 🎯</p>
+            <div class="social-links">
+                <a href="#" class="social-link">📧</a>
+                <a href="#" class="social-link">💼</a>
+                <a href="#" class="social-link">🐙</a>
+                <a href="#" class="social-link">🐦</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle answer visibility
+        function toggleAnswer(questionElement) {
+            const answer = questionElement.nextElementSibling;
+            const icon = questionElement.querySelector('.toggle-icon');
+            
+            if (answer.classList.contains('show')) {
+                answer.classList.remove('show');
+                icon.textContent = '+';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                answer.classList.add('show');
+                icon.textContent = '−';
+                icon.style.transform = 'rotate(180deg)';
             }
-        });
-        // Toggle current
-        if (!isShown) {
-            ans.classList.add('show');
-            if(icon) icon.textContent = '-';
-        } else {
-            ans.classList.remove('show');
-            if(icon) icon.textContent = '+';
         }
-    }
-}
 
-// Attach event listeners only once (no need for inline onclick)
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.question').forEach(function(q) {
-        q.addEventListener('click', function() {
-            toggleAnswer(q);
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const questionCards = document.querySelectorAll('.question-card');
+            
+            questionCards.forEach(card => {
+                const questionText = card.querySelector('.question').textContent.toLowerCase();
+                const answerText = card.querySelector('.answer').textContent.toLowerCase();
+                
+                if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
-    });
-});
-</script>           
- </body>       
+
+        // Filter functionality
+        function filterQuestions(category) {
+            const questionCards = document.querySelectorAll('.question-card');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            questionCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading animation effect
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.question-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.6s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Ctrl + / to focus search
+            if (e.ctrlKey && e.key === '/') {
+                e.preventDefault();
+                document.getElementById('searchInput').focus();
+            }
+            
+            // Escape to clear search
+            if (e.key === 'Escape') {
+                document.getElementById('searchInput').value = '';
+                document.getElementById('searchInput').dispatchEvent(new Event('input'));
+            }
+        });
+    </script>
+</body>
+</html>
