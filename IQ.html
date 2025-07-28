@@ -5,46 +5,149 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Top Interview Questions and Answers | Besant Technologies</title>
 <style>
+  /* Reset some basics */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 900px;
     margin: 20px auto;
     background: #f9f9f9;
     color: #333;
     padding: 20px;
+    line-height: 1.6;
   }
+
+  /* Header */
+  h1 {
+    color: #0056b3;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* Navigation styles */
   nav {
     background: #0056b3;
-    padding: 10px;
-    margin-bottom: 20px;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 10000;
+    border-radius: 8px;
+    margin-bottom: 20px;
   }
-  nav a {
+
+  nav .nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  nav .nav-links a {
     color: white;
     margin-right: 15px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    padding: 6px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
   }
-  nav a:hover {
+
+  nav .nav-links a:hover,
+  nav .nav-links a:focus {
     text-decoration: underline;
+    background-color: #003e7e;
+    outline: none;
   }
-  h1, h2 {
-    color: #0056b3;
+
+  /* Hamburger menu button */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
   }
+
+  .menu-toggle span {
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* Transform hamburger to X when active */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Responsive nav: hides links by default on mobile */
+  @media (max-width: 768px) {
+    nav .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #0056b3;
+      position: absolute;
+      top: 58px; /* height of nav */
+      left: 0;
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    nav .nav-links.show {
+      display: flex;
+    }
+
+    nav .nav-links a {
+      margin: 8px 20px;
+      padding: 10px 15px;
+      font-size: 1.1rem;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+  }
+
+  /* Questions & Answers */
   .question {
-    font-weight: bold;
+    font-weight: 700;
     margin-top: 1.2em;
     color: #222;
   }
+
   .answer {
     margin-left: 1em;
+    margin-bottom: 1em;
     color: #555;
   }
+
   ul {
     margin-left: 2em;
     color: #555;
+    margin-bottom: 1em;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
   }
 </style>
 </head>
@@ -53,29 +156,39 @@
 <h1>Top Interview Questions and Answers</h1>
 
 <nav>
-  <a href="#pyspark">PySpark</a>
-  <a href="#sql">SQL</a>
-  <a href="#css">CSS</a>
-  <a href="#ai">Artificial Intelligence</a>
-  <a href="#salesforce">Salesforce</a>
-  <a href="#python">Python</a>
-  <a href="#java">Java</a>
-  <a href="#wordpress">WordPress</a>
-  <a href="#ibmwmq">IBM WMQ</a>
-  <a href="#datascience">Data Science with Python</a>
-  <a href="#ccnp">CCNP</a>
-  <a href="#informatica">Informatica MDM</a>
-  <a href="#flutterdart">Flutter and Dart</a>
-  <a href="#msdynamicscrm">Microsoft Dynamics CRM</a>
-  <a href="#apitesting">API Testing</a>
-  <a href="#cloudcomputing">Cloud Computing</a>
-  <a href="#devops">DevOps</a>  
-    <a href="#cybersecurity">Cyber Security</a>
-    <a href="#cloudcomputing">Cloud Computing</a>
-    <a href="#cloudcomputing">Cloud Computing</a>
-    <a href="#cloudcomputing">Cloud Computing</a>
-    <a href="#cloudcomputing">Cloud Computing</a>
-    <a href="#cloudcomputing">Cloud Computing</a>
+  <div class="nav-container">
+    <div class="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0" aria-expanded="false" aria-controls="nav-links">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#pyspark">PySpark</a>
+      <a href="#sql">SQL</a>
+      <a href="#css">CSS</a>
+      <a href="#ai">Artificial Intelligence</a>
+      <a href="#salesforce">Salesforce</a>
+      <a href="#python">Python</a>
+      <a href="#java">Java</a>
+      <a href="#wordpress">WordPress</a>
+      <a href="#ibmwmq">IBM WMQ</a>
+      <a href="#datascience">Data Science with Python</a>
+      <a href="#ccnp">CCNP</a>
+      <a href="#informatica">Informatica MDM</a>
+      <a href="#flutterdart">Flutter and Dart</a>
+      <a href="#msdynamicscrm">Microsoft Dynamics CRM</a>
+      <a href="#apitesting">API Testing</a>
+      <a href="#cloudcomputing">Cloud Computing</a>
+      <a href="#devops">DevOps</a>  
+      <a href="#cybersecurity">Cyber Security</a>
+      <a href="#mlops">ML Ops</a>
+      <a href="#generativeai">Generative AI</a>
+      <a href="#frontendframeworks">Frontend Frameworks</a>
+      <a href="#blockchainweb3">Block Chain</a>
+      <a href="#dataengineering">Data Engineering</a>
+      <a href="#edgeiot">Edge IOT</a>
+    </div>
+  </div>
 </nav>
 <section id="pyspark">
   <h2>PySpark Interview Questions and Answers</h2>
@@ -4093,4 +4206,1552 @@
     Using multiple layers of security controls—technical, physical, and administrative—for comprehensive protection against threats.
   </div>
 </section>
+<section id="mlops">
+  <h2>MLOps (AI/ML Operations) Interview Questions and Answers</h2>
 
+  <div class="question">1. What is MLOps?</div>
+  <div class="answer">
+    MLOps (Machine Learning Operations) is a set of practices for managing the end-to-end lifecycle of machine learning models—including development, deployment, monitoring, and governance—to ensure scalability, reliability, and collaboration between data science and IT teams.
+  </div>
+
+  <div class="question">2. What are the main components of an MLOps pipeline?</div>
+  <div class="answer">
+    Components include data ingestion, data validation, feature engineering, model training, model validation, model deployment, monitoring, and CI/CD automation.
+  </div>
+
+  <div class="question">3. What is model versioning?</div>
+  <div class="answer">
+    Model versioning is the process of tracking and managing different versions of models and their associated metadata, data, and code to enable reproducibility and rollback.
+  </div>
+
+  <div class="question">4. What tools are commonly used for MLOps?</div>
+  <div class="answer">
+    MLflow, Kubeflow, TensorFlow Extended (TFX), SageMaker, Vertex AI, Azure ML, DVC, and Metaflow.
+  </div>
+
+  <div class="question">5. What is the difference between model deployment and model serving?</div>
+  <div class="answer">
+    Model deployment is the act of moving a trained model to a production environment; model serving means exposing the model as an API or endpoint to handle real-time or batch prediction requests.
+  </div>
+
+  <div class="question">6. How do you monitor a deployed machine learning model?</div>
+  <div class="answer">
+    By tracking metrics like prediction accuracy, data drift, model latency, request volumes, and system health using monitoring stacks and alerting systems.
+  </div>
+
+  <div class="question">7. What is data drift?</div>
+  <div class="answer">
+    Data drift occurs when the statistical properties of input data change over time, potentially degrading model performance if not detected and addressed.
+  </div>
+
+  <div class="question">8. What is concept drift?</div>
+  <div class="answer">
+    Concept drift refers to changes in the relationship between input variables and the target variable, requiring retraining or adaptation of the model.
+  </div>
+
+  <div class="question">9. How do you automate the retraining of models?</div>
+  <div class="answer">
+    Set up scheduled jobs or trigger retraining pipelines based on performance thresholds, data drift detection, or periodic intervals in orchestration tools.
+  </div>
+
+  <div class="question">10. What is feature store?</div>
+  <div class="answer">
+    A feature store is a centralized repository to manage, store, and reuse features for model training and inference.
+  </div>
+
+  <div class="question">11. What is model registry?</div>
+  <div class="answer">
+    A model registry is a system to catalog, version, stage, and manage machine learning models for control and discoverability.
+  </div>
+
+  <div class="question">12. What is a pipeline in MLOps?</div>
+  <div class="answer">
+    An MLOps pipeline is a sequence of automated processes for preprocessing data, training, evaluating, and deploying models, managed with orchestration frameworks.
+  </div>
+
+  <div class="question">13. What is end-to-end reproducibility in MLOps?</div>
+  <div class="answer">
+    Reproducibility means any ML experiment can be re-run with the same code, data, and configuration to produce the same results—facilitated by tracking code, parameters, and environments.
+  </div>
+
+  <div class="question">14. What is model governance?</div>
+  <div class="answer">
+    Model governance ensures compliance, traceability, auditability, and responsible use of ML models in production.
+  </div>
+
+  <div class="question">15. What is canary deployment in model serving?</div>
+  <div class="answer">
+    Deploying a new model version to a small subset of users/requests for evaluation before full rollout, minimizing risk from faulty models.
+  </div>
+
+  <div class="question">16. What is A/B testing in ML deployments?</div>
+  <div class="answer">
+    A/B testing serves multiple model versions to different user subsets, comparing their performance to choose the best approach.
+  </div>
+
+  <div class="question">17. What is CI/CD in the context of MLOps?</div>
+  <div class="answer">
+    Continuous Integration and Continuous Delivery/Deployment (CI/CD) in ML automates testing, validation, and release of models and pipeline code to production upon changes.
+  </div>
+
+  <div class="question">18. What is inference in ML?</div>
+  <div class="answer">
+    Inference is the process of using a trained model to make predictions on new, unseen data.
+  </div>
+
+  <div class="question">19. How is model explainability achieved in production?</div>
+  <div class="answer">
+    Using tools and techniques such as SHAP, LIME, or integrated system explanations to interpret and present reasons for model predictions.
+  </div>
+
+  <div class="question">20. What is a data pipeline and how does it relate to MLOps?</div>
+  <div class="answer">
+    A data pipeline automates the steps of collecting, cleaning, transforming, and loading data for downstream ML tasks, forming the foundation for reliable MLOps.
+  </div>
+
+  <div class="question">21. What is a training pipeline?</div>
+  <div class="answer">
+    It is an automated sequence for feature engineering, model training, evaluation, and output of artifacts ready for deployment.
+  </div>
+
+  <div class="question">22. What is a prediction pipeline?</div>
+  <div class="answer">
+    Sequence of steps performed during inference, including data preprocessing, feature extraction, and model prediction.
+  </div>
+
+  <div class="question">23. How do you ensure scalability of model serving?</div>
+  <div class="answer">
+    Use container orchestration (Kubernetes), auto-scaling APIs, serverless inference, and load balancing for horizontal scaling of prediction services.
+  </div>
+
+  <div class="question">24. What challenges are unique to MLOps versus DevOps?</div>
+  <div class="answer">
+    Managing data and model versioning, reproducibility, monitoring for drift, explainability, experimentation tracking, and higher variability in production workloads.
+  </div>
+
+  <div class="question">25. What is experiment tracking?</div>
+  <div class="answer">
+    Recording metadata, parameters, code versions, and results for each model experiment to compare and reproduce workflows.
+  </div>
+
+  <div class="question">26. Name some tools for experiment tracking.</div>
+  <div class="answer">
+    MLflow Tracking, Weights & Biases, Neptune.ai, DVC Experiments, TensorBoard.
+  </div>
+
+  <div class="question">27. How can you monitor for model bias in production?</div>
+  <div class="answer">
+    Implement monitoring for prediction distributions, fairness metrics, unintended correlations, and alerting on anomalies on live data.
+  </div>
+
+  <div class="question">28. What is model rollback?</div>
+  <div class="answer">
+    Model rollback means reverting to a previous model version in production if the new version causes regressions or failures.
+  </div>
+
+  <div class="question">29. What are common model performance metrics tracked in MLOps?</div>
+  <div class="answer">
+    Accuracy, precision, recall, F1 score, ROC-AUC, mean absolute error, latency, throughput, and resource utilization.
+  </div>
+
+  <div class="question">30. What is model packaging?</div>
+  <div class="answer">
+    Packaging a model means encapsulating it (with dependencies) into a deployable artifact, such as a Docker container or serialized file.
+  </div>
+
+  <div class="question">31. How is security handled in MLOps pipelines?</div>
+  <div class="answer">
+    Use role-based access, audit logging, data encryption, secrets management, compliance controls, and secure API/auth mechanisms across pipelines.
+  </div>
+
+  <div class="question">32. What is a notebook in the MLOps context?</div>
+  <div class="answer">
+    Interactive computing files (Jupyter or similar) used for data exploration, prototyping, and sharing experiments—tracked as artifacts in MLOps.
+  </div>
+
+  <div class="question">33. What is model caching?</div>
+  <div class="answer">
+    Caching stores frequently used model outputs or intermediate computations to speed up repeated predictions or pipeline stages.
+  </div>
+
+  <div class="question">34. What role do containers play in MLOps?</div>
+  <div class="answer">
+    Containers package code, dependencies, and models together for reproducible deployment and scaling across different environments.
+  </div>
+
+  <div class="question">35. What is ML model lifecycle management?</div>
+  <div class="answer">
+    Managing stages from data prep, development, validation, deployment, monitoring, retraining, and archiving/decommissioning of models.
+  </div>
+
+  <div class="question">36. What compliance challenges can exist in MLOps?</div>
+  <div class="answer">
+    Personal data usage (PII, GDPR), audit trails, model lineage tracking, reproducibility requirements, and security reviews.
+  </div>
+
+  <div class="question">37. What is batch inference?</div>
+  <div class="answer">
+    Processing large volumes of data in groups (batches) for predictions, typically using scheduled jobs or data pipelines.
+  </div>
+
+  <div class="question">38. What is online (real-time) inference?</div>
+  <div class="answer">
+    Making instantaneous predictions for each request, often integrated with web or mobile applications through REST APIs.
+  </div>
+
+  <div class="question">39. What are LLMOps or GenAIOps?</div>
+  <div class="answer">
+    LLMOps and GenAIOps apply MLOps principles specifically for large language models and generative AI, dealing with prompt versioning, model fine-tuning, hallucination detection, and responsible AI concerns.
+  </div>
+
+  <div class="question">40. What is shadow deployment in the ML context?</div>
+  <div class="answer">
+    A new model is deployed alongside the production model, silently receiving the same requests but without impacting users, enabling evaluation under real traffic.
+  </div>
+
+  <div class="question">41. What is model lineage?</div>
+  <div class="answer">
+    Model lineage traces the data, code, and changes that led to a given model version, enabling transparency and accountability.
+  </div>
+
+  <div class="question">42. How do you handle secret management in ML pipelines?</div>
+  <div class="answer">
+    Store sensitive credentials and keys in a secrets manager integrated with pipeline orchestration, with access control and encryption.
+  </div>
+
+  <div class="question">43. What is the importance of data validation in MLOps?</div>
+  <div class="answer">
+    Data validation ensures input data meets quality standards, preventing pipeline and model errors before deployed in production.
+  </div>
+
+  <div class="question">44. What is hyperparameter tuning?</div>
+  <div class="answer">
+    Automated process of searching for the best values of model parameters (like learning rate, tree depth) to optimize model performance.
+  </div>
+
+  <div class="question">45. Name frameworks for automated hyperparameter tuning.</div>
+  <div class="answer">
+    Optuna, Hyperopt, Ray Tune, Google Vizier, MLflow HyperOpt.
+  </div>
+
+  <div class="question">46. What is a model artifact?</div>
+  <div class="answer">
+    A model artifact is any file or object produced as output of training, including model binaries, weights, metrics, logs, and metadata.
+  </div>
+
+  <div class="question">47. What is the LLM prompt registry and why is it needed?</div>
+  <div class="answer">
+    A prompt registry catalogs, versions, and documents prompt templates for LLMs, supporting reproducibility and compliance.
+  </div>
+
+  <div class="question">48. What is responsible AI and how does MLOps facilitate it?</div>
+  <div class="answer">
+    Responsible AI practices include fairness, transparency, robustness, privacy, and accountability—MLOps enforces these via automated checks, monitors, and audit trails.
+  </div>
+
+  <div class="question">49. What is model staleness?</div>
+  <div class="answer">
+    Model staleness happens when a deployed model is out of sync with current data or underlying phenomena, requiring retraining or updates.
+  </div>
+
+  <div class="question">50. How do you manage model access and authorization?</div>
+  <div class="answer">
+    Use authenticated endpoints, API gateways, and RBAC policies in serving platforms to control who can run, update, or see models.
+  </div>
+</section>
+<section id="generativeai">
+  <h2>Generative AI & LLMs Interview Questions and Answers</h2>
+
+  <div class="question">1. What is Generative AI?</div>
+  <div class="answer">
+    Generative AI refers to machine learning systems that create new content—such as text, images, audio, or code—based on patterns learned from data.
+  </div>
+
+  <div class="question">2. What is a Large Language Model (LLM)?</div>
+  <div class="answer">
+    An LLM is a type of AI model trained on massive text corpora to understand and generate human-like language; examples include GPT, PaLM, Gemini, Llama.
+  </div>
+
+  <div class="question">3. Give examples of applications of generative AI.</div>
+  <div class="answer">
+    Chatbots, code generation, text summarization, translation, creative writing, synthetic image generation (e.g., DALL-E), music composition, and content recommendation.
+  </div>
+
+  <div class="question">4. What is “prompt engineering”?</div>
+  <div class="answer">
+    Prompt engineering is the practice of designing and refining user inputs to AI models to guide desired outputs, especially for LLMs.
+  </div>
+
+  <div class="question">5. What is model “fine-tuning”?</div>
+  <div class="answer">
+    Fine-tuning adapts a pre-trained model to perform specific tasks or understand domain-specific language using a smaller, curated dataset.
+  </div>
+
+  <div class="question">6. Explain Retrieval-Augmented Generation (RAG).</div>
+  <div class="answer">
+    RAG is an approach that combines LLMs with external retrieval systems so models generate answers grounded in updated or external documents.
+  </div>
+
+  <div class="question">7. What is a “hallucination” in generative AI?</div>
+  <div class="answer">
+    A hallucination is when a generative model outputs inaccurate or fabricated information that appears plausible but is not factual.
+  </div>
+
+  <div class="question">8. How do you mitigate LLM hallucinations?</div>
+  <div class="answer">
+    Use retrieval-augmentation, fact-checking, prompt constraints, post-generation validation, and model fine-tuning with high-quality data.
+  </div>
+
+  <div class="question">9. What is “chain-of-thought” prompting?</div>
+  <div class="answer">
+    Chain-of-thought prompting instructs models to reason step-by-step, improving performance on complex questions and logical tasks.
+  </div>
+
+  <div class="question">10. What is in-context learning?</div>
+  <div class="answer">
+    In-context learning lets LLMs use examples and instructions in the prompt without parameter updates, enabling task adaptation on the fly.
+  </div>
+
+  <div class="question">11. What safety risks are associated with generative AI?</div>
+  <div class="answer">
+    Risks include misinformation, copyright violation, bias amplification, toxic outputs, and misuse for generating malicious content.
+  </div>
+
+  <div class="question">12. What are “guardrails” in AI systems?</div>
+  <div class="answer">
+    Guardrails are controls and policies put in place to restrict unsafe, biased, or undesired model outputs.
+  </div>
+
+  <div class="question">13. How do LLMs tokenize input text?</div>
+  <div class="answer">
+    LLMs break input text into smaller units (tokens)—words, subwords, or characters—using a tokenizer optimized for their architecture.
+  </div>
+
+  <div class="question">14. What is RLHF (Reinforcement Learning from Human Feedback)?</div>
+  <div class="answer">
+    RLHF is a training approach where human feedback on outputs trains a reward model, which then helps fine-tune an LLM to align with human preferences.
+  </div>
+
+  <div class="question">15. Name some popular open-source LLMs.</div>
+  <div class="answer">
+    Llama (Meta), Falcon, Mistral, T5, and Bloom.
+  </div>
+
+  <div class="question">16. What is parameter size in LLMs, and why does it matter?</div>
+  <div class="answer">
+    Parameter size indicates the number of trainable weights; larger models generally possess greater capacity, but may require more data, compute, and care to avoid overfitting.
+  </div>
+
+  <div class="question">17. What is model quantization and why is it used?</div>
+  <div class="answer">
+    Quantization reduces the precision of model weights (e.g., from 32-bit to 8-bit), decreasing model size and speed requirements while trading off nominal accuracy.
+  </div>
+
+  <div class="question">18. What is prompt injection?</div>
+  <div class="answer">
+    Prompt injection is a security risk where malicious input alters the intended behavior of an LLM, potentially bypassing restrictions or leaking sensitive data.
+  </div>
+
+  <div class="question">19. What does “context window” mean in LLMs?</div>
+  <div class="answer">
+    The context window is the maximum amount of input text (tokens) the LLM can process at once, affecting how much information is retained for generating responses.
+  </div>
+
+  <div class="question">20. How do you evaluate generative model outputs?</div>
+  <div class="answer">
+    Common metrics include BLEU, ROUGE, METEOR for text; human evaluation for relevance and factuality; classifier tests for harmful content; and dataset-specific metrics.
+  </div>
+
+  <div class="question">21. What is semantic search in the context of LLMs?</div>
+  <div class="answer">
+    Semantic search retrieves information based on meaning and context (not just keyword matching), often using vector embeddings from LLMs.
+  </div>
+
+  <div class="question">22. What is “embedding” in generative AI?</div>
+  <div class="answer">
+    An embedding is a high-dimensional vector representation of words, sentences, or even images, capturing semantic relationships for LLM processing and similarity search.
+  </div>
+
+  <div class="question">23. What is temperature in text generation?</div>
+  <div class="answer">
+    Temperature is a parameter controlling randomness; high values produce more diverse outputs, while low values make the model deterministic.
+  </div>
+
+  <div class="question">24. What is the difference between zero-shot, one-shot, and few-shot learning?</div>
+  <div class="answer">
+    Zero-shot: no examples given; One-shot: one example; Few-shot: a few examples in the prompt to condition the LLM's responses.
+  </div>
+
+  <div class="question">25. How do you deploy LLMs at scale?</div>
+  <div class="answer">
+    Deploy with container orchestration, distributed inference engines, cloud APIs, serverless platforms, GPU/TPU acceleration, and autoscaling infrastructure.
+  </div>
+
+  <div class="question">26. What is instruction-tuning?</div>
+  <div class="answer">
+    Instruction-tuning is supervised fine-tuning of LLMs on a dataset comprising instructions and expected outputs, aligning models with user intent.
+  </div>
+
+  <div class="question">27. Explain the concept of “prompt chaining.”</div>
+  <div class="answer">
+    Prompt chaining links together multiple LLM prompts and responses to solve complex tasks through intermediate reasoning and multiple steps.
+  </div>
+
+  <div class="question">28. What are vector databases and their use in LLMs?</div>
+  <div class="answer">
+    Vector DBs store and search high-dimensional embeddings for similarity search, enabling fast retrieval of context documents for RAG and semantic applications.
+  </div>
+
+  <div class="question">29. What is knowledge grounding in LLM generation?</div>
+  <div class="answer">
+    Grounding integrates external knowledge into model outputs, ensuring they reference verifiable facts or context, reducing hallucinations.
+  </div>
+
+  <div class="question">30. What are system prompts in LLMs?</div>
+  <div class="answer">
+    System prompts set behavioral guidelines for the model, defining tone, persona, safety constraints, or output format before user requests are seen.
+  </div>
+
+  <div class="question">31. What is watermarking in generative AI?</div>
+  <div class="answer">
+    Watermarking embeds subtle signals in generated content to identify origin (human vs AI), aiding detection and attribution.
+  </div>
+
+  <div class="question">32. What is a diffusion model in generative AI?</div>
+  <div class="answer">
+    Diffusion models create content (often images) by iteratively refining random noise toward an intended output using learned guidance.
+  </div>
+
+  <div class="question">33. How do you control bias in LLM outputs?</div>
+  <div class="answer">
+    Address through curated training datasets, regular bias audits, reinforcement learning with feedback, and output filters or guardrails.
+  </div>
+
+  <div class="question">34. What is multi-modality in generative AI?</div>
+  <div class="answer">
+    Multi-modal models process and generate more than one type of data—such as text, images, audio, or video—simultaneously.
+  </div>
+
+  <div class="question">35. Name some leading multimodal generative models.</div>
+  <div class="answer">
+    OpenAI GPT-4o, Gemini, LLaVA, and Google’s Gemini family (Gemini Pro, Ultra).
+  </div>
+
+  <div class="question">36. What are safety layers in LLM deployment?</div>
+  <div class="answer">
+    Additional checks (e.g., classifiers for toxicity, policy enforcement, output filtering, user authentication) to prevent harmful or noncompliant outputs.
+  </div>
+
+  <div class="question">37. What is the role of alignment in generative AI?</div>
+  <div class="answer">
+    Alignment focuses on ensuring model behavior meets human values and norms, reducing risk of misuse or negative impact.
+  </div>
+
+  <div class="question">38. What is a context window overflow in LLMs?</div>
+  <div class="answer">
+    If input (including prompt and conversation history) exceeds the model’s maximum context window, earliest tokens are truncated or lost, risking omitted context.
+  </div>
+
+  <div class="question">39. Explain open-source vs closed-source LLMs.</div>
+  <div class="answer">
+    Open-source LLMs (e.g., Llama, Mistral) have accessible weights and code, allowing custom use, while closed-source LLMs (e.g., GPT-4, Claude) are proprietary.
+  </div>
+
+  <div class="question">40. What is a safety and alignment evaluation benchmark?</div>
+  <div class="answer">
+    Benchmarks like HELM, Holistic Evaluation of Language Models, and custom red-teaming scripts, measure LLMs for bias, toxicity, factuality, and safety.
+  </div>
+
+  <div class="question">41. What is LLMOps?</div>
+  <div class="answer">
+    LLMOps applies MLOps principles to large language models, covering prompt versioning, deployment, monitoring, cost optimization, and compliance.
+  </div>
+
+  <div class="question">42. How do LLMs support code generation?</div>
+  <div class="answer">
+    LLMs are trained on code and natural language, enabling them to generate, explain, refactor, and autocomplete code snippets in many programming languages.
+  </div>
+
+  <div class="question">43. What is synthetic data generation, and why is it important?</div>
+  <div class="answer">
+    Generative AI creates synthetic (artificial) datasets for training, testing, or privacy, useful when real data is limited or sensitive.
+  </div>
+
+  <div class="question">44. What is red teaming in the context of AI safety?</div>
+  <div class="answer">
+    Red teaming is systematically probing AI models for unsafe, biased, or false outputs using adversarial inputs and evaluation scripts.
+  </div>
+
+  <div class="question">45. What does “function calling” mean in LLMs?</div>
+  <div class="answer">
+    Function calling allows LLMs to trigger external APIs or software functions based on prompt analysis, enabling AI agents and integrations.
+  </div>
+
+  <div class="question">46. What is the impact of context length on LLM performance?</div>
+  <div class="answer">
+    Longer context windows allow richer information for reasoning, but may increase compute needs and pose challenges for model scaling.
+  </div>
+
+  <div class="question">47. What are “jailbreaks” in generative AI?</div>
+  <div class="answer">
+    Jailbreaks are prompts or exploits designed to make AI systems bypass safety features, revealing restricted or harmful information.
+  </div>
+
+  <div class="question">48. What are Responsible AI practices for generative models?</div>
+  <div class="answer">
+    Practices include transparency, fairness, ongoing monitoring, clear communication of limitations, informed consent, and mitigation of harms.
+  </div>
+
+  <div class="question">49. What is a “consistency check” in LLM evaluation?</div>
+  <div class="answer">
+    Consistency checks validate that model answers are stable and repeatable under similar input conditions, revealing brittleness or randomness in outputs.
+  </div>
+
+  <div class="question">50. How can organizations reduce cost and latency with LLM APIs?</div>
+  <div class="answer">
+    Use prompt optimization, batching requests, model distillation, local fine-tuning for smaller models, and selecting right-sized APIs depending on use case.
+  </div>
+</section>
+<section id="frontendframeworks">
+  <h2>Modern Frontend Frameworks (React, Next.js, etc.) Interview Questions and Answers</h2>
+
+  <div class="question">1. What is a frontend framework?</div>
+  <div class="answer">
+    A frontend framework is a collection of pre-written JavaScript, CSS, and HTML code used to build the user interface and client-side logic of web applications efficiently.
+  </div>
+
+  <div class="question">2. What is React?</div>
+  <div class="answer">
+    React is a declarative, component-based JavaScript library developed by Facebook for building interactive UIs with reusable components.
+  </div>
+
+  <div class="question">3. What is a virtual DOM in React?</div>
+  <div class="answer">
+    The virtual DOM is a lightweight JavaScript object representing the actual DOM; React uses it to detect changes efficiently and update only what’s needed.
+  </div>
+
+  <div class="question">4. What is JSX?</div>
+  <div class="answer">
+    JSX (JavaScript XML) is a syntax extension for JavaScript that looks like HTML and is used with React to describe UI structure.
+  </div>
+
+  <div class="question">5. Describe a functional component in React.</div>
+  <div class="answer">
+    A functional component is a plain JavaScript function returning JSX elements, suitable for simple, stateless UI parts.
+  </div>
+
+  <div class="question">6. What is a class component in React?</div>
+  <div class="answer">
+    A class component is a React component defined as an ES6 class, supporting lifecycle methods and local state management.
+  </div>
+
+  <div class="question">7. What are React hooks?</div>
+  <div class="answer">
+    Hooks are functions (like useState, useEffect) that let you use state and lifecycle features in functional components.
+  </div>
+
+  <div class="question">8. What is the use of useEffect in React?</div>
+  <div class="answer">
+    useEffect is a React hook for running side effects (like data fetching or subscriptions) after rendering.
+  </div>
+
+  <div class="question">9. Explain prop drilling.</div>
+  <div class="answer">
+    Prop drilling is the process of passing data through many nested components via props, which can lead to code that is harder to maintain.
+  </div>
+
+  <div class="question">10. What is context in React?</div>
+  <div class="answer">
+    Context provides a way to share values (like themes or user state) across components without explicit prop passing.
+  </div>
+
+  <div class="question">11. What is Next.js?</div>
+  <div class="answer">
+    Next.js is a React framework enabling server-side rendering, static site generation, file-based routing, and optimized performance.
+  </div>
+
+  <div class="question">12. Explain server-side rendering (SSR) in Next.js.</div>
+  <div class="answer">
+    SSR renders web pages on the server before sending them to the client, improving initial load speed and SEO.
+  </div>
+
+  <div class="question">13. What is static site generation (SSG)?</div>
+  <div class="answer">
+    SSG generates HTML pages at build time, serving static content for fast performance and scalability.
+  </div>
+
+  <div class="question">14. What is hydration in frontend frameworks?</div>
+  <div class="answer">
+    Hydration attaches JavaScript event handlers to server-rendered HTML so a static page becomes interactive on the client.
+  </div>
+
+  <div class="question">15. How does React manage state?</div>
+  <div class="answer">
+    React state is managed within components using useState and can be lifted up to parents or managed globally by context or libraries (e.g., Redux, Zustand).
+  </div>
+
+  <div class="question">16. Name state management libraries for React.</div>
+  <div class="answer">
+    Redux, MobX, Zustand, Recoil, Jotai, and React Context API.
+  </div>
+
+  <div class="question">17. What is Redux?</div>
+  <div class="answer">
+    Redux is a predictable state container for JavaScript apps, maintaining global state in a single store with unidirectional data flow.
+  </div>
+
+  <div class="question">18. Explain reducers in Redux.</div>
+  <div class="answer">
+    Reducers are pure functions that take the current state and an action, then return a new state based on the action.
+  </div>
+
+  <div class="question">19. What are React refs?</div>
+  <div class="answer">
+    Refs are objects used to access and interact with DOM elements or React elements directly in components.
+  </div>
+
+  <div class="question">20. What is code splitting?</div>
+  <div class="answer">
+    Code splitting divides application code into smaller chunks loaded on demand, improving performance and initial load times.
+  </div>
+
+  <div class="question">21. What is lazy loading in React?</div>
+  <div class="answer">
+    Lazy loading loads React components and resources only when needed, using React.lazy and Suspense for components.
+  </div>
+
+  <div class="question">22. How does routing work in Next.js?</div>
+  <div class="answer">
+    File-based routing maps file and folder structure in the /pages directory to application routes automatically.
+  </div>
+
+  <div class="question">23. What is API routes in Next.js?</div>
+  <div class="answer">
+    API routes enable backend endpoints (serverless functions) within a Next.js project, handling HTTP requests under /pages/api.
+  </div>
+
+  <div class="question">24. What is a single-page application (SPA)?</div>
+  <div class="answer">
+    An SPA loads a single HTML page and dynamically updates content via JavaScript, avoiding full page reloads.
+  </div>
+
+  <div class="question">25. What is hydration mismatch?</div>
+  <div class="answer">
+    A hydration mismatch occurs when server-rendered HTML doesn’t match the client version, often leading to UI glitches or warnings.
+  </div>
+
+  <div class="question">26. What are hooks like useMemo and useCallback used for?</div>
+  <div class="answer">
+    useMemo memoizes computed values; useCallback memoizes function references to prevent unnecessary re-renders.
+  </div>
+
+  <div class="question">27. What are keys in React lists?</div>
+  <div class="answer">
+    Keys are unique identifiers assigned to elements in a list to help React track which items change, are added, or removed.
+  </div>
+
+  <div class="question">28. Explain SSR vs CSR vs SSG in frontend frameworks.</div>
+  <div class="answer">
+    SSR: Server-side rendering; CSR: Client-side rendering; SSG: Static site generation—each balances initial load speed, SEO, and flexibility differently.
+  </div>
+
+  <div class="question">29. What are modern alternatives to React?</div>
+  <div class="answer">
+    Vue.js, Svelte, Solid.js, Qwik, and Lit are major alternatives emphasizing speed, simplicity, or reactivity.
+  </div>
+
+  <div class="question">30. What is a custom hook?</div>
+  <div class="answer">
+    A custom hook in React is a reusable function that encapsulates logic using hooks, enabling code sharing across components.
+  </div>
+
+  <div class="question">31. What is suspense in React?</div>
+  <div class="answer">
+    Suspense lets you declaratively specify loading states for components that are waiting for asynchronous data or code.
+  </div>
+
+  <div class="question">32. What is a higher-order component (HOC)?</div>
+  <div class="answer">
+    An HOC is a function that takes a component and returns a new component, enhancing or wrapping the original with additional functionality.
+  </div>
+
+  <div class="question">33. What are single-file components in Vue?</div>
+  <div class="answer">
+    Single-file components are .vue files encapsulating template, script, and style for a component in Vue.js, improving modularity.
+  </div>
+
+  <div class="question">34. What is Svelte, and how does it differ from React or Vue?</div>
+  <div class="answer">
+    Svelte is a compiler framework that converts components into efficient JavaScript at build time instead of using a virtual DOM at runtime.
+  </div>
+
+  <div class="question">35. What is a store in Svelte?</div>
+  <div class="answer">
+    A Svelte store is a reactive object for managing and sharing state outside components.
+  </div>
+
+  <div class="question">36. What is hydration in Svelte or Vue?</div>
+  <div class="answer">
+    Hydration attaches framework logic and handlers to server-rendered HTML to enable SPA interactivity in Svelte or Vue.
+  </div>
+
+  <div class="question">37. What are signals in Solid.js?</div>
+  <div class="answer">
+    Signals are fine-grained, reactive primitives (via createSignal) enabling optimal updates for Solid.js without a virtual DOM.
+  </div>
+
+  <div class="question">38. What is Vite?</div>
+  <div class="answer">
+    Vite is a modern, fast build tool and development server for frontend apps, supporting hot module replacement and instant reloads.
+  </div>
+
+  <div class="question">39. What is web assembly (WASM)?</div>
+  <div class="answer">
+    WASM is a low-level binary format for browser apps, enabling near-native performance and interoperability with JS on the web.
+  </div>
+
+  <div class="question">40. Explain the role of components in frontend frameworks.</div>
+  <div class="answer">
+    Components encapsulate UI, logic, and state, promoting reusability, maintainability, and testability in frontend applications.
+  </div>
+
+  <div class="question">41. How do you handle forms and validation in React?</div>
+  <div class="answer">
+    Use controlled components and hooks (like useState, useReducer), or libraries like Formik, React Hook Form, and Yup for robust validation.
+  </div>
+
+  <div class="question">42. What are portals in React?</div>
+  <div class="answer">
+    Portals enable rendering components into DOM nodes outside the main React tree, useful for modals, tooltips, or overlays.
+  </div>
+
+  <div class="question">43. What is SSR cache revalidation in Next.js?</div>
+  <div class="answer">
+    Revalidation updates pre-rendered pages on-demand or at intervals, blending static content with real-time freshness for dynamic websites.
+  </div>
+
+  <div class="question">44. How is styling managed in modern frontend?</div>
+  <div class="answer">
+    Through CSS-in-JS, CSS Modules, Tailwind CSS, Styled Components, SASS/LESS, PostCSS, or traditional global CSS.
+  </div>
+
+  <div class="question">45. What is hydration and streaming in React 18+?</div>
+  <div class="answer">
+    Streaming allows server-rendered pages to be sent in progressive chunks; hydration makes each chunk interactive as it arrives for faster perceived load.
+  </div>
+
+  <div class="question">46. What is data fetching in Next.js (getServerSideProps/getStaticProps)?</div>
+  <div class="answer">
+    getServerSideProps fetches data at request time (SSR); getStaticProps fetches data at build time (SSG) for static optimization.
+  </div>
+
+  <div class="question">47. How is error boundary used in React?</div>
+  <div class="answer">
+    Error boundaries are components that catch JavaScript errors anywhere in their child tree and display a fallback UI instead of crashing the app.
+  </div>
+
+  <div class="question">48. What is HMR (Hot Module Replacement)?</div>
+  <div class="answer">
+    HMR updates individual modules of a running app in the browser without a full reload, speeding up development.
+  </div>
+
+  <div class="question">49. What is tree shaking in frontend tooling?</div>
+  <div class="answer">
+    Tree shaking removes unused code from the final JavaScript bundle, reducing payload size and improving load speed.
+  </div>
+
+  <div class="question">50. What is SEO and why does SSR help?</div>
+  <div class="answer">
+    SEO is optimizing websites for search engines; SSR delivers fully rendered HTML, enabling better crawling and indexing than pure client-side apps.
+  </div>
+</section>
+<section id="blockchainweb3">
+  <h2>Blockchain & Web3 Interview Questions and Answers</h2>
+
+  <div class="question">1. What is blockchain?</div>
+  <div class="answer">
+    Blockchain is a distributed, decentralized digital ledger that records transactions in immutable, cryptographically linked blocks secured by consensus mechanisms.
+  </div>
+
+  <div class="question">2. How does blockchain ensure immutability?</div>
+  <div class="answer">
+    Immutability is ensured by linking blocks using cryptographic hashes—altering past data invalidates all subsequent blocks and is rejected by consensus.
+  </div>
+
+  <div class="question">3. What is a smart contract?</div>
+  <div class="answer">
+    A smart contract is self-executing code stored and run on the blockchain, directly controlling digital assets and automating agreements.
+  </div>
+
+  <div class="question">4. What is Ethereum?</div>
+  <div class="answer">
+    Ethereum is a leading, programmable blockchain that supports smart contracts and decentralized applications, using ether (ETH) as its native currency.
+  </div>
+
+  <div class="question">5. What is a wallet in blockchain?</div>
+  <div class="answer">
+    A wallet is software or hardware that stores private keys, allowing users to send, receive, and manage cryptocurrencies and tokens.
+  </div>
+
+  <div class="question">6. What is proof of work?</div>
+  <div class="answer">
+    Proof of work (PoW) is a consensus algorithm requiring network participants to solve complex puzzles to validate transactions and add new blocks.
+  </div>
+
+  <div class="question">7. What is proof of stake?</div>
+  <div class="answer">
+    Proof of stake (PoS) selects validators based on the amount of cryptocurrency they hold and are willing to “stake” as collateral.
+  </div>
+
+  <div class="question">8. What is a blockchain fork?</div>
+  <div class="answer">
+    A fork occurs when a blockchain splits into two versions—either temporarily (soft fork) or permanently (hard fork)—due to protocol changes or disagreements.
+  </div>
+
+  <div class="question">9. What are tokens?</div>
+  <div class="answer">
+    Tokens are digital assets created on top of blockchains, representing value, utility, voting rights, or other items (e.g., ERC-20 tokens on Ethereum).
+  </div>
+
+  <div class="question">10. What’s the difference between a coin and a token?</div>
+  <div class="answer">
+    Coins have their standalone blockchain (e.g., Bitcoin, Ether); tokens are built on top of existing blockchains, like USDT on Ethereum.
+  </div>
+
+  <div class="question">11. What is Web3?</div>
+  <div class="answer">
+    Web3 refers to the next generation of the internet based on decentralized protocols, blockchain, and peer-to-peer communication, giving users ownership and control.
+  </div>
+
+  <div class="question">12. What are decentralized applications (dApps)?</div>
+  <div class="answer">
+    dApps are open-source, autonomous applications running on blockchain networks, not controlled by a single entity.
+  </div>
+
+  <div class="question">13. What are NFTs?</div>
+  <div class="answer">
+    Non-Fungible Tokens (NFTs) are unique, indivisible digital assets stored on the blockchain representing ownership of digital or physical items.
+  </div>
+
+  <div class="question">14. How do blockchains achieve consensus?</div>
+  <div class="answer">
+    Consensus is achieved using algorithms like Proof of Work, Proof of Stake, Delegated Proof of Stake, and Practical Byzantine Fault Tolerance.
+  </div>
+
+  <div class="question">15. What is a public vs private blockchain?</div>
+  <div class="answer">
+    Public blockchains are open and permissionless (anyone can join and participate), while private blockchains restrict participation to an invited set of entities.
+  </div>
+
+  <div class="question">16. What is a blockchain node?</div>
+  <div class="answer">
+    A node is a computer participating in the blockchain network, maintaining a copy of the ledger and relaying transactions/blocks.
+  </div>
+
+  <div class="question">17. What is a blockchain explorer?</div>
+  <div class="answer">
+    A blockchain explorer is a web application that lets users view transactions, addresses, blocks, and other data on a blockchain.
+  </div>
+
+  <div class="question">18. What is “gas” in Ethereum?</div>
+  <div class="answer">
+    Gas is a unit of computational work required to execute operations (like transactions or smart contract functions) on Ethereum.
+  </div>
+
+  <div class="question">19. What causes high gas fees?</div>
+  <div class="answer">
+    High gas fees occur during network congestion, when many users compete to have their transactions processed quickly.
+  </div>
+
+  <div class="question">20. What programming languages are common for smart contract development?</div>
+  <div class="answer">
+    Solidity is the most common for Ethereum, Vyper for Ethereum, and Rust for Solana or NEAR blockchains.
+  </div>
+
+  <div class="question">21. What are oracles in blockchain?</div>
+  <div class="answer">
+    Oracles are services that provide smart contracts with external data (e.g., real-world prices, weather) not natively available on the blockchain.
+  </div>
+
+  <div class="question">22. What is a decentralized autonomous organization (DAO)?</div>
+  <div class="answer">
+    A DAO is an organization run by rules encoded as smart contracts, managed collectively by members often via token-based voting.
+  </div>
+
+  <div class="question">23. What is staking?</div>
+  <div class="answer">
+    Staking involves locking cryptocurrency in a network to participate in validation, governance, or earn rewards in Proof of Stake systems.
+  </div>
+
+  <div class="question">24. What is DeFi?</div>
+  <div class="answer">
+    Decentralized Finance (DeFi) refers to financial services (lending, borrowing, trading) executed on blockchains via smart contracts, without intermediaries.
+  </div>
+
+  <div class="question">25. What is a liquidity pool?</div>
+  <div class="answer">
+    A liquidity pool is a smart contract containing pairs of tokens provided by users to enable decentralized trading and earning rewards.
+  </div>
+
+  <div class="question">26. What are bridges in blockchain?</div>
+  <div class="answer">
+    Bridges connect different blockchains, enabling transfer of tokens and data between them.
+  </div>
+
+  <div class="question">27. What is a consensus attack (51% attack)?</div>
+  <div class="answer">
+    A 51% attack is when an entity gains control of over half the network’s mining power, allowing double-spending or blocking new transactions.
+  </div>
+
+  <div class="question">28. What is sharding in blockchain?</div>
+  <div class="answer">
+    Sharding splits the blockchain into smaller shards, each processing a subset of transactions, improving scalability and throughput.
+  </div>
+
+  <div class="question">29. What is the role of cryptography in blockchain?</div>
+  <div class="answer">
+    Cryptography ensures transaction security, integrity, privacy, and digital signatures, and forms the basis of consensus protocols.
+  </div>
+
+  <div class="question">30. What is a zero-knowledge proof?</div>
+  <div class="answer">
+    ZKPs let one party prove a statement to another without revealing the statement itself, used for privacy-preserving blockchain applications.
+  </div>
+
+  <div class="question">31. What is the meaning of “gas limit”?</div>
+  <div class="answer">
+    Gas limit is the maximum amount of gas a user is willing to spend on a transaction or contract in Ethereum.
+  </div>
+
+  <div class="question">32. What is a testnet?</div>
+  <div class="answer">
+    A testnet is a blockchain that simulates the conditions of the mainnet for development and testing purposes using non-valuable tokens.
+  </div>
+
+  <div class="question">33. What are Layer 2 solutions?</div>
+  <div class="answer">
+    Layer 2 solutions build on top of blockchains to increase throughput and reduce fees (examples: rollups, payment channels, sidechains).
+  </div>
+
+  <div class="question">34. What is a rollup?</div>
+  <div class="answer">
+    A rollup bundles multiple transactions off-chain, then submits them as a single transaction to the main chain for security and efficiency.
+  </div>
+
+  <div class="question">35. What are custodial vs non-custodial wallets?</div>
+  <div class="answer">
+    Custodial wallets have a third party manage private keys; non-custodial wallets let users control their own private keys.
+  </div>
+
+  <div class="question">36. What is a mnemonic phrase?</div>
+  <div class="answer">
+    A mnemonic (seed) phrase is a list of words generated to back up and recover wallet private keys securely.
+  </div>
+
+  <div class="question">37. What is EVM compatibility?</div>
+  <div class="answer">
+    EVM compatibility enables blockchains to run Ethereum smart contracts and use Ethereum development tools.
+  </div>
+
+  <div class="question">38. What are consensus mechanisms other than PoW and PoS?</div>
+  <div class="answer">
+    Delegated Proof of Stake, Practical Byzantine Fault Tolerance, Proof of Authority, and Proof of History are alternative consensus algorithms.
+  </div>
+
+  <div class="question">39. What is a Merkle tree?</div>
+  <div class="answer">
+    A Merkle tree is a hash-based data structure that allows efficient, secure verification of transaction integrity in blockchains.
+  </div>
+
+  <div class="question">40. What are rug pulls?</div>
+  <div class="answer">
+    Rug pulls are scams where developers drain liquidity or shut down a project, causing tokens to become worthless after attracting investors.
+  </div>
+
+  <div class="question">41. What is a DEX (decentralized exchange)?</div>
+  <div class="answer">
+    A DEX is a peer-to-peer cryptocurrency exchange operating through smart contracts without central intermediaries (e.g., Uniswap, Sushiswap).
+  </div>
+
+  <div class="question">42. What are stablecoins?</div>
+  <div class="answer">
+    Stablecoins are cryptocurrencies pegged to the value of real-world assets, typically fiat (e.g., USDT, USDC), to reduce volatility.
+  </div>
+
+  <div class="question">43. What is a smart contract audit?</div>
+  <div class="answer">
+    An audit is a systematic analysis of smart contract code to detect vulnerabilities and ensure correctness, security, and compliance.
+  </div>
+
+  <div class="question">44. What is an airdrop?</div>
+  <div class="answer">
+    Airdrops are distributions of tokens to wallet holders as promotional or community incentives.
+  </div>
+
+  <div class="question">45. What is on-chain governance?</div>
+  <div class="answer">
+    On-chain governance is the process by which protocol updates and changes are enacted through votes and proposals recorded on the blockchain.
+  </div>
+
+  <div class="question">46. What is interoperability in blockchain?</div>
+  <div class="answer">
+    Interoperability is the ability of different blockchain networks to communicate, interact, and transfer assets/data between each other.
+  </div>
+
+  <div class="question">47. What are sidechains?</div>
+  <div class="answer">
+    Sidechains are separate blockchains running in parallel to a main chain, pegged by a two-way bridge, for scaling and experimentation.
+  </div>
+
+  <div class="question">48. What is slashing in PoS blockchains?</div>
+  <div class="answer">
+    Slashing is a penalty mechanism where staked funds are forfeited for malicious or faulty behavior by validators in Proof of Stake systems.
+  </div>
+
+  <div class="question">49. What is a genesis block?</div>
+  <div class="answer">
+    The genesis block is the very first block of any blockchain, serving as the root for all future block records.
+  </div>
+
+  <div class="question">50. What are some leading blockchain development frameworks?</div>
+  <div class="answer">
+    Leading frameworks include Truffle, Hardhat, Brownie (for Ethereum), and Anchor (for Solana).
+  </div>
+</section>
+<section id="dataengineering">
+  <h2>Data Engineering Interview Questions and Answers</h2>
+
+  <div class="question">1. What is data engineering?</div>
+  <div class="answer">
+    Data engineering is the discipline of designing, building, and maintaining systems and infrastructure for collecting, storing, processing, and analyzing large volumes of data.
+  </div>
+
+  <div class="question">2. What is ETL?</div>
+  <div class="answer">
+    ETL stands for Extract, Transform, Load—a process of extracting data from sources, transforming it for analysis, and loading it into storage systems like data warehouses.
+  </div>
+
+  <div class="question">3. Explain ELT and its benefits.</div>
+  <div class="answer">
+    ELT (Extract, Load, Transform) loads data directly into storage and transforms it there, leveraging modern scalable compute like cloud data warehouses for improved speed and flexibility.
+  </div>
+
+  <div class="question">4. What is a data pipeline?</div>
+  <div class="answer">
+    A data pipeline automates and sequences the movement, transformation, and validation of data from source to destination.
+  </div>
+
+  <div class="question">5. Name popular open-source data pipeline orchestration tools.</div>
+  <div class="answer">
+    Apache Airflow, Apache NiFi, Luigi, and Prefect.
+  </div>
+
+  <div class="question">6. What is a data lake?</div>
+  <div class="answer">
+    A data lake is a scalable storage system for raw or semi-structured data, optimized for bulk storage before processing and analytics.
+  </div>
+
+  <div class="question">7. How does a data warehouse differ from a data lake?</div>
+  <div class="answer">
+    A data warehouse stores structured, processed data for analysis and BI, while a data lake stores raw, unprocessed, and varied-format data.
+  </div>
+
+  <div class="question">8. What is batch processing vs stream processing?</div>
+  <div class="answer">
+    Batch processing handles large amounts of data in discrete chunks over time; stream processing analyzes data in real-time as it arrives.
+  </div>
+
+  <div class="question">9. Name frameworks for batch processing.</div>
+  <div class="answer">
+    Apache Spark, Apache Hadoop MapReduce, and Google Dataflow.
+  </div>
+
+  <div class="question">10. Name frameworks for stream processing.</div>
+  <div class="answer">
+    Apache Kafka Streams, Apache Flink, Apache Storm, and Spark Structured Streaming.
+  </div>
+
+  <div class="question">11. What is Apache Spark?</div>
+  <div class="answer">
+    Apache Spark is a fast, general-purpose cluster computing system for big data processing with APIs for Java, Scala, Python, and R.
+  </div>
+
+  <div class="question">12. What is a data schema?</div>
+  <div class="answer">
+    A schema defines the structure, fields, and types of data stored in a table or dataset.
+  </div>
+
+  <div class="question">13. What is data normalization and denormalization?</div>
+  <div class="answer">
+    Normalization structures data to reduce redundancy; denormalization combines tables to optimize query performance for analytics.
+  </div>
+
+  <div class="question">14. What is a slowly changing dimension (SCD)?</div>
+  <div class="answer">
+    SCD describes how dimensional data changes over time in data warehousing. SCD Type 1 overwrites data, SCD Type 2 adds historical records.
+  </div>
+
+  <div class="question">15. What is a data mart?</div>
+  <div class="answer">
+    A data mart is a subset of a data warehouse focused on a specific business line or team, often optimized for speed.
+  </div>
+
+  <div class="question">16. What is a star schema?</div>
+  <div class="answer">
+    A star schema is a database schema with a central fact table linked to multiple dimension tables, optimizing for fast queries in BI.
+  </div>
+
+  <div class="question">17. What is a snowflake schema?</div>
+  <div class="answer">
+    A snowflake schema normalizes dimension tables into multiple related tables, reducing redundancy at the cost of query speed.
+  </div>
+
+  <div class="question">18. What is columnar storage and its benefit?</div>
+  <div class="answer">
+    Columnar storage organizes data by columns, not rows, making aggregation and analytical workloads faster and more efficient.
+  </div>
+
+  <div class="question">19. What are some popular cloud data warehouses?</div>
+  <div class="answer">
+    Snowflake, Google BigQuery, Amazon Redshift, and Azure Synapse Analytics.
+  </div>
+
+  <div class="question">20. What is a distributed system?</div>
+  <div class="answer">
+    A distributed system is a network of independent computers working together for scalability, fault tolerance, and big data processing.
+  </div>
+
+  <div class="question">21. What is Apache Kafka?</div>
+  <div class="answer">
+    Apache Kafka is a distributed event streaming platform for building real-time data pipelines and stream processing applications.
+  </div>
+
+  <div class="question">22. Explain the role of a message broker.</div>
+  <div class="answer">
+    A message broker (like Kafka, RabbitMQ) intermediates between producers and consumers, ensuring reliable delivery of messages/data streams.
+  </div>
+
+  <div class="question">23. What is schema evolution?</div>
+  <div class="answer">
+    Schema evolution allows changes to data schema over time while maintaining compatibility and integrity in data pipelines.
+  </div>
+
+  <div class="question">24. What is a data catalog?</div>
+  <div class="answer">
+    A data catalog is a metadata inventory listing available datasets, schemas, and usage info to enable data discovery and governance.
+  </div>
+
+  <div class="question">25. What are common serialization formats for big data?</div>
+  <div class="answer">
+    Parquet, Avro, ORC, and JSON are widely used for efficient storage and transmission in data engineering.
+  </div>
+
+  <div class="question">26. What is data partitioning?</div>
+  <div class="answer">
+    Partitioning splits large datasets into smaller, manageable chunks (e.g., by date) to speed up query and processing times.
+  </div>
+
+  <div class="question">27. What is data sharding?</div>
+  <div class="answer">
+    Sharding divides large databases into smaller, independent pieces ("shards") to distribute load and improve scalability.
+  </div>
+
+  <div class="question">28. What is data lineage?</div>
+  <div class="answer">
+    Data lineage tracks the flow, transformations, and origins of data throughout its lifecycle for accountability and auditing.
+  </div>
+
+  <div class="question">29. Explain data quality and how to ensure it in pipelines.</div>
+  <div class="answer">
+    Data quality means data is accurate, consistent, complete, and timely; it's ensured via validation rules, checks, and cleansing steps built into pipelines.
+  </div>
+
+  <div class="question">30. What is CDC (Change Data Capture)?</div>
+  <div class="answer">
+    CDC records and propagates changes made in source databases, enabling incremental and real-time data updates.
+  </div>
+
+  <div class="question">31. What is data governance?</div>
+  <div class="answer">
+    Data governance encompasses policies and processes for managing data availability, usability, integrity, and security in an organization.
+  </div>
+
+  <div class="question">32. What is a data mesh?</div>
+  <div class="answer">
+    A data mesh is an architectural approach that decentralizes responsibility for data pipelines and domains, promoting data-as-a-product and self-service.
+  </div>
+
+  <div class="question">33. What is an OLAP cube?</div>
+  <div class="answer">
+    An OLAP cube is a multi-dimensional array of data used for complex analytical and ad hoc querying in BI systems.
+  </div>
+
+  <div class="question">34. What is a time window in stream processing?</div>
+  <div class="answer">
+    Time windows group events occurring within specific time intervals for aggregation or analytics (e.g., tumbling, sliding, session windows).
+  </div>
+
+  <div class="question">35. What is a DAG?</div>
+  <div class="answer">
+    A Directed Acyclic Graph (DAG) represents workflow or data pipeline tasks and their dependencies without cycles.
+  </div>
+
+  <div class="question">36. What is idempotency in data pipelines?</div>
+  <div class="answer">
+    Idempotency ensures an operation can be applied multiple times without changing the result after the initial application, aiding reliability.
+  </div>
+
+  <div class="question">37. What is backfilling?</div>
+  <div class="answer">
+    Backfilling is processing historical data in a data pipeline to recover from outages or load missed records.
+  </div>
+
+  <div class="question">38. What is data deduplication?</div>
+  <div class="answer">
+    Data deduplication removes duplicate records to ensure clean, consistent datasets in storage and analytics.
+  </div>
+
+  <div class="question">39. What are late-arriving data and watermarking?</div>
+  <div class="answer">
+    Late-arriving data refers to events that arrive past their expected processing time; watermarking marks the point up to which data is considered complete for aggregation.
+  </div>
+
+  <div class="question">40. What is a NoSQL database, and when to use one?</div>
+  <div class="answer">
+    A NoSQL database is non-relational, designed for scalable, flexible storage (e.g., document, key-value, graph)—useful for semi-structured/unstructured or rapidly changing schemas.
+  </div>
+
+  <div class="question">41. What is denormalized storage in data lakes/warehouses?</div>
+  <div class="answer">
+    Denormalized storage flattens related tables, reducing joins for analytical queries and often improving performance, at the cost of redundancy.
+  </div>
+
+  <div class="question">42. What is event sourcing?</div>
+  <div class="answer">
+    Event sourcing stores all state changes as a sequence of events, enabling robust auditing and state reconstruction.
+  </div>
+
+  <div class="question">43. What is Lambda architecture?</div>
+  <div class="answer">
+    Lambda architecture combines batch and real-time processing for large-scale data systems, supporting speed and accuracy across data pipelines.
+  </div>
+
+  <div class="question">44. What is Delta Lake?</div>
+  <div class="answer">
+    Delta Lake is an open table format and storage layer on top of data lakes supporting ACID transactions, versioning, and time travel.
+  </div>
+
+  <div class="question">45. What is Z-order clustering in big data storage?</div>
+  <div class="answer">
+    Z-order clustering is a data layout optimization for better multi-dimensional query performance by physically colocating related columns.
+  </div>
+
+  <div class="question">46. What are some best practices for scalable data pipelines?</div>
+  <div class="answer">
+    Modular pipeline design, proper partitioning, stateless transformations, monitoring, idempotency, data validation, and automated error handling.
+  </div>
+
+  <div class="question">47. What is Airflow and how does it manage pipelines?</div>
+  <div class="answer">
+    Apache Airflow is an orchestration tool for authoring, scheduling, and monitoring workflows defined as code using DAGs.
+  </div>
+
+  <div class="question">48. What is schema registry in Kafka?</div>
+  <div class="answer">
+    Schema registry stores and manages schema versions for Kafka topics, ensuring producer/consumer compatibility and enabling safe schema evolution.
+  </div>
+
+  <div class="question">49. What is data masking?</div>
+  <div class="answer">
+    Data masking obfuscates sensitive fields in datasets to protect PII or comply with privacy laws while preserving data utility for analytics.
+  </div>
+
+  <div class="question">50. What skills and languages are essential for data engineers?</div>
+  <div class="answer">
+    Key skills include SQL, Python, data modeling, ETL tools, distributed systems, cloud platforms, and familiarity with frameworks like Spark and Kafka.
+  </div>
+</section>
+<section id="edgeiot">
+  <h2>Edge Computing & IoT Interview Questions and Answers</h2>
+
+  <div class="question">1. What is edge computing?</div>
+  <div class="answer">
+    Edge computing processes data close to the source (sensors, devices) rather than sending it to centralized cloud servers, reducing latency and bandwidth usage.
+  </div>
+
+  <div class="question">2. What is IoT?</div>
+  <div class="answer">
+    Internet of Things (IoT) is a network of interconnected physical devices embedded with sensors, software, and connectivity, enabling them to collect and exchange data.
+  </div>
+
+  <div class="question">3. What are common protocols used in IoT?</div>
+  <div class="answer">
+    MQTT, CoAP, AMQP, HTTP/HTTPS, and Zigbee are widely used for efficient device communication in IoT networks.
+  </div>
+
+  <div class="question">4. What is an IoT gateway?</div>
+  <div class="answer">
+    An IoT gateway bridges edge devices and the cloud, aggregating, pre-processing, filtering, and relaying data between devices and backend systems.
+  </div>
+
+  <div class="question">5. What are the benefits of edge computing?</div>
+  <div class="answer">
+    Edge computing reduces latency, improves reliability, enables real-time analytics, reduces bandwidth, and enhances privacy by local data processing.
+  </div>
+
+  <div class="question">6. What are some common use cases for edge computing?</div>
+  <div class="answer">
+    Industrial automation, autonomous vehicles, remote monitoring, smart cities, connected healthcare, and AR/VR applications.
+  </div>
+
+  <div class="question">7. What is fog computing?</div>
+  <div class="answer">
+    Fog computing extends cloud computing to the network edge, adding intermediate nodes that process data between edge devices and the cloud.
+  </div>
+
+  <div class="question">8. What is latency and why is it important in edge/IoT?</div>
+  <div class="answer">
+    Latency is the delay in data processing and transfer; minimizing it is crucial for time-sensitive applications like industrial control or healthcare alerts.
+  </div>
+
+  <div class="question">9. What is remote device management?</div>
+  <div class="answer">
+    Remote device management provides tools and services to configure, monitor, update, and troubleshoot IoT devices deployed at scale.
+  </div>
+
+  <div class="question">10. What is device provisioning in IoT?</div>
+  <div class="answer">
+    Device provisioning assigns unique identities, security keys, and initial configurations to devices before connecting to a network.
+  </div>
+
+  <div class="question">11. How is data security achieved in IoT and edge platforms?</div>
+  <div class="answer">
+    Through encryption, secure boot, access controls, regular patching, and network segmentation.
+  </div>
+
+  <div class="question">12. What is device authentication and authorization?</div>
+  <div class="answer">
+    Authentication ensures only registered devices connect; authorization defines what devices are permitted to do in the system.
+  </div>
+
+  <div class="question">13. What are IoT sensors? Name a few types.</div>
+  <div class="answer">
+    IoT sensors capture environmental or system data. Examples: temperature, humidity, motion, light, pressure, gas, proximity, and GPS sensors.
+  </div>
+
+  <div class="question">14. What is digital twin technology?</div>
+  <div class="answer">
+    A digital twin is a virtual representation of a physical asset or system, updated with real-time IoT data for simulation and monitoring.
+  </div>
+
+  <div class="question">15. What is a microcontroller?</div>
+  <div class="answer">
+    A microcontroller is a compact integrated circuit with CPU, memory, and programmable input/output, used in embedded IoT devices.
+  </div>
+
+  <div class="question">16. Name some cloud IoT platforms.</div>
+  <div class="answer">
+    AWS IoT Core, Azure IoT Hub, Google Cloud IoT Core, IBM Watson IoT.
+  </div>
+
+  <div class="question">17. What is real-time analytics?</div>
+  <div class="answer">
+    Real-time analytics involves processing and analyzing data as it arrives, enabling instant insights and automated responses.
+  </div>
+
+  <div class="question">18. What is predictive maintenance in IoT?</div>
+  <div class="answer">
+    Predictive maintenance uses IoT sensors and analytics to forecast equipment failures, reducing downtime and maintenance costs.
+  </div>
+
+  <div class="question">19. What is over-the-air (OTA) update?</div>
+  <div class="answer">
+    OTA updates remotely deliver firmware or software upgrades to IoT devices, essential for bug fixes, features, and security.
+  </div>
+
+  <div class="question">20. What is message broker in IoT?</div>
+  <div class="answer">
+    A message broker, like MQTT broker, facilitates message routing and delivery between IoT devices and applications.
+  </div>
+
+  <div class="question">21. Explain data aggregation in the context of edge/IoT.</div>
+  <div class="answer">
+    Data aggregation combines data from multiple sensors/devices at the edge to reduce data volume and enable composite analysis before sending to the cloud.
+  </div>
+
+  <div class="question">22. What is LoRaWAN and where is it used?</div>
+  <div class="answer">
+    LoRaWAN is a low-power wide-area networking protocol for IoT, ideal for long-range, low-bandwidth applications like agriculture and smart cities.
+  </div>
+
+  <div class="question">23. What is an actuator in IoT?</div>
+  <div class="answer">
+    An actuator receives commands from a controller and performs actions, like opening a valve, turning on a motor, or adjusting lights.
+  </div>
+
+  <div class="question">24. What is MQTT?</div>
+  <div class="answer">
+    MQTT is a lightweight, publish/subscribe messaging protocol designed for IoT with low bandwidth and unreliable networks.
+  </div>
+
+  <div class="question">25. Explain the roles of publisher, broker, and subscriber in MQTT.</div>
+  <div class="answer">
+    Publishers send messages, the broker routes them to subscribers interested in specific topics, decoupling senders and receivers.
+  </div>
+
+  <div class="question">26. What is data filtering at the edge?</div>
+  <div class="answer">
+    Data filtering removes redundant or irrelevant data at the edge, minimizing bandwidth and processing only important events or anomalies.
+  </div>
+
+  <div class="question">27. What is time-series data in IoT?</div>
+  <div class="answer">
+    Time-series data consists of data points indexed in temporal order, common in IoT for tracking sensor readings over time.
+  </div>
+
+  <div class="question">28. What are edge AI and edge inference?</div>
+  <div class="answer">
+    Edge AI/deep learning deploys machine learning models directly on edge devices; edge inference runs predictions locally for reduced latency and offline capability.
+  </div>
+
+  <div class="question">29. What are smart gateways?</div>
+  <div class="answer">
+    Smart gateways not only relay data but also support protocol translation, security, local computation, and device management at the edge.
+  </div>
+
+  <div class="question">30. How does 5G impact IoT and edge computing?</div>
+  <div class="answer">
+    5G offers ultra-low latency, high bandwidth, and massive device connectivity, enabling advanced IoT/edge use cases and real-time applications.
+  </div>
+
+  <div class="question">31. What is a mesh network in IoT?</div>
+  <div class="answer">
+    A mesh network enables devices to communicate directly and relay data for each other, increasing range and reliability.
+  </div>
+
+  <div class="question">32. What is a sensor fusion?</div>
+  <div class="answer">
+    Sensor fusion combines readings from multiple sensors to produce richer, more accurate data for context-aware applications.
+  </div>
+
+  <div class="question">33. What is an IoT device shadow?</div>
+  <div class="answer">
+    A device shadow is a virtual representation of a device’s last reported state and desired state, enabling decoupled communication and remote control.
+  </div>
+
+  <div class="question">34. What is edge orchestration?</div>
+  <div class="answer">
+    Edge orchestration manages deployment, updates, and coordination of applications and workloads across distributed edge devices.
+  </div>
+
+  <div class="question">35. What is device telemetry?</div>
+  <div class="answer">
+    Telemetry is the automatic measurement and wireless transmission of data from remote devices.
+  </div>
+
+  <div class="question">36. What are the major security concerns with IoT?</div>
+  <div class="answer">
+    Weak authentication, firmware vulnerabilities, insecure data transmission, lack of updates, and physical tampering.
+  </div>
+
+  <div class="question">37. What is a MAC address and its use in IoT?</div>
+  <div class="answer">
+    A MAC address is a hardware identifier for networking interfaces in devices, used for addressing and routing on local networks.
+  </div>
+
+  <div class="question">38. Name common IoT device operating systems.</div>
+  <div class="answer">
+    RIOT, Zephyr, FreeRTOS, Mbed OS, TinyOS, and Linux (Yocto, Ubuntu Core).
+  </div>
+
+  <div class="question">39. What is data interoperability in IoT?</div>
+  <div class="answer">
+    Interoperability allows different devices and platforms to exchange and use data seamlessly, using common standards and protocols.
+  </div>
+
+  <div class="question">40. What is cloud-to-edge connectivity?</div>
+  <div class="answer">
+    It's the architecture and networking that allows cloud applications to communicate with and control edge devices for data exchange and orchestration.
+  </div>
+
+  <div class="question">41. What is a rule engine in IoT platforms?</div>
+  <div class="answer">
+    A rule engine executes policies or business logic (e.g., IF temperature > 100 THEN send alert) in response to device events.
+  </div>
+
+  <div class="question">42. What is an edge cluster?</div>
+  <div class="answer">
+    An edge cluster is a group of physically proximate edge nodes/devices, managed together for compute, storage, and resilience.
+  </div>
+
+  <div class="question">43. What is edge containerization?</div>
+  <div class="answer">
+    Running containerized applications (e.g., with Docker) on edge devices for application isolation, portability, and managed updates.
+  </div>
+
+  <div class="question">44. How does blockchain benefit IoT and edge?</div>
+  <div class="answer">
+    Blockchain can provide secure, distributed identity, data integrity, and tamper-proof logging of IoT device actions and transactions at the edge.
+  </div>
+
+  <div class="question">45. What are AI accelerators in edge devices?</div>
+  <div class="answer">
+    Specialized hardware (GPUs, TPUs, FPGAs) embedded in edge devices to accelerate AI inference and processing locally.
+  </div>
+
+  <div class="question">46. What is device onboarding?</div>
+  <div class="answer">
+    Onboarding securely connects a new device to the IoT network, establishes credentials, and configures required services and policies.
+  </div>
+
+  <div class="question">47. What are event-driven architectures in IoT?</div>
+  <div class="answer">
+    Event-driven architectures trigger actions in response to events detected by devices (e.g., sensor reading crosses threshold).
+  </div>
+
+  <div class="question">48. How is data privacy enforced in edge computing?</div>
+  <div class="answer">
+    By processing data locally, anonymization, encrypting sensitive data, access controls, and meeting regulatory compliance at the point of origin.
+  </div>
+
+  <div class="question">49. What are digital signatures in IoT data?</div>
+  <div class="answer">
+    Digital signatures ensure IoT data authenticity and integrity, verifying the sender and preventing tampering.
+  </div>
+
+  <div class="question">50. What are the challenges in scaling IoT and edge solutions?</div>
+  <div class="answer">
+    Device heterogeneity, security, provisioning, network constraints, interoperability, firmware management, and distributed monitoring.
+  </div>
+</section>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  function toggleMenu() {
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+    menuToggle.setAttribute('aria-expanded', !expanded);
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('show');
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+  menuToggle.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleMenu();
+    }
+  });
+
+  // Close menu when a nav link is clicked (on mobile)
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navLinks.classList.contains('show')) {
+        toggleMenu();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
