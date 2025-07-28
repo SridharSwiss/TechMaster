@@ -697,8 +697,9 @@ document.addEventListener('DOMContentLoaded', function() {
             q.classList.toggle('active');
             // Toggle "active" class on the corresponding answer
             var ans = q.nextElementSibling;
-            if (ans && ans.classList.contains('answer')) {
-                ans.classList.toggle('active');
+if (ans && ans.classList.contains('answer')) {
+    ans.classList.toggle('show');
+}
             }
         });
     });
