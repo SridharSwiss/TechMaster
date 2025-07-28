@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Top Interview Questions and Answers | Besant Technologies</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #f9f9f9;
+    color: #333;
+    padding: 20px;
+  }
+  nav {
+    background: #0056b3;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  h1, h2 {
+    color: #0056b3;
+  }
+  .question {
+    font-weight: bold;
+    margin-top: 1.2em;
+    color: #222;
+  }
+  .answer {
+    margin-left: 1em;
+    color: #555;
+  }
+  ul {
+    margin-left: 2em;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<h1>Top Interview Questions and Answers</h1>
+
+<nav>
+  <a href="#pyspark">PySpark</a>
+  <a href="#sql">SQL</a>
+  <a href="#css">CSS</a>
+  <a href="#ai">Artificial Intelligence</a>
+  <a href="#salesforce">Salesforce</a>
+  <a href="#python">Python</a>
+  <a href="#java">Java</a>
+  <a href="#wordpress">WordPress</a>
+  <a href="#ibmwmq">IBM WMQ</a>
+  <a href="#datascience">Data Science with Python</a>
+  <a href="#ccnp">CCNP</a>
+  <a href="#informatica">Informatica MDM</a>
+  <a href="#flutterdart">Flutter and Dart</a>
+  <a href="#msdynamicscrm">Microsoft Dynamics CRM</a>
+  <a href="#apitesting">API Testing</a>
+</nav>
+<section id="pyspark">
+  <h2>PySpark Interview Questions and Answers</h2>
+
+  <div class="question">1. What is Apache Spark?</div>
+  <div class="answer">Apache Spark is an open-source cluster computing framework designed for fast and general-purpose large-scale data processing with in-memory computation capabilities.</div>
+
+  <div class="question">2. What is PySpark?</div>
+  <div class="answer">PySpark is the Python API for Apache Spark, allowing Python developers to interface with Spark’s core functionalities and API seamlessly.</div>
+
+  <div class="question">3. What are RDDs in Spark?</div>
+  <div class="answer">RDD (Resilient Distributed Dataset) is a fault-tolerant, immutable distributed collection of objects that can be processed in parallel.</div>
+
+  <div class="question">4. What are the key features of Apache Spark?</div>
+  <div class="answer">
+    <ul>
+      <li>In-memory computation for faster processing.</li>
+      <li>Support for multiple languages: Scala, Java, Python, and R.</li>
+      <li>Rich set of libraries including SQL, streaming, machine learning, and graph processing.</li>
+      <li>Lazy evaluation of transformations.</li>
+      <li>Fault tolerance with lineage graphs.</li>
+    </ul>
+  </div>
+
+  <div class="question">5. What is the difference between RDD, DataFrame, and Dataset?</div>
+  <div class="answer">RDD is the basic low-level API representing distributed collections. DataFrame is a distributed collection organized into named columns, with optimizations and schema. Dataset is a typed extension of DataFrames, combining benefits of RDDs and DataFrames with compile-time type safety (in Scala and Java only).</div>
+
+  <div class="question">6. What is SparkContext?</div>
+  <div class="answer">SparkContext is the entry point to Spark functionality, responsible for connecting to the cluster manager and coordinating job execution.</div>
+
+  <div class="question">7. What is lazy evaluation in Spark?</div>
+  <div class="answer">Lazy evaluation means Spark postpones computation until an action is invoked, optimizing the overall data processing workflow.</div>
+
+  <div class="question">8. What are transformations and actions in Spark?</div>
+  <div class="answer">Transformations are operations on RDDs that return new RDDs (lazy). Actions trigger execution and return results or write data.</div>
+
+  <div class="question">9. How does Spark handle fault tolerance?</div>
+  <div class="answer">Spark uses lineage information to recompute lost data partitions from parent RDDs in case of node failures.</div>
+
+  <div class="question">10. What is the difference between cache() and persist()?</div>
+  <div class="answer">cache() is a shorthand for persist() with the default storage level (memory only). persist() allows specifying storage levels like MEMORY_AND_DISK.</div>
+
+  <div class="question">11. What is a broadcast variable?</div>
+  <div class="answer">A broadcast variable allows the program to efficiently send a large read-only value to all worker nodes.</div>
+
+  <div class="question">12. What is an accumulator?</div>
+  <div class="answer">An accumulator is a variable that tasks can add to using commutative and associative operations, used for counters and sums.</div>
+
+  <div class="question">13. What is Spark SQL?</div>
+  <div class="answer">Spark SQL is a Spark module for structured data processing using DataFrames and SQL queries.</div>
+
+  <div class="question">14. What is a DataFrame?</div>
+  <div class="answer">A DataFrame is a distributed collection of data organized into named columns, similar to a table in a relational database.</div>
+
+  <div class="question">15. How do you create a DataFrame in PySpark?</div>
+  <div class="answer">You can create a DataFrame by loading data from external sources (like JSON, CSV, Parquet) or by converting an existing RDD or Python list using sparkSession.createDataFrame().</div>
+
+  <div class="question">16. What are the common file formats supported by Spark?</div>
+  <div class="answer">CSV, JSON, Parquet, ORC, Avro, and text files are commonly supported.</div>
+
+  <div class="question">17. What is the difference between narrow and wide transformations?</div>
+  <div class="answer">Narrow transformations (like map, filter) do not require data shuffling, while wide transformations (like reduceByKey, join) require shuffling data across partitions.</div>
+
+  <div class="question">18. What is a shuffle operation in Spark?</div>
+  <div class="answer">Shuffle is a costly operation where data is redistributed across partitions, usually happening in wide transformations.</div>
+
+  <div class="question">19. What is DAG in Spark?</div>
+  <div class="answer">DAG (Directed Acyclic Graph) is Spark’s execution plan representing sequence and dependencies of transformations.</div>
+
+  <div class="question">20. Explain Spark Streaming.</div>
+  <div class="answer">Spark Streaming processes live data streams by dividing data into micro-batches for near real-time analytics.</div>
+
+  <div class="question">21. How to handle skewness in Spark?</div>
+  <div class="answer">Use salting keys, broadcast joins, or repartition to handle skewed data.</div>
+
+  <div class="question">22. What is Tungsten in Spark?</div>
+  <div class="answer">Tungsten is a Spark optimization project focusing on memory management and code generation for better execution efficiency.</div>
+
+  <div class="question">23. What is Catalyst Optimizer?</div>
+  <div class="answer">Catalyst is Spark SQL’s query optimizer that analyzes and optimizes logical plans for efficient execution.</div>
+
+  <div class="question">24. What is the difference between coalesce() and repartition()?</div>
+  <div class="answer">coalesce() reduces the number of partitions without shuffle (efficient for decreasing partitions), while repartition() can increase or decrease partitions and does shuffle.</div>
+
+  <div class="question">25. What is a checkpoint in Spark?</div>
+  <div class="answer">Checkpointing saves the RDD to reliable storage to truncate lineage and recover data in case of failures.</div>
+
+  <div class="question">26. Explain the role of Spark driver and executor.</div>
+  <div class="answer">The driver program manages the SparkContext and plans jobs. Executors run tasks and perform computations on worker nodes.</div>
+
+  <div class="question">27. How do you optimize joins in Spark?</div>
+  <div class="answer">Use broadcast joins for small tables, partition data properly, and avoid skew by salting keys.</div>
+
+  <div class="question">28. What is a SparkSession?</div>
+  <div class="answer">SparkSession is the unified entry point to Spark functionalities introduced in Spark 2.x, superseding SparkContext for SQL, DataFrame, and Dataset APIs.</div>
+
+  <div class="question">29. How is data serialized in Spark?</div>
+  <div class="answer">Spark serializes data using Java serialization by default; Kryo serializer is an alternative that is faster and more efficient.</div>
+
+  <div class="question">30. What is MLlib?</div>
+  <div class="answer">MLlib is Spark’s scalable machine learning library supporting classification, regression, clustering, and collaborative filtering.</div>
+
+  <div class="question">31. How do you run PySpark locally?</div>
+  <div class="answer">Set master URL to 'local[*]' in SparkConf or submit spark-shell with --master local option.</div>
+
+  <div class="question">32. What is the difference between map() and flatMap()?</div>
+  <div class="answer">map() applies a function to each element returning one output per input. flatMap() can return zero or more outputs per input, flattening the result.</div>
+
+  <div class="question">33. How do you persist RDDs?</div>
+  <div class="answer">By calling persist() with a desired StorageLevel like MEMORY_ONLY or MEMORY_AND_DISK.</div>
+
+  <div class="question">34. What is the difference between a DataFrame and a table in Spark?</div>
+  <div class="answer">A DataFrame is an in-memory distributed collection, whereas a Spark SQL table is a metadata abstraction representing data stored externally or
+  </div>
+</section>
