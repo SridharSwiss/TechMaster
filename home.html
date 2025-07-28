@@ -270,10 +270,54 @@
         .course-subtitle {
             opacity: 0.9;
             font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-rating {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .stars {
+            font-size: 1rem;
+        }
+
+        .rating-text {
+            font-size: 0.8rem;
+            opacity: 0.9;
         }
 
         .course-body {
             padding: 1.5rem;
+        }
+
+        .course-info {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #666;
+        }
+
+        .info-value {
+            color: #333;
+            font-weight: 500;
         }
 
         .course-features {
@@ -293,11 +337,31 @@
         }
 
         .course-price {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .current-price {
             font-size: 1.5rem;
             font-weight: bold;
             color: #667eea;
-            text-align: center;
-            margin-bottom: 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .discount {
+            background: #28a745;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
 
         /* Locations Section */
@@ -597,16 +661,39 @@
                     <div class="course-header">
                         <h3 class="course-title">Full Stack Development</h3>
                         <p class="course-subtitle">MEAN/MERN Stack</p>
+                        <div class="course-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.8 (1,250 reviews)</span>
+                        </div>
                     </div>
                     <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <span class="info-value">4 Months</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Mode:</span>
+                                <span class="info-value">Online/Offline</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Batch Size:</span>
+                                <span class="info-value">Max 15 Students</span>
+                            </div>
+                        </div>
                         <ul class="course-features">
-                            <li>Angular/React.js Frontend</li>
-                            <li>Node.js Backend</li>
-                            <li>MongoDB Database</li>
-                            <li>Real-time Projects</li>
-                            <li>Placement Assistance</li>
+                            <li>Angular/React.js Frontend Development</li>
+                            <li>Node.js & Express Backend</li>
+                            <li>MongoDB Database Management</li>
+                            <li>3+ Real-time Industry Projects</li>
+                            <li>100% Placement Assistance</li>
+                            <li>Resume Building & Mock Interviews</li>
                         </ul>
-                        <div class="course-price">₹35,000</div>
+                        <div class="course-price">
+                            <span class="original-price">₹45,000</span>
+                            <span class="current-price">₹35,000</span>
+                            <span class="discount">22% OFF</span>
+                        </div>
                         <a href="#" class="btn btn-primary" onclick="openModal('enrollModal')" style="width: 100%; text-align: center;">Enroll Now</a>
                     </div>
                 </div>
@@ -615,16 +702,39 @@
                     <div class="course-header">
                         <h3 class="course-title">Data Science & Analytics</h3>
                         <p class="course-subtitle">Python, ML, AI</p>
+                        <div class="course-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.9 (980 reviews)</span>
+                        </div>
                     </div>
                     <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <span class="info-value">5 Months</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Mode:</span>
+                                <span class="info-value">Online/Offline</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Batch Size:</span>
+                                <span class="info-value">Max 12 Students</span>
+                            </div>
+                        </div>
                         <ul class="course-features">
-                            <li>Python Programming</li>
-                            <li>Machine Learning</li>
-                            <li>Data Visualization</li>
-                            <li>Deep Learning</li>
-                            <li>Industry Projects</li>
+                            <li>Python Programming & Libraries</li>
+                            <li>Machine Learning Algorithms</li>
+                            <li>Data Visualization & Analytics</li>
+                            <li>Deep Learning & Neural Networks</li>
+                            <li>5+ Industry Capstone Projects</li>
+                            <li>Kaggle Competition Training</li>
                         </ul>
-                        <div class="course-price">₹40,000</div>
+                        <div class="course-price">
+                            <span class="original-price">₹55,000</span>
+                            <span class="current-price">₹40,000</span>
+                            <span class="discount">27% OFF</span>
+                        </div>
                         <a href="#" class="btn btn-primary" onclick="openModal('enrollModal')" style="width: 100%; text-align: center;">Enroll Now</a>
                     </div>
                 </div>
@@ -633,16 +743,39 @@
                     <div class="course-header">
                         <h3 class="course-title">Cloud Computing</h3>
                         <p class="course-subtitle">AWS, Azure, GCP</p>
+                        <div class="course-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.7 (850 reviews)</span>
+                        </div>
                     </div>
                     <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <span class="info-value">3 Months</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Mode:</span>
+                                <span class="info-value">Online/Offline</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Batch Size:</span>
+                                <span class="info-value">Max 20 Students</span>
+                            </div>
+                        </div>
                         <ul class="course-features">
-                            <li>AWS Certification</li>
-                            <li>Azure Fundamentals</li>
-                            <li>DevOps Integration</li>
-                            <li>Cloud Architecture</li>
-                            <li>Hands-on Labs</li>
+                            <li>AWS Solutions Architect Certification</li>
+                            <li>Azure Fundamentals & Advanced</li>
+                            <li>DevOps Integration & Automation</li>
+                            <li>Cloud Architecture Design</li>
+                            <li>Hands-on Labs & Live Projects</li>
+                            <li>Multi-cloud Deployment Strategies</li>
                         </ul>
-                        <div class="course-price">₹30,000</div>
+                        <div class="course-price">
+                            <span class="original-price">₹40,000</span>
+                            <span class="current-price">₹30,000</span>
+                            <span class="discount">25% OFF</span>
+                        </div>
                         <a href="#" class="btn btn-primary" onclick="openModal('enrollModal')" style="width: 100%; text-align: center;">Enroll Now</a>
                     </div>
                 </div>
@@ -651,16 +784,39 @@
                     <div class="course-header">
                         <h3 class="course-title">Software Testing</h3>
                         <p class="course-subtitle">Manual & Automation</p>
+                        <div class="course-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.6 (1,100 reviews)</span>
+                        </div>
                     </div>
                     <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <span class="info-value">3 Months</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Mode:</span>
+                                <span class="info-value">Online/Offline</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Batch Size:</span>
+                                <span class="info-value">Max 18 Students</span>
+                            </div>
+                        </div>
                         <ul class="course-features">
-                            <li>Manual Testing</li>
-                            <li>Selenium Automation</li>
-                            <li>API Testing</li>
-                            <li>Performance Testing</li>
-                            <li>Test Management</li>
+                            <li>Manual Testing Fundamentals</li>
+                            <li>Selenium WebDriver Automation</li>
+                            <li>API Testing with Postman/REST</li>
+                            <li>Performance Testing (JMeter)</li>
+                            <li>Test Management Tools (JIRA)</li>
+                            <li>Mobile Testing & Cross-browser</li>
                         </ul>
-                        <div class="course-price">₹25,000</div>
+                        <div class="course-price">
+                            <span class="original-price">₹32,000</span>
+                            <span class="current-price">₹25,000</span>
+                            <span class="discount">22% OFF</span>
+                        </div>
                         <a href="#" class="btn btn-primary" onclick="openModal('enrollModal')" style="width: 100%; text-align: center;">Enroll Now</a>
                     </div>
                 </div>
@@ -669,16 +825,39 @@
                     <div class="course-header">
                         <h3 class="course-title">DevOps Engineering</h3>
                         <p class="course-subtitle">CI/CD, Docker, Kubernetes</p>
+                        <div class="course-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.8 (720 reviews)</span>
+                        </div>
                     </div>
                     <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <span class="info-value">4 Months</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Mode:</span>
+                                <span class="info-value">Online/Offline</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Batch Size:</span>
+                                <span class="info-value">Max 15 Students</span>
+                            </div>
+                        </div>
                         <ul class="course-features">
-                            <li>Jenkins CI/CD</li>
-                            <li>Docker Containers</li>
-                            <li>Kubernetes</li>
-                            <li>AWS DevOps</li>
-                            <li>Infrastructure as Code</li>
+                            <li>Jenkins CI/CD Pipeline Setup</li>
+                            <li>Docker Containerization</li>
+                            <li>Kubernetes Orchestration</li>
+                            <li>AWS DevOps Services</li>
+                            <li>Infrastructure as Code (Terraform)</li>
+                            <li>Monitoring & Logging (ELK Stack)</li>
                         </ul>
-                        <div class="course-price">₹35,000</div>
+                        <div class="course-price">
+                            <span class="original-price">₹45,000</span>
+                            <span class="current-price">₹35,000</span>
+                            <span class="discount">22% OFF</span>
+                        </div>
                         <a href="#" class="btn btn-primary" onclick="openModal('enrollModal')" style="width: 100%; text-align: center;">Enroll Now</a>
                     </div>
                 </div>
@@ -687,16 +866,39 @@
                     <div class="course-header">
                         <h3 class="course-title">Digital Marketing</h3>
                         <p class="course-subtitle">SEO, SEM, Social Media</p>
+                        <div class="course-rating">
+                            <span class="stars">⭐⭐⭐⭐⭐</span>
+                            <span class="rating-text">4.5 (650 reviews)</span>
+                        </div>
                     </div>
                     <div class="course-body">
+                        <div class="course-info">
+                            <div class="info-item">
+                                <span class="info-label">Duration:</span>
+                                <span class="info-value">2 Months</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Mode:</span>
+                                <span class="info-value">Online/Offline</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Batch Size:</span>
+                                <span class="info-value">Max 25 Students</span>
+                            </div>
+                        </div>
                         <ul class="course-features">
-                            <li>Google Ads Certification</li>
-                            <li>SEO Optimization</li>
-                            <li>Social Media Marketing</li>
-                            <li>Content Marketing</li>
-                            <li>Analytics & Reporting</li>
+                            <li>Google Ads & Facebook Ads Certification</li>
+                            <li>SEO & Search Engine Optimization</li>
+                            <li>Social Media Marketing Strategy</li>
+                            <li>Content Marketing & Copywriting</li>
+                            <li>Google Analytics & Reporting</li>
+                            <li>Email Marketing & Automation</li>
                         </ul>
-                        <div class="course-price">₹20,000</div>
+                        <div class="course-price">
+                            <span class="original-price">₹25,000</span>
+                            <span class="current-price">₹20,000</span>
+                            <span class="discount">20% OFF</span>
+                        </div>
                         <a href="#" class="btn btn-primary" onclick="openModal('enrollModal')" style="width: 100%; text-align: center;">Enroll Now</a>
                     </div>
                 </div>
