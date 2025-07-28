@@ -789,4 +789,22 @@ spark.conf.set("spark.sql.adaptive.enabled", "true")
 
                 <div class="question-container">
                     <div class="question">
-                        <span><span class="difficulty easy">Easy</span
+                        <span><span class="difficulty easy">Easy</span>
+                            <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all question elements
+    var questions = document.querySelectorAll('.question');
+    questions.forEach(function(q) {
+        q.addEventListener('click', function() {
+            // Toggle "active" class on the clicked question
+            q.classList.toggle('active');
+            // Toggle "active" class on the corresponding answer
+            var ans = q.nextElementSibling;
+            if (ans && ans.classList.contains('answer')) {
+                ans.classList.toggle('active');
+            }
+        });
+    });
+});
+</script>
+ </body>                           
