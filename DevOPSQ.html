@@ -705,4 +705,54 @@ if (ans && ans.classList.contains('answer')) {
     });
 });
 </script>
+ <!-- Place this at the bottom, before </body> -->
+<script>
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+        // Optionally collapse all answers on navigation
+        document.querySelectorAll('.answer.show').forEach(function(ans){
+            ans.classList.remove('show');
+            if(ans.previousElementSibling) {
+                let icon = ans.previousElementSibling.querySelector('.toggle-icon');
+                if(icon) icon.textContent = '+';
+            }
+        });
+    }
+}
+
+function toggleAnswer(elem) {
+    var ans = elem.nextElementSibling;
+    var icon = elem.querySelector('.toggle-icon');
+    if (ans && ans.classList.contains('answer')) {
+        var isShown = ans.classList.contains('show');
+        // Hide all other answers
+        document.querySelectorAll('.answer.show').forEach(function(a){
+            a.classList.remove('show');
+            if(a.previousElementSibling) {
+                let otherIcon = a.previousElementSibling.querySelector('.toggle-icon');
+                if(otherIcon) otherIcon.textContent = '+';
+            }
+        });
+        // Toggle current
+        if (!isShown) {
+            ans.classList.add('show');
+            if(icon) icon.textContent = '-';
+        } else {
+            ans.classList.remove('show');
+            if(icon) icon.textContent = '+';
+        }
+    }
+}
+
+// Attach event listeners only once (no need for inline onclick)
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.question').forEach(function(q) {
+        q.addEventListener('click', function() {
+            toggleAnswer(q);
+        });
+    });
+});
+</script>           
  </body>       
