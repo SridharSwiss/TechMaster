@@ -370,168 +370,416 @@
             </div>
         </div>
     </nav>
-<section id="pyspark">
-  <h2>PySpark Interview Questions and Answers</h2>
+<section class="content-section" id="pyspark">
+  <h2 class="section-title">PySpark Interview Questions and Answers</h2>
 
-  <div class="question">1. What is Apache Spark?</div>
-  <div class="answer">Apache Spark is an open-source cluster computing framework designed for fast and general-purpose large-scale data processing with in-memory computation capabilities.</div>
-
-  <div class="question">2. What is PySpark?</div>
-  <div class="answer">PySpark is the Python API for Apache Spark, allowing Python developers to interface with Spark’s core functionalities and API seamlessly.</div>
-
-  <div class="question">3. What are RDDs in Spark?</div>
-  <div class="answer">RDD (Resilient Distributed Dataset) is a fault-tolerant, immutable distributed collection of objects that can be processed in parallel.</div>
-
-  <div class="question">4. What are the key features of Apache Spark?</div>
-  <div class="answer">
-    <ul>
-      <li>In-memory computation for faster processing.</li>
-      <li>Support for multiple languages: Scala, Java, Python, and R.</li>
-      <li>Rich set of libraries including SQL, streaming, machine learning, and graph processing.</li>
-      <li>Lazy evaluation of transformations.</li>
-      <li>Fault tolerance with lineage graphs.</li>
-    </ul>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">1</span>What is Apache Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Apache Spark is an open-source cluster computing framework designed for fast and general-purpose large-scale data processing with in-memory computation capabilities.</div>
   </div>
 
-  <div class="question">5. What is the difference between RDD, DataFrame, and Dataset?</div>
-  <div class="answer">RDD is the basic low-level API representing distributed collections. DataFrame is a distributed collection organized into named columns, with optimizations and schema. Dataset is a typed extension of DataFrames, combining benefits of RDDs and DataFrames with compile-time type safety (in Scala and Java only).</div>
-
-  <div class="question">6. What is SparkContext?</div>
-  <div class="answer">SparkContext is the entry point to Spark functionality, responsible for connecting to the cluster manager and coordinating job execution.</div>
-
-  <div class="question">7. What is lazy evaluation in Spark?</div>
-  <div class="answer">Lazy evaluation means Spark postpones computation until an action is invoked, optimizing the overall data processing workflow.</div>
-
-  <div class="question">8. What are transformations and actions in Spark?</div>
-  <div class="answer">Transformations are operations on RDDs that return new RDDs (lazy). Actions trigger execution and return results or write data.</div>
-
-  <div class="question">9. How does Spark handle fault tolerance?</div>
-  <div class="answer">Spark uses lineage information to recompute lost data partitions from parent RDDs in case of node failures.</div>
-
-  <div class="question">10. What is the difference between cache() and persist()?</div>
-  <div class="answer">cache() is a shorthand for persist() with the default storage level (memory only). persist() allows specifying storage levels like MEMORY_AND_DISK.</div>
-
-  <div class="question">11. What is a broadcast variable?</div>
-  <div class="answer">A broadcast variable allows the program to efficiently send a large read-only value to all worker nodes.</div>
-
-  <div class="question">12. What is an accumulator?</div>
-  <div class="answer">An accumulator is a variable that tasks can add to using commutative and associative operations, used for counters and sums.</div>
-
-  <div class="question">13. What is Spark SQL?</div>
-  <div class="answer">Spark SQL is a Spark module for structured data processing using DataFrames and SQL queries.</div>
-
-  <div class="question">14. What is a DataFrame?</div>
-  <div class="answer">A DataFrame is a distributed collection of data organized into named columns, similar to a table in a relational database.</div>
-
-  <div class="question">15. How do you create a DataFrame in PySpark?</div>
-  <div class="answer">You can create a DataFrame by loading data from external sources (like JSON, CSV, Parquet) or by converting an existing RDD or Python list using sparkSession.createDataFrame().</div>
-
-  <div class="question">16. What are the common file formats supported by Spark?</div>
-  <div class="answer">CSV, JSON, Parquet, ORC, Avro, and text files are commonly supported.</div>
-
-  <div class="question">17. What is the difference between narrow and wide transformations?</div>
-  <div class="answer">Narrow transformations (like map, filter) do not require data shuffling, while wide transformations (like reduceByKey, join) require shuffling data across partitions.</div>
-
-  <div class="question">18. What is a shuffle operation in Spark?</div>
-  <div class="answer">Shuffle is a costly operation where data is redistributed across partitions, usually happening in wide transformations.</div>
-
-  <div class="question">19. What is DAG in Spark?</div>
-  <div class="answer">DAG (Directed Acyclic Graph) is Spark’s execution plan representing sequence and dependencies of transformations.</div>
-
-  <div class="question">20. Explain Spark Streaming.</div>
-  <div class="answer">Spark Streaming processes live data streams by dividing data into micro-batches for near real-time analytics.</div>
-
-  <div class="question">21. How to handle skewness in Spark?</div>
-  <div class="answer">Use salting keys, broadcast joins, or repartition to handle skewed data.</div>
-
-  <div class="question">22. What is Tungsten in Spark?</div>
-  <div class="answer">Tungsten is a Spark optimization project focusing on memory management and code generation for better execution efficiency.</div>
-
-  <div class="question">23. What is Catalyst Optimizer?</div>
-  <div class="answer">Catalyst is Spark SQL’s query optimizer that analyzes and optimizes logical plans for efficient execution.</div>
-
-  <div class="question">24. What is the difference between coalesce() and repartition()?</div>
-  <div class="answer">coalesce() reduces the number of partitions without shuffle (efficient for decreasing partitions), while repartition() can increase or decrease partitions and does shuffle.</div>
-
-  <div class="question">25. What is a checkpoint in Spark?</div>
-  <div class="answer">Checkpointing saves the RDD to reliable storage to truncate lineage and recover data in case of failures.</div>
-
-  <div class="question">26. Explain the role of Spark driver and executor.</div>
-  <div class="answer">The driver program manages the SparkContext and plans jobs. Executors run tasks and perform computations on worker nodes.</div>
-
-  <div class="question">27. How do you optimize joins in Spark?</div>
-  <div class="answer">Use broadcast joins for small tables, partition data properly, and avoid skew by salting keys.</div>
-
-  <div class="question">28. What is a SparkSession?</div>
-  <div class="answer">SparkSession is the unified entry point to Spark functionalities introduced in Spark 2.x, superseding SparkContext for SQL, DataFrame, and Dataset APIs.</div>
-
-  <div class="question">29. How is data serialized in Spark?</div>
-  <div class="answer">Spark serializes data using Java serialization by default; Kryo serializer is an alternative that is faster and more efficient.</div>
-
-  <div class="question">30. What is MLlib?</div>
-  <div class="answer">MLlib is Spark’s scalable machine learning library supporting classification, regression, clustering, and collaborative filtering.</div>
-
-  <div class="question">31. How do you run PySpark locally?</div>
-  <div class="answer">Set master URL to 'local[*]' in SparkConf or submit spark-shell with --master local option.</div>
-
-  <div class="question">32. What is the difference between map() and flatMap()?</div>
-  <div class="answer">map() applies a function to each element returning one output per input. flatMap() can return zero or more outputs per input, flattening the result.</div>
-
-  <div class="question">33. How do you persist RDDs?</div>
-  <div class="answer">By calling persist() with a desired StorageLevel like MEMORY_ONLY or MEMORY_AND_DISK.</div>
-
-  <div class="question">34. What is the difference between a DataFrame and a table in Spark?</div>
-  <div class="answer">A DataFrame is an in-memory distributed collection, whereas a Spark SQL table is a metadata abstraction representing data stored externally or
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">2</span>What is PySpark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">PySpark is the Python API for Apache Spark, allowing Python developers to interface with Spark’s core functionalities and API seamlessly.</div>
   </div>
-  <div class="answer">A DataFrame is an in-memory distributed collection, whereas a Spark SQL table is a metadata abstraction representing data stored externally or registered temporarily.</div>
 
-  <div class="question">35. How do you read a CSV file in PySpark?</div>
-  <div class="answer">Use <code>spark.read.csv('filename.csv', header=True, inferSchema=True)</code> to load a CSV file as a DataFrame.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">3</span>What are RDDs in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">RDD (Resilient Distributed Dataset) is a fault-tolerant, immutable distributed collection of objects that can be processed in parallel.</div>
+  </div>
 
-  <div class="question">36. How can you view the schema of a DataFrame?</div>
-  <div class="answer">Call <code>df.printSchema()</code> to display the hierarchical schema of the DataFrame.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">4</span>What are the key features of Apache Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">
+      <ul>
+        <li>In-memory computation for faster processing.</li>
+        <li>Support for multiple languages: Scala, Java, Python, and R.</li>
+        <li>Rich set of libraries including SQL, streaming, machine learning, and graph processing.</li>
+        <li>Lazy evaluation of transformations.</li>
+        <li>Fault tolerance with lineage graphs.</li>
+      </ul>
+    </div>
+  </div>
 
-  <div class="question">37. How do you select columns from a DataFrame?</div>
-  <div class="answer">Use <code>df.select('col1', 'col2')</code> to select columns in PySpark.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">5</span>What is the difference between RDD, DataFrame, and Dataset?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">RDD is the basic low-level API representing distributed collections. DataFrame is a distributed collection organized into named columns, with optimizations and schema. Dataset is a typed extension of DataFrames, combining benefits of RDDs and DataFrames with compile-time type safety (in Scala and Java only).</div>
+  </div>
 
-  <div class="question">38. How do you filter rows in a DataFrame?</div>
-  <div class="answer">Utilize <code>df.filter(df['col'] &gt; 5)</code> or <code>df.where(df['col'] == 'value')</code> to filter rows.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">6</span>What is SparkContext?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">SparkContext is the entry point to Spark functionality, responsible for connecting to the cluster manager and coordinating job execution.</div>
+  </div>
 
-  <div class="question">39. How do you perform groupBy operations?</div>
-  <div class="answer">Use <code>df.groupBy('col').agg({'col2':'sum'})</code> or similar aggregation functions.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">7</span>What is lazy evaluation in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Lazy evaluation means Spark postpones computation until an action is invoked, optimizing the overall data processing workflow.</div>
+  </div>
 
-  <div class="question">40. What are window functions in Spark?</div>
-  <div class="answer">Window functions perform calculations across a set of rows related to the current row, useful for running totals, rankings, etc.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">8</span>What are transformations and actions in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Transformations are operations on RDDs that return new RDDs (lazy). Actions trigger execution and return results or write data.</div>
+  </div>
 
-  <div class="question">41. What is explode in PySpark?</div>
-  <div class="answer">The <code>explode()</code> function flattens arrays or maps into separate rows.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">9</span>How does Spark handle fault tolerance?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Spark uses lineage information to recompute lost data partitions from parent RDDs in case of node failures.</div>
+  </div>
 
-  <div class="question">42. How to join two DataFrames?</div>
-  <div class="answer">Use <code>df1.join(df2, df1["id"] == df2["id"], "inner")</code> for joins like inner, left, right, or outer.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">10</span>What is the difference between cache() and persist()?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">cache() is a shorthand for persist() with the default storage level (memory only). persist() allows specifying storage levels like MEMORY_AND_DISK.</div>
+  </div>
 
-  <div class="question">43. How do you handle missing data in PySpark?</div>
-  <div class="answer">Use <code>df.na.drop()</code> to drop nulls, <code>df.na.fill(value)</code> to fill nulls, or <code>df.na.replace()</code> to replace specific values.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">11</span>What is a broadcast variable?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A broadcast variable allows the program to efficiently send a large read-only value to all worker nodes.</div>
+  </div>
 
-  <div class="question">44. How to write a DataFrame to a Parquet file?</div>
-  <div class="answer">Use <code>df.write.parquet('output_path')</code> to store the DataFrame in Parquet format.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">12</span>What is an accumulator?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An accumulator is a variable that tasks can add to using commutative and associative operations, used for counters and sums.</div>
+  </div>
 
-  <div class="question">45. What is Py4J?</div>
-  <div class="answer">Py4J enables Python programs running in a Python interpreter to dynamically access Java objects in a JVM, used internally by PySpark to call Spark in JVM.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">13</span>What is Spark SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Spark SQL is a Spark module for structured data processing using DataFrames and SQL queries.</div>
+  </div>
 
-  <div class="question">46. What is partitioning in Spark?</div>
-  <div class="answer">Partitioning controls how data is distributed across the cluster, affecting parallelism and performance. Use <code>repartition()</code> and <code>coalesce()</code> for adjusting partitions.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">14</span>What is a DataFrame?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A DataFrame is a distributed collection of data organized into named columns, similar to a table in a relational database.</div>
+  </div>
 
-  <div class="question">47. How can you broadcast a variable in PySpark?</div>
-  <div class="answer">Use <code>sc.broadcast(value)</code> to create a broadcast variable accessible to all nodes.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">15</span>How do you create a DataFrame in PySpark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">You can create a DataFrame by loading data from external sources (like JSON, CSV, Parquet) or by converting an existing RDD or Python list using sparkSession.createDataFrame().</div>
+  </div>
 
-  <div class="question">48. What’s the use of withColumn in PySpark?</div>
-  <div class="answer"><code>withColumn()</code> is used to add a new column or replace an existing column in a DataFrame.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">16</span>What are the common file formats supported by Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">CSV, JSON, Parquet, ORC, Avro, and text files are commonly supported.</div>
+  </div>
 
-  <div class="question">49. How do you remove duplicates from a DataFrame?</div>
-  <div class="answer">Use <code>df.dropDuplicates()</code> or <code>df.dropDuplicates(['col1', 'col2'])</code> for a subset of columns.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">17</span>What is the difference between narrow and wide transformations?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Narrow transformations (like map, filter) do not require data shuffling, while wide transformations (like reduceByKey, join) require shuffling data across partitions.</div>
+  </div>
 
-  <div class="question">50. How to handle skewed data in PySpark?</div>
-  <div class="answer">Use techniques like salting keys, broadcasting small tables, leveraging custom partitioning, or applying map-side reductions to manage data skew.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">18</span>What is a shuffle operation in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Shuffle is a costly operation where data is redistributed across partitions, usually happening in wide transformations.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">19</span>What is DAG in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">DAG (Directed Acyclic Graph) is Spark’s execution plan representing sequence and dependencies of transformations.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">20</span>Explain Spark Streaming.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Spark Streaming processes live data streams by dividing data into micro-batches for near real-time analytics.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">21</span>How to handle skewness in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use salting keys, broadcast joins, or repartition to handle skewed data.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">22</span>What is Tungsten in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Tungsten is a Spark optimization project focusing on memory management and code generation for better execution efficiency.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">23</span>What is Catalyst Optimizer?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Catalyst is Spark SQL’s query optimizer that analyzes and optimizes logical plans for efficient execution.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">24</span>What is the difference between coalesce() and repartition()?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">coalesce() reduces the number of partitions without shuffle (efficient for decreasing partitions), while repartition() can increase or decrease partitions and does shuffle.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">25</span>What is a checkpoint in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Checkpointing saves the RDD to reliable storage to truncate lineage and recover data in case of failures.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">26</span>Explain the role of Spark driver and executor.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The driver program manages the SparkContext and plans jobs. Executors run tasks and perform computations on worker nodes.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">27</span>How do you optimize joins in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use broadcast joins for small tables, partition data properly, and avoid skew by salting keys.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">28</span>What is a SparkSession?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">SparkSession is the unified entry point to Spark functionalities introduced in Spark 2.x, superseding SparkContext for SQL, DataFrame, and Dataset APIs.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">29</span>How is data serialized in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Spark serializes data using Java serialization by default; Kryo serializer is an alternative that is faster and more efficient.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">30</span>What is MLlib?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">MLlib is Spark’s scalable machine learning library supporting classification, regression, clustering, and collaborative filtering.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">31</span>How do you run PySpark locally?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Set master URL to 'local[*]' in SparkConf or submit spark-shell with --master local option.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">32</span>What is the difference between map() and flatMap()?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">map() applies a function to each element returning one output per input. flatMap() can return zero or more outputs per input, flattening the result.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">33</span>How do you persist RDDs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">By calling persist() with a desired StorageLevel like MEMORY_ONLY or MEMORY_AND_DISK.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">34</span>What is the difference between a DataFrame and a table in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A DataFrame is an in-memory distributed collection, whereas a Spark SQL table is a metadata abstraction representing data stored externally or registered temporarily.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">35</span>How do you read a CSV file in PySpark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>spark.read.csv('filename.csv', header=True, inferSchema=True)</code> to load a CSV file as a DataFrame.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">36</span>How can you view the schema of a DataFrame?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Call <code>df.printSchema()</code> to display the hierarchical schema of the DataFrame.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">37</span>How do you select columns from a DataFrame?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>df.select('col1', 'col2')</code> to select columns in PySpark.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">38</span>How do you filter rows in a DataFrame?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Utilize <code>df.filter(df['col'] &gt; 5)</code> or <code>df.where(df['col'] == 'value')</code> to filter rows.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">39</span>How do you perform groupBy operations?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>df.groupBy('col').agg({'col2':'sum'})</code> or similar aggregation functions.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">40</span>What are window functions in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Window functions perform calculations across a set of rows related to the current row, useful for running totals, rankings, etc.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">41</span>What is explode in PySpark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The <code>explode()</code> function flattens arrays or maps into separate rows.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">42</span>How to join two DataFrames?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>df1.join(df2, df1["id"] == df2["id"], "inner")</code> for joins like inner, left, right, or outer.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">43</span>How do you handle missing data in PySpark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>df.na.drop()</code> to drop nulls, <code>df.na.fill(value)</code> to fill nulls, or <code>df.na.replace()</code> to replace specific values.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">44</span>How to write a DataFrame to a Parquet file?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>df.write.parquet('output_path')</code> to store the DataFrame in Parquet format.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">45</span>What is Py4J?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Py4J enables Python programs running in a Python interpreter to dynamically access Java objects in a JVM, used internally by PySpark to call Spark in JVM.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">46</span>What is partitioning in Spark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Partitioning controls how data is distributed across the cluster, affecting parallelism and performance. Use <code>repartition()</code> and <code>coalesce()</code> for adjusting partitions.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">47</span>How can you broadcast a variable in PySpark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>sc.broadcast(value)</code> to create a broadcast variable accessible to all nodes.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">48</span>What’s the use of withColumn in PySpark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>withColumn()</code> is used to add a new column or replace an existing column in a DataFrame.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">49</span>How do you remove duplicates from a DataFrame?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>df.dropDuplicates()</code> or <code>df.dropDuplicates(['col1', 'col2'])</code> for a subset of columns.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">50</span>How to handle skewed data in PySpark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use techniques like salting keys, broadcasting small tables, leveraging custom partitioning, or applying map-side reductions to manage data skew.</div>
+  </div>
 
 </section>
 <section id="sql">
