@@ -1186,6 +1186,9 @@
     </div>
     <div class="answer">EXPLAIN shows the execution plan of a SQL statement, helping optimize queries and understand their behavior.</div>
   </div>
+     <div class="question-card">
+    <div class="question" onclick="window.location.href = '#home'"> <span><span class="question-number"></span>Back to Top / Home</span> <span class="toggle-icon">&#x25B2;</span> </div>
+    </div>       
 </section>
 <section class="content-section" id="css">
   <h2 class="section-title">CSS Interview Questions and Answers</h2>
@@ -5280,7 +5283,16 @@
             menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('show'));
         }
     });
-
+        function toggleAnswer(element) {
+            const answer = element.nextElementSibling; // Get the next sibling, which should be the answer
+            if (answer && answer.classList.contains('answer')) { // Check if it exists and is indeed an answer
+                answer.classList.toggle('active');
+                const icon = element.querySelector('.toggle-icon');
+                icon.innerHTML = answer.classList.contains('active') ? '&#x25B2;' : '&#x25BC;';
+            }
+            // If it's not an answer (like your "Back to Top" button), this function will safely do nothing for it.
+        }
+  
     // Collapse/expand Q&A
     function toggleAnswer(el) {
         const answer = el.nextElementSibling;
