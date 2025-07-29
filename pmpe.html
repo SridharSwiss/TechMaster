@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Python Mastery Pathway: An Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Energetic & Playful -->
+    <!-- Application Structure Plan: A single-page, top-down narrative infographic. It starts with a hero section with key stats. It then visually outlines the 4-stage pathway (Pre-course to Advanced) using a structured HTML/CSS flow diagram. Each stage is a dedicated section with text summaries and visualizations (Donut charts for content breakdown, Bar charts for time commitment). The Advanced section uses a 3-column layout to compare specialization tracks, culminating in a Radar chart to visualize skill focus. The narrative concludes with "Why Choose Us" and "Target Audience" sections using styled cards. This structure tells a compelling story, guiding the user logically through the course's value proposition. -->
+    <!-- Visualization & Content Choices: 1. Pathway Diagram (Report Info: Course Structure -> Goal: Organize -> Viz: HTML/CSS Flow Diagram -> Justification: Intuitive visual flow -> Method: Tailwind Flexbox). 2. Key Stats (Report Info: Course scope -> Goal: Inform -> Viz: Large Text -> Justification: High impact). 3. Level Composition (Report Info: Chapter themes -> Goal: Compare/Composition -> Viz: Donut Chart -> Justification: Shows proportional focus -> Library: Chart.js). 4. Learning Hours (Report Info: Table 2 / Chapter details -> Goal: Compare -> Viz: Bar Chart -> Justification: Easy comparison of effort -> Library: Chart.js). 5. Advanced Tracks (Report Info: 3 tracks -> Goal: Compare -> Viz: Radar Chart -> Justification: Compares multiple skill dimensions effectively -> Library: Chart.js). 6. Benefits (Report Info: Brochure text -> Goal: Organize -> Viz: Styled Cards with Unicode Icons -> Justification: Scannable, visually appealing summary). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .path-item::after {
+            content: '→';
+            font-size: 2rem;
+            color: #FFC107;
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .path-item:last-child::after {
+            content: '';
+        }
+        @media (max-width: 1024px) {
+            .path-item::after {
+                content: '↓';
+                right: 50%;
+                top: 100%;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#003049] text-white text-center py-16 px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold">The Python Mastery Pathway</h1>
+        <p class="mt-4 text-xl md:text-2xl text-gray-300">Your 360-Degree Journey from Novice to Specialist</p>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div class="bg-[#D62828]/80 p-6 rounded-lg">
+                <p class="text-5xl font-bold text-white">4</p>
+                <p class="mt-2 text-lg text-gray-200">Comprehensive Levels</p>
+            </div>
+            <div class="bg-[#F77F00]/80 p-6 rounded-lg">
+                <p class="text-5xl font-bold text-white">3</p>
+                <p class="mt-2 text-lg text-gray-200">Career Specializations</p>
+            </div>
+            <div class="bg-[#FCBF49]/80 p-6 rounded-lg">
+                <p class="text-5xl font-bold text-[#003049]">100%</p>
+                <p class="mt-2 text-lg text-[#003049] font-medium">Project-Based Learning</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 space-y-24">
+
+        <section id="pathway-overview">
+            <h2 class="text-3xl font-bold text-center mb-4">The Learning Journey</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Our curriculum is a meticulously structured pathway designed to build your skills progressively. Each level is a stepping stone to the next, ensuring a solid foundation before tackling advanced topics.</p>
+            <div class="flex flex-col lg:flex-row justify-center items-center gap-16 lg:gap-8">
+                <div class="relative path-item bg-white p-6 rounded-lg shadow-lg text-center w-64">
+                    <div class="text-2xl font-bold text-[#003049]">1</div>
+                    <h3 class="text-xl font-semibold mt-2">Python Readiness</h3>
+                    <p class="text-sm text-gray-500 mt-1">Pre-Course</p>
+                </div>
+                <div class="relative path-item bg-white p-6 rounded-lg shadow-lg text-center w-64">
+                    <div class="text-2xl font-bold text-[#D62828]">2</div>
+                    <h3 class="text-xl font-semibold mt-2">Python Essentials</h3>
+                    <p class="text-sm text-gray-500 mt-1">Beginner</p>
+                </div>
+                <div class="relative path-item bg-white p-6 rounded-lg shadow-lg text-center w-64">
+                    <div class="text-2xl font-bold text-[#F77F00]">3</div>
+                    <h3 class="text-xl font-semibold mt-2">Practical Applications</h3>
+                    <p class="text-sm text-gray-500 mt-1">Intermediate</p>
+                </div>
+                <div class="relative path-item bg-white p-6 rounded-lg shadow-lg text-center w-64">
+                    <div class="text-2xl font-bold text-[#FCBF49]">4</div>
+                    <h3 class="text-xl font-semibold mt-2">Specialization</h3>
+                    <p class="text-sm text-gray-500 mt-1">Advanced</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="level-1" class="bg-white p-8 rounded-xl shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-[#003049]">Pre-Course: Python Readiness</h3>
+                    <p class="mt-4 text-gray-600">This module is for absolute beginners, ensuring everyone starts with a solid foundation. We demystify programming and guide you through setting up your coding environment, so you can write your first program with confidence.</p>
+                    <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                        <p class="font-semibold text-blue-800">Key Outcome:</p>
+                        <p class="text-blue-700">Successfully install Python, configure an IDE, and write simple scripts using variables and input/output.</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-center mb-2">Total Time: 10 Hours</h4>
+                    <div class="chart-container">
+                        <canvas id="preCourseChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="level-2" class="bg-white p-8 rounded-xl shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                 <div>
+                    <h4 class="text-xl font-semibold text-center mb-2">Beginner Level Breakdown</h4>
+                    <div class="chart-container">
+                        <canvas id="beginnerChart"></canvas>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <h3 class="text-3xl font-bold text-[#D62828]">Level 1: Python Essentials</h3>
+                    <p class="mt-4 text-gray-600">Build a strong command of Python's core components. You'll master data structures, control flow, functions, and the fundamentals of Object-Oriented Programming (OOP), enabling you to write logical and functional programs.</p>
+                    <div class="mt-6 bg-red-50 p-4 rounded-lg text-left">
+                        <p class="font-semibold text-red-800">Key Outcome:</p>
+                        <p class="text-red-700">Ability to solve practical problems by combining data structures, functions, and OOP concepts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="level-3" class="bg-white p-8 rounded-xl shadow-lg">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-[#F77F00]">Level 2: Practical Applications</h3>
+                    <p class="mt-4 text-gray-600">Transition from theory to practice. This level focuses on using Python's powerful ecosystem to build real-world solutions. You'll learn to work with APIs, scrape websites, interact with databases, and use Git for version control.</p>
+                     <div class="mt-6 bg-orange-50 p-4 rounded-lg">
+                        <p class="font-semibold text-orange-800">Key Outcome:</p>
+                        <p class="text-orange-700">A portfolio of functional applications, including a basic web app built with Flask.</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xl font-semibold text-center mb-2">Intermediate Level Breakdown</h4>
+                    <div class="chart-container">
+                        <canvas id="intermediateChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="level-4" class="bg-[#003049] text-white p-8 rounded-xl shadow-2xl">
+            <div class="text-center">
+                <h3 class="text-4xl font-extrabold text-[#FCBF49]">Level 3: Python for Specialization</h3>
+                <p class="mt-4 text-gray-300 max-w-3xl mx-auto">Choose your career path. This advanced level equips you with expert skills in a high-demand domain, culminating in a capstone project that showcases your mastery to potential employers.</p>
+            </div>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-600">
+                    <h4 class="text-2xl font-bold text-white">Data Science & ML</h4>
+                    <p class="mt-2 text-gray-300">Analyze data, build predictive models, and create compelling visualizations.</p>
+                    <ul class="mt-4 space-y-2 text-gray-300 list-disc list-inside">
+                        <li>Pandas & NumPy</li>
+                        <li>Matplotlib & Seaborn</li>
+                        <li>Scikit-learn</li>
+                        <li>PyTorch/TensorFlow</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-600">
+                    <h4 class="text-2xl font-bold text-white">Web Development</h4>
+                    <p class="mt-2 text-gray-300">Build complex, secure, and scalable web applications and APIs.</p>
+                    <ul class="mt-4 space-y-2 text-gray-300 list-disc list-inside">
+                        <li>Advanced Flask & APIs</li>
+                        <li>Django Framework</li>
+                        <li>User Authentication</li>
+                        <li>Deployment & Docker</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-600">
+                    <h4 class="text-2xl font-bold text-white">IT Automation</h4>
+                    <p class="mt-2 text-gray-300">Automate OS tasks, network configuration, and cloud infrastructure.</p>
+                    <ul class="mt-4 space-y-2 text-gray-300 list-disc list-inside">
+                        <li>Advanced OS Interaction</li>
+                        <li>Network Automation</li>
+                        <li>Cloud SDKs (AWS/GCP)</li>
+                        <li>Infrastructure as Code</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12">
+                 <h4 class="text-xl font-semibold text-center mb-4 text-white">Comparative Skill Focus</h4>
+                 <div class="chart-container bg-white/10 rounded-lg p-4">
+                    <canvas id="advancedRadarChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="why-choose-us">
+             <h2 class="text-3xl font-bold text-center mb-12">Why The Python Mastery Pathway?</h2>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-4xl">📚</p>
+                    <h3 class="text-xl font-semibold mt-4">360-Degree Coverage</h3>
+                    <p class="mt-2 text-gray-600">A complete end-to-end journey from the absolute basics to cutting-edge, specialized applications.</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-4xl">🛠️</p>
+                    <h3 class="text-xl font-semibold mt-4">Project-Based Core</h3>
+                    <p class="mt-2 text-gray-600">You don't just learn, you build. Every module contributes to a tangible, portfolio-worthy project.</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-4xl">🎯</p>
+                    <h3 class="text-xl font-semibold mt-4">Career-Aligned</h3>
+                    <p class="mt-2 text-gray-600">Specialize in Data Science, Web Development, or IT Automation to gain in-demand skills.</p>
+                 </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <p class="text-4xl">🏆</p>
+                    <h3 class="text-xl font-semibold mt-4">Industry-Ready</h3>
+                    <p class="mt-2 text-gray-600">Master professional tools like Git and learn concepts that align with industry certifications.</p>
+                 </div>
+             </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-8 px-4 mt-16">
+        <p class="text-lg">Ready to transform your career?</p>
+        <p class="text-gray-400 mt-2">Enroll in The Python Mastery Pathway and unlock your potential.</p>
+    </footer>
+
+    <script>
+        const processLabels = (labels) => {
+            return labels.map(label => {
+                if (label.length > 16) {
+                    const words = label.split(' ');
+                    let currentLine = '';
+                    const lines = [];
+                    for (const word of words) {
+                        if ((currentLine + ' ' + word).length > 16) {
+                            lines.push(currentLine.trim());
+                            currentLine = word;
+                        } else {
+                            currentLine += (currentLine ? ' ' : '') + word;
+                        }
+                    }
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            });
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            } else {
+              return label;
+            }
+        };
+
+        const chartColors = {
+            blue: '#003049',
+            red: '#D62828',
+            orange: '#F77F00',
+            yellow: '#FCBF49',
+            lightBlue: '#669bbc'
+        };
+
+        const preCourseData = {
+            labels: processLabels(['Computational Thinking', 'Environment Setup', 'Basic Syntax & First Programs']),
+            datasets: [{
+                label: 'Hours',
+                data: [3, 4, 3],
+                backgroundColor: [chartColors.blue, chartColors.red, chartColors.orange],
+            }]
+        };
+        new Chart(document.getElementById('preCourseChart'), {
+            type: 'doughnut',
+            data: preCourseData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        const beginnerData = {
+            labels: processLabels(['Data Structures', 'Control Flow', 'Functions', 'Error Handling', 'Intro to OOP', 'File I/O']),
+            datasets: [{
+                label: 'Focus Area',
+                data: [6, 6, 7, 5, 6, 4],
+                backgroundColor: [chartColors.blue, chartColors.red, chartColors.orange, chartColors.yellow, chartColors.lightBlue, '#c1121f'],
+            }]
+        };
+        new Chart(document.getElementById('beginnerChart'), {
+            type: 'bar',
+            data: beginnerData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Estimated Hours' } }
+                }
+            }
+        });
+        
+        const intermediateData = {
+            labels: processLabels(['Advanced OOP', 'Libraries & Packages', 'Web Scraping & APIs', 'Databases (SQL)', 'Version Control (Git)', 'Basic Web Dev (Flask)']),
+            datasets: [{
+                label: 'Focus Area',
+                data: [8, 6, 8, 7, 8, 9],
+                backgroundColor: [chartColors.blue, chartColors.red, chartColors.orange, chartColors.yellow, chartColors.lightBlue, '#c1121f'],
+            }]
+        };
+        new Chart(document.getElementById('intermediateChart'), {
+            type: 'bar',
+            data: intermediateData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    y: { title: { display: true, text: 'Estimated Hours' } }
+                }
+            }
+        });
+        
+        const advancedRadarData = {
+            labels: ['Data Analysis', 'Development', 'Automation', 'Machine Learning', 'Security & Deployment'],
+            datasets: [
+                {
+                    label: 'Data Science & ML',
+                    data: [5, 2, 1, 5, 2],
+                    fill: true,
+                    backgroundColor: 'rgba(214, 40, 40, 0.2)',
+                    borderColor: 'rgb(214, 40, 40)',
+                    pointBackgroundColor: 'rgb(214, 40, 40)',
+                }, {
+                    label: 'Web Development',
+                    data: [2, 5, 2, 1, 5],
+                    fill: true,
+                    backgroundColor: 'rgba(247, 127, 0, 0.2)',
+                    borderColor: 'rgb(247, 127, 0)',
+                    pointBackgroundColor: 'rgb(247, 127, 0)',
+                }, {
+                    label: 'IT Automation',
+                    data: [2, 3, 5, 1, 4],
+                    fill: true,
+                    backgroundColor: 'rgba(0, 48, 73, 0.2)',
+                    borderColor: 'rgb(0, 48, 73)',
+                    pointBackgroundColor: 'rgb(0, 48, 73)',
+                }
+            ]
+        };
+        new Chart(document.getElementById('advancedRadarChart'), {
+            type: 'radar',
+            data: advancedRadarData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { labels: { color: 'white' } },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.2)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.2)' },
+                        pointLabels: { color: 'white', font: { size: 12 } },
+                        ticks: {
+                            color: 'white',
+                            backdropColor: 'transparent',
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
