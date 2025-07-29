@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The PowerUp Power BI Program Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Brilliant Blues -->
+    <!-- Application Structure Plan: The infographic follows a narrative flow designed to guide a potential student. It starts with a high-impact hook about the demand for Power BI skills, introduces the "PowerUp" program as the solution, visualizes the entire learning journey as a process flow, dives deeper with comparative charts, clarifies prerequisites with a checklist, and ends with a strong call to action. This top-down, narrative-driven structure is more engaging and persuasive than a simple data dump. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Demand for BI skills -> Goal: Inform -> Viz: Large stat cards -> Justification: High-impact, easily scannable hook. Method: HTML/CSS.
+        - Report Info: Course Structure (Table 1) -> Goal: Organize/Change -> Viz: HTML/CSS Flowchart -> Justification: Clearly shows the step-by-step progression of the curriculum. Method: HTML/CSS with Tailwind. CONFIRMING NO SVG/Mermaid.
+        - Report Info: Module Distribution & Duration (Table 1) -> Goal: Compare/Composition -> Viz: Chart.js Stacked Bar & Donut Chart -> Justification: The stacked bar effectively shows the time investment per track, while the donut chart gives a quick overview of the program's focus by skill level. Library: Chart.js. CONFIRMING NO SVG.
+        - Report Info: Competitive Differentiators (Table 3) -> Goal: Compare -> Viz: Chart.js Radar Chart -> Justification: A visually compelling way to showcase "PowerUp"'s strengths against an aggregated competitor profile, more engaging than a table for an infographic format. Library: Chart.js. CONFIRMING NO SVG.
+        - Report Info: Prerequisites (Table 2) -> Goal: Inform/Organize -> Viz: Styled Checklist -> Justification: A clean, clear, and scannable format for presenting requirements. Method: HTML/CSS with Unicode icons. CONFIRMING NO SVG.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flowchart-step {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+        }
+        .flowchart-step:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 28px;
+            width: 2px;
+            height: 100%;
+            background-color: #4DA9E4;
+        }
+        .flowchart-dot {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: #0079BE;
+            border: 4px solid #9ED5F6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <!-- Section 1: The Opportunity -->
+        <header class="text-center mb-12 md:mb-16">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#00446A] mb-4">The Data Revolution is Here.</h1>
+            <p class="text-xl md:text-2xl text-[#006094] max-w-3xl mx-auto">The demand for professionals who can transform data into insight has never been higher. Power BI is the key.</p>
+        </header>
+
+        <!-- Section 2: Introducing PowerUp -->
+        <section class="mb-12 md:mb-16 bg-white rounded-2xl shadow-lg p-8">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold text-[#00446A] mb-4">Introducing The "PowerUp" Program</h2>
+                    <p class="text-lg text-gray-700 mb-4">
+                        "PowerUp" is a comprehensive, 360-degree learning experience designed to guide you from an absolute novice to an advanced, certified Power BI practitioner. We've synthesized best practices from across the industry to create one cohesive, project-based curriculum.
+                    </p>
+                    <p class="text-lg text-gray-700">
+                        This isn't just another course; it's your complete roadmap to becoming a job-ready data professional.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-[#0079BE] text-white rounded-full w-48 h-48 flex flex-col items-center justify-center mx-auto shadow-2xl">
+                        <div class="text-6xl font-extrabold">360°</div>
+                        <div class="font-semibold">Coverage</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Learning Journey -->
+        <section class="mb-12 md:mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#00446A] mb-10">Your Path to Mastery: The Complete Curriculum</h2>
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-10">
+                <div id="learning-journey-flowchart">
+                    <!-- Flowchart steps will be injected by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: A Closer Look -->
+        <section class="mb-12 md:mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#00446A] mb-10">The Program by the Numbers</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#006094] text-center mb-4">Total Learning Hours by Track</h3>
+                    <p class="text-center text-gray-600 text-sm mb-4">Our curriculum provides a deep, immersive experience, with a significant focus on advanced, real-world skills.</p>
+                    <div class="chart-container h-96">
+                        <canvas id="hoursByTrackChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#006094] text-center mb-4">Module Distribution by Skill Level</h3>
+                    <p class="text-center text-gray-600 text-sm mb-4">The program is structured to ensure a strong foundation before progressing to complex topics.</p>
+                     <div class="chart-container h-96">
+                        <canvas id="modulesByLevelChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: How We Compare -->
+        <section class="mb-12 md:mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#00446A] mb-10">The PowerUp Advantage</h2>
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#006094] mb-4">A Uniquely Comprehensive Approach</h3>
+                        <p class="text-gray-600 mb-4">We don't just teach you the tools; we prepare you for the enterprise. Our curriculum emphasizes the critical areas of governance, security, and real-world deployment that other platforms often overlook.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-center"><span class="text-[#0079BE] font-bold mr-2">✔</span> Integrated Pre-Course for Beginners</li>
+                            <li class="flex items-center"><span class="text-[#0079BE] font-bold mr-2">✔</span> Deep Dive into Enterprise Governance</li>
+                            <li class="flex items-center"><span class="text-[#0079BE] font-bold mr-2">✔</span> End-to-End Capstone Project</li>
+                            <li class="flex items-center"><span class="text-[#0079BE] font-bold mr-2">✔</span> Direct PL-300 Certification Alignment</li>
+                        </ul>
+                    </div>
+                    <div class="chart-container h-96">
+                        <canvas id="comparisonRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 6: Prerequisites -->
+        <section class="mb-12 md:mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#00446A] mb-10">Are You Ready to Power Up?</h2>
+            <div class="bg-white rounded-2xl shadow-lg p-8 grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-[#006094] mb-4">Prerequisites Checklist</h3>
+                    <p class="text-gray-600 mb-6">Success in Power BI builds on a few key fundamentals. Our "Data Essentials" pre-course is designed to get you up to speed on all of them.</p>
+                    <ul id="prerequisites-list" class="space-y-4">
+                       <!-- Prerequisites will be injected by JS -->
+                    </ul>
+                </div>
+                <div class="bg-[#00446A] text-white rounded-lg p-8 flex flex-col justify-center">
+                     <h3 class="text-2xl font-bold mb-4 text-[#9ED5F6]">No Experience? No Problem.</h3>
+                     <p>Our dedicated "Data Essentials" pre-course (Module 0) covers every prerequisite. We'll build your foundation in Excel, data literacy, and analytical thinking, ensuring you're fully prepared to succeed in the core Power BI curriculum.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Call to Action -->
+        <footer class="text-center bg-[#00446A] text-white rounded-2xl shadow-lg p-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Your Future in Data Starts Now.</h2>
+            <p class="text-lg text-[#9ED5F6] max-w-2xl mx-auto mb-8">Graduate with a portfolio-ready capstone project and the knowledge to pass the PL-300 Certification. Become the data expert companies are searching for.</p>
+            <button class="bg-[#4DA9E4] text-[#00446A] font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-white transition-all transform hover:scale-105">
+                Enroll in PowerUp Today
+            </button>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const brilliantBluesPalette = {
+                darkest: '#00446A',
+                dark: '#006094',
+                medium: '#0079BE',
+                light: '#4DA9E4',
+                lightest: '#9ED5F6',
+                background: 'rgba(77, 169, 228, 0.2)'
+            };
+
+            const curriculumData = [
+                { num: 0, track: 'Pre-Course', title: 'Data Essentials: Data Literacy & Excel for BI Readiness', duration: 20, level: 'Absolute Beginner' },
+                { num: 1, track: 'Beginner', title: 'Navigating Power BI Desktop & Data Connection', duration: 25, level: 'Beginner' },
+                { num: 2, track: 'Beginner', title: 'Introduction to Power Query & Basic Data Transformation', duration: 30, level: 'Beginner' },
+                { num: 3, track: 'Beginner', title: 'Crafting Your First Visuals & Reports', duration: 35, level: 'Beginner' },
+                { num: 4, track: 'Intermediate', title: 'Advanced Power Query & ETL Concepts', duration: 40, level: 'Intermediate' },
+                { num: 5, track: 'Intermediate', title: 'Data Modeling & Relationships', duration: 45, level: 'Intermediate' },
+                { num: 6, track: 'Intermediate', title: 'Introduction to DAX for Business Logic', duration: 50, level: 'Intermediate' },
+                { num: 7, track: 'Advanced', title: 'Mastering DAX for Complex Calculations', duration: 60, level: 'Advanced' },
+                { num: 8, track: 'Advanced', title: 'Advanced Visualization, Design & Storytelling', duration: 55, level: 'Advanced' },
+                { num: 9, track: 'Advanced', title: 'Power BI Service, Security & Governance', duration: 65, level: 'Advanced' },
+                { num: 10, track: 'Capstone & Cert.', title: 'Integrated Capstone Project & PL-300 Exam Prep', duration: 40, level: 'All' }
+            ];
+            
+            const prerequisitesData = [
+                { text: 'Basic Computer Literacy', covered: true },
+                { text: 'Analytical & Problem-Solving Mindset', covered: true },
+                { text: 'Fundamental Excel Skills', covered: true },
+                { text: 'Power Query Experience (in Excel)', covered: true },
+                { text: 'Core Data Concepts Knowledge', covered: true }
+            ];
+
+            function wrapLabel(str, maxWidth = 16) {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                let lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                }
+                lines.push(currentLine.trim());
+                return lines;
+            }
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                }
+                return label;
+            };
+
+            // 1. Learning Journey Flowchart
+            const flowchartContainer = document.getElementById('learning-journey-flowchart');
+            curriculumData.forEach(module => {
+                const stepDiv = document.createElement('div');
+                stepDiv.className = 'flowchart-step';
+                stepDiv.innerHTML = `
+                    <div class="flowchart-dot">${module.num}</div>
+                    <h4 class="font-bold text-lg text-[#006094]">${module.track} Track</h4>
+                    <p class="text-gray-700">${module.title}</p>
+                    <span class="text-sm font-medium text-white bg-[#4DA9E4] py-1 px-2 rounded-full inline-block mt-2">${module.duration} hours</span>
+                `;
+                flowchartContainer.appendChild(stepDiv);
+            });
+
+            // 2. Hours by Track Chart (Stacked Bar)
+            const hoursByTrackCtx = document.getElementById('hoursByTrackChart').getContext('2d');
+            const trackData = curriculumData.reduce((acc, module) => {
+                if (!acc[module.track]) {
+                    acc[module.track] = 0;
+                }
+                acc[module.track] += module.duration;
+                return acc;
+            }, {});
+            new Chart(hoursByTrackCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Total Program'],
+                    datasets: Object.keys(trackData).map((track, index) => ({
+                        label: track,
+                        data: [trackData[track]],
+                        backgroundColor: Object.values(brilliantBluesPalette)[index + 1]
+                    }))
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                title: (context) => 'Time Investment by Track'
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { stacked: true, title: { display: true, text: 'Total Hours' } },
+                        y: { stacked: true }
+                    }
+                }
+            });
+
+            // 3. Modules by Level Chart (Donut)
+            const modulesByLevelCtx = document.getElementById('modulesByLevelChart').getContext('2d');
+            const levelData = curriculumData.reduce((acc, module) => {
+                const level = module.level === 'All' ? 'Capstone & Cert.' : module.level;
+                if (!acc[level]) {
+                    acc[level] = 0;
+                }
+                acc[level]++;
+                return acc;
+            }, {});
+            new Chart(modulesByLevelCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: Object.keys(levelData),
+                    datasets: [{
+                        label: '# of Modules',
+                        data: Object.values(levelData),
+                        backgroundColor: [
+                            brilliantBluesPalette.lightest,
+                            brilliantBluesPalette.light,
+                            brilliantBluesPalette.medium,
+                            brilliantBluesPalette.dark,
+                        ],
+                        borderColor: '#fff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                title: (context) => context[0].label
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 4. Comparison Radar Chart
+            const radarCtx = document.getElementById('comparisonRadarChart').getContext('2d');
+            new Chart(radarCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['Practical Application', 'Enterprise Governance', 'Beginner Friendly', 'DAX Depth', 'Data Storytelling', 'Certification Prep'],
+                    datasets: [{
+                        label: 'PowerUp Program',
+                        data: [9, 9, 8, 9, 8, 10],
+                        fill: true,
+                        backgroundColor: brilliantBluesPalette.background,
+                        borderColor: brilliantBluesPalette.medium,
+                        pointBackgroundColor: brilliantBluesPalette.medium,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: brilliantBluesPalette.medium
+                    }, {
+                        label: 'Average Competitor',
+                        data: [7, 4, 7, 6, 5, 7],
+                        fill: true,
+                        backgroundColor: 'rgba(200, 200, 200, 0.2)',
+                        borderColor: 'rgb(150, 150, 150)',
+                        pointBackgroundColor: 'rgb(150, 150, 150)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgb(150, 150, 150)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        tooltip: {
+                            callbacks: { title: (context) => context[0].label }
+                        }
+                    },
+                    scales: {
+                        r: {
+                            angleLines: { color: '#ddd' },
+                            grid: { color: '#ddd' },
+                            pointLabels: { font: { size: 12, weight: 'bold' }, color: brilliantBluesPalette.darkest },
+                            ticks: {
+                                backdropColor: '#f0f4f8',
+                                color: '#666',
+                                stepSize: 2
+                            },
+                            min: 0,
+                            max: 10
+                        }
+                    }
+                }
+            });
+            
+            // 5. Prerequisites List
+            const prereqList = document.getElementById('prerequisites-list');
+            prerequisitesData.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'flex items-start';
+                li.innerHTML = `
+                    <span class="text-xl text-[#0079BE] mr-3 mt-1">✔</span>
+                    <div>
+                        <h4 class="font-semibold text-lg">${item.text}</h4>
+                        <p class="text-sm text-gray-500">Covered in our "Data Essentials" Pre-Course</p>
+                    </div>
+                `;
+                prereqList.appendChild(li);
+            });
+
+        });
+    </script>
+</body>
+</html>
