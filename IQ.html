@@ -1790,258 +1790,59 @@
 
   <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">48</span>How do you schedule Apex code?</span><
 </section>
-<section id="python">
-  <h2>Python Interview Questions and Answers</h2>
+<section class="content-section" id="python">
+  <h2 class="section-title">Python Interview Questions and Answers</h2>
 
-  <div class="question">1. What is Python?</div>
-  <div class="answer">
-    Python is a high-level, interpreted, general-purpose programming language known for its readability, simplicity, and versatility.
-  </div>
-
-  <div class="question">2. What are Python’s key features?</div>
-  <div class="answer">
-    Interpreted, dynamically typed, object-oriented, portable, extensive standard libraries, and supports multiple programming paradigms.
-  </div>
-
-  <div class="question">3. What is a Python module?</div>
-  <div class="answer">
-    A module is a file containing Python definitions and statements that can be imported and reused in other scripts.
-  </div>
-
-  <div class="question">4. What is PEP 8?</div>
-  <div class="answer">
-    PEP 8 is Python's official style guide, covering code layout and best practices for readable and consistent code.
-  </div>
-
-  <div class="question">5. What is the difference between list and tuple?</div>
-  <div class="answer">
-    Lists are mutable and use square brackets; tuples are immutable and use parentheses.
-  </div>
-
-  <div class="question">6. How do you create a virtual environment in Python?</div>
-  <div class="answer">
-    Use <code>python -m venv env</code> to create and <code>source env/bin/activate</code> (Linux) or <code>env\Scripts\activate</code> (Windows) to activate.
-  </div>
-
-  <div class="question">7. What is list comprehension?</div>
-  <div class="answer">
-    A concise way to create lists using a single line expression. Example: <code>[x for x in range(5)]</code>
-  </div>
-
-  <div class="question">8. What is a decorator?</div>
-  <div class="answer">
-    A function that modifies the behavior of another function using the <code>@decorator</code> syntax.
-  </div>
-
-  <div class="question">9. What is a lambda function?</div>
-  <div class="answer">
-    An anonymous, one-line function defined using the <code>lambda</code> keyword.
-  </div>
-
-  <div class="question">10. Explain *args and **kwargs.</div>
-  <div class="answer">
-    *args collects variable positional arguments; **kwargs collects variable keyword arguments in functions.
-  </div>
-
-  <div class="question">11. What is the difference between deep and shallow copy?</div>
-  <div class="answer">
-    A shallow copy copies references to objects, while a deep copy copies both the objects and nested objects recursively.
-  </div>
-
-  <div class="question">12. What are Python’s built-in data types?</div>
-  <div class="answer">
-    int, float, bool, str, list, tuple, set, dict, bytes, bytearray.
-  </div>
-
-  <div class="question">13. What is the use of self in Python classes?</div>
-  <div class="answer">
-    <code>self</code> refers to the instance of the class, allowing access to its attributes and methods.
-  </div>
-
-  <div class="question">14. What is inheritance in Python?</div>
-  <div class="answer">
-    Inheritance is an OOP feature where a class derives attributes and behaviors from another class.
-  </div>
-
-  <div class="question">15. What is the difference between @staticmethod and @classmethod?</div>
-  <div class="answer">
-    <code>@staticmethod</code> does not take the class or instance as a parameter, while <code>@classmethod</code> receives the class as the first parameter.
-  </div>
-
-  <div class="question">16. How do you handle exceptions in Python?</div>
-  <div class="answer">
-    Use try-except blocks, with optional else and finally sections, to catch and handle exceptions.
-  </div>
-
-  <div class="question">17. What is a generator in Python?</div>
-  <div class="answer">
-    A generator is a function that returns an iterator using the <code>yield</code> keyword to produce a sequence of values lazily.
-  </div>
-
-  <div class="question">18. How do you read and write files in Python?</div>
-  <div class="answer">
-    Use the <code>open()</code> function in read (<code>'r'</code>) or write (<code>'w'</code>) mode, and handle files with <code>with</code> statement for proper closure.
-  </div>
-
-  <div class="question">19. What is duck typing?</div>
-  <div class="answer">
-    Duck typing is a concept where the type or class of an object is determined by its behavior (methods or properties), not its explicit inheritance.
-  </div>
-
-  <div class="question">20. What is the GIL?</div>
-  <div class="answer">
-    The Global Interpreter Lock (GIL) is a mutex that protects access to Python objects, preventing multiple native threads from executing Python bytecodes at once.
-  </div>
-
-  <div class="question">21. What is pip?</div>
-  <div class="answer">
-    pip is the standard package manager for installing and managing third-party Python packages.
-  </div>
-
-  <div class="question">22. What are regular expressions, and how are they used in Python?</div>
-  <div class="answer">
-    Regular expressions are patterns for string searching/manipulation, supported via the <code>re</code> module.
-  </div>
-
-  <div class="question">23. What is list slicing?</div>
-  <div class="answer">
-    Slicing lets you extract a part of a list using the <code>[start:stop:step]</code> syntax.
-  </div>
-
-  <div class="question">24. What is __init__.py?</div>
-  <div class="answer">
-    <code>__init__.py</code> is used to mark a directory as a Python package; it can also execute initialization code for the package.
-  </div>
-
-  <div class="question">25. What is the difference between range and xrange?</div>
-  <div class="answer">
-    <code>range</code> returns a list in Python 2 and an iterator in Python 3; <code>xrange</code> is only in Python 2 and returns an iterator.
-  </div>
-
-  <div class="question">26. How do you reverse a list?</div>
-  <div class="answer">
-    Use the <code>list.reverse()</code> method or <code>list[::-1]</code> slicing.
-  </div>
-
-  <div class="question">27. What is the difference between remove(), pop(), and del?</div>
-  <div class="answer">
-    <code>remove()</code> deletes the first matching value, <code>pop()</code> removes by index and returns the value, <code>del</code> deletes by index/slice.
-  </div>
-
-  <div class="question">28. What is a context manager?</div>
-  <div class="answer">
-    A context manager properly manages resources using <code>with</code> blocks, ensuring acquisition and release actions (e.g., file open/close).
-  </div>
-
-  <div class="question">29. How do you sort a dictionary by value?</div>
-  <div class="answer">
-    Use <code>sorted(dict.items(), key=lambda item: item[1])</code>.
-  </div>
-
-  <div class="question">30. What are Python iterators?</div>
-  <div class="answer">
-    Iterators are objects that implement the <code>__iter__()</code> and <code>__next__()</code> methods to traverse containers.
-  </div>
-
-  <div class="question">31. How do you merge two dictionaries in Python 3.5+?</div>
-  <div class="answer">
-    Use the <code>**</code> unpacking operator: <code>{**dict1, **dict2}</code>.
-  </div>
-
-  <div class="question">32. What is monkey patching?</div>
-  <div class="answer">
-    Monkey patching is the dynamic modification of a class or module at runtime.
-  </div>
-
-  <div class="question">33. What are decorators used for?</div>
-  <div class="answer">
-    Decorators modify or enhance functions or classes without permanently changing their source code.
-  </div>
-
-  <div class="question">34. What is the purpose of the pass statement?</div>
-  <div class="answer">
-    pass is a no-operation statement used as a placeholder in blocks of code.
-  </div>
-
-  <div class="question">35. What is __name__ == "__main__" used for?</div>
-  <div class="answer">
-    This conditional checks if the script is run directly (not imported) and executes code accordingly.
-  </div>
-
-  <div class="question">36. Explain difference between @staticmethod and @classmethod.</div>
-  <div class="answer">
-    @staticmethod has no access to class or instance; @classmethod receives class as first argument.
-  </div>
-
-  <div class="question">37. What is multiple inheritance?</div>
-  <div class="answer">
-    A class inherits from more than one parent class, allowing access to multiple base class methods and properties.
-  </div>
-
-  <div class="question">38. What are magic methods?</div>
-  <div class="answer">
-    Special methods with double underscores (dunder methods) like <code>__init__</code>, <code>__str__</code>, <code>__add__</code> that enable operator overloading and custom behavior.
-  </div>
-
-  <div class="question">39. How can you check the Python version?</div>
-  <div class="answer">
-    Use <code>python --version</code> in the terminal or <code>import sys; print(sys.version)</code> in script.
-  </div>
-
-  <div class="question">40. What is docstring?</div>
-  <div class="answer">
-    A docstring is a string literal that documents modules, classes, or methods, defined within triple quotes immediately after the definition.
-  </div>
-
-  <div class="question">41. What is the zip() function?</div>
-  <div class="answer">
-    zip() combines multiple iterables into an iterator of tuples, pairing elements by position.
-  </div>
-
-  <div class="question">42. What is the difference between is and ==?</div>
-  <div class="answer">
-    <code>is</code> checks identity (same object in memory); <code>==</code> checks equality (same value).
-  </div>
-
-  <div class="question">43. What is list unpacking?</div>
-  <div class="answer">
-    Assigning values in a list (or any iterable) directly to variables, e.g., <code>a, b = [1, 2]</code>.
-  </div>
-
-  <div class="question">44. What is a set in Python?</div>
-  <div class="answer">
-    A set is an unordered, mutable collection of unique elements.
-  </div>
-
-  <div class="question">45. What is a frozenset?</div>
-  <div class="answer">
-    frozenset is an immutable version of set.
-  </div>
-
-  <div class="question">46. How do you install a package using pip?</div>
-  <div class="answer">
-    Run <code>pip install package_name</code> in the terminal.
-  </div>
-
-  <div class="question">47. How do you create a class in Python?</div>
-  <div class="answer">
-    Use the <code>class</code> keyword followed by class name and definition block.
-  </div>
-
-  <div class="question">48. What is __slots__?</div>
-  <div class="answer">
-    __slots__ restricts a class to a fixed set of attributes, reducing memory usage.
-  </div>
-
-  <div class="question">49. What is the difference between sort() and sorted()?</div>
-  <div class="answer">
-    sort() modifies the list in place; sorted() returns a new sorted list from any iterable.
-  </div>
-
-  <div class="question">50. What are metaclasses in Python?</div>
-  <div class="answer">
-    Metaclasses are classes of classes that define how classes behave or are constructed.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">1</span>What is Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Python is a high-level, interpreted, general-purpose programming language known for its readability, simplicity, and versatility.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">2</span>What are Python’s key features?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Interpreted, dynamically typed, object-oriented, portable, extensive standard libraries, and supports multiple programming paradigms.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">3</span>What is a Python module?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A module is a file containing Python definitions and statements that can be imported and reused in other scripts.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">4</span>What is PEP 8?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">PEP 8 is Python's official style guide, covering code layout and best practices for readable and consistent code.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">5</span>What is the difference between list and tuple?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Lists are mutable and use square brackets; tuples are immutable and use parentheses.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">6</span>How do you create a virtual environment in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Use <code>python -m venv env</code> to create and <code>source env/bin/activate</code> (Linux) or <code>env\Scripts\activate</code> (Windows) to activate.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">7</span>What is list comprehension?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A concise way to create lists using a single line expression. Example: <code>[x for x in range(5)]</code></div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">8</span>What is a decorator?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A function that modifies the behavior of another function using the <code>@decorator</code> syntax.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">9</span>What is a lambda function?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">An anonymous, one-line function defined using the <code>lambda</code> keyword.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">10</span>Explain *args and **kwargs.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer"><code>*args</code> collects variable positional arguments; <code>**kwargs</code> collects variable keyword arguments in functions.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">11</span>What is the difference between deep and shallow copy?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A shallow copy copies references to objects, while a deep copy copies both the objects and nested objects recursively.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">12</span>What are Python’s built-in data types?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">int, float, bool, str, list, tuple, set, dict, bytes, bytearray.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">13</span>What is the use of self in Python classes?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer"><code>self</code> refers to the instance of the class, allowing access to its attributes and methods.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">14</span>What is inheritance in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Inheritance is an OOP feature where a class derives attributes and behaviors from another class.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">15</span>What is the difference between @staticmethod and @classmethod?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer"><code>@staticmethod</code> does not take the class or instance as a parameter, while <code>@classmethod</code> receives the class as the first parameter.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">16</span>How do you handle exceptions in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Use try-except blocks, with optional else and finally sections, to catch and handle exceptions.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">17</span>What is pickling and unpickling?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Pickling is converting a Python object into a byte stream; unpickling is converting the byte stream back to an object.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">18</span>What is a generator?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A generator is a function that yields values one at a time using the <code>yield</code> keyword, producing an iterator.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">19</span>How is memory managed in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Python uses automatic memory management with reference counting and garbage collection.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">20</span>What is the GIL (Global Interpreter Lock)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">GIL is a mutex that allows only one thread to execute Python bytecode at a time in CPython, affecting multithreaded performance.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">21</span>What is slicing in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Slicing is a technique to access parts of sequences like lists, tuples, and strings using the <code>[start:stop:step]</code> syntax.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">22</span>How do you reverse a list?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Use <code>list.reverse()</code> or <code>list[::-1]</code>.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">23</span>How do you remove duplicates from a list?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Convert the list to a set using <code>set(list)</code>, then back to a list: <code>list(set(list))</code>.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">24</span>What is a dictionary in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A dictionary is an unordered collection of key-value pairs defined with curly braces: <code>{'key': 'value'}</code>.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">25</span>What is a set in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A set is an unordered collection of unique elements defined with curly braces: <code>{1, 2, 3}</code>.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">26</span>What is a docstring?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A docstring is a string literal specified in source code to document a function, module, class, or method.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">27</span>How do you comment in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Single-line comments use <code>#</code>; multi-line comments use triple quotes <code>''' ... '''</code> or <code>""" ... """</code>.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">28</span>What is a function in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A function is a block of reusable code that performs a specific task, defined using the <code>def</code> keyword.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">29</span>What are *args and **kwargs?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer"><code>*args</code> allows passing a variable number of positional arguments, <code>**kwargs</code> allows passing a variable number of keyword arguments.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">30</span>What is recursion?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Recursion is a programming technique where a function calls itself directly or indirectly.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">31</span>What is a class in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A class is a blueprint for creating objects (instances) that encapsulate data and functionality.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">32</span>What is an object in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">An object is an instance of a class, representing a collection of attributes and methods.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">33</span>What is method overloading in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Python does not support traditional method overloading; the last defined method overrides previous ones with the same name.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">34</span>What is method overriding?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Method overriding allows a subclass to provide a specific implementation of a method already defined in its superclass.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">35</span>What is multiple inheritance?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Multiple inheritance is a feature where a class can inherit from more than one parent class.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">36</span>What is a property decorator?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">The <code>@property</code> decorator allows a method to be accessed like an attribute, enabling getter/setter functionality.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">37</span>What is a static method?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A static method is a method that does not receive the class or instance as an argument, defined using <code>@staticmethod</code>.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">38</span>What is a class method?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A class method receives the class as its first argument (<code>cls</code>), defined using <code>@classmethod</code>.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">39</span>What is the difference between range and xrange?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer"><code>range()</code> returns a list in Python 2 and a range object in Python 3. <code>xrange()</code> is only available in Python 2 and returns an iterator.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">40</span>How do you open and read a file in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Use <code>open('filename', 'r')</code> to open and <code>file.read()</code> or iterate over the file object to read contents.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">41</span>How do you write to a file?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Use <code>open('filename', 'w')</code> to open for writing, then <code>file.write('text')</code>.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">42</span>What is a context manager?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A context manager manages resources using <code>with</code> statements, ensuring proper acquisition and release (e.g., <code>with open()</code>).</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">43</span>What is the purpose of the __init__.py file?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer"><code>__init__.py</code> designates a directory as a Python package and can contain initialization code for the package.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">44</span>What are Python packages?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Packages are directories containing a special <code>__init__.py</code> file and can contain modules or sub-packages.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">45</span>What is pip?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Pip is the package installer for Python, used to install, upgrade, and manage external Python libraries.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">46</span>What is PyPI?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">PyPI (Python Package Index) is an online repository of open-source Python packages.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">47</span>What is virtualenv?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer"><code>virtualenv</code> is a tool to create isolated Python environments for different projects.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">48</span>What is unittest in Python?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer"><code>unittest</code> is a built-in Python module for writing and running automated tests.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">49</span>What is the difference between Python 2 and Python 3?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Python 3 is the latest version with many improvements and changes (e.g., <code>print()</code> function, Unicode support, integer division); Python 2 is legacy and no longer supported.</div></div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">50</span>What are some popular Python frameworks?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Popular frameworks include Django and Flask (web), Pandas and NumPy (data), TensorFlow and PyTorch (ML/AI), and Pytest (testing).</div></div>
 </section>
 <section id="java">
   <h2>Java Interview Questions and Answers</h2>
