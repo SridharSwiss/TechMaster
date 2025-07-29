@@ -2429,6 +2429,1215 @@
   <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">49</span>What are rollback strategies in production deployments?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Rollback involves reverting deployment to previous version via backups, blue-green, canary, or version pinning to minimize impact of faulty releases.</div></div>
   <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">50</span>What is “chaos engineering”?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Chaos engineering proactively tests system resilience by introducing controlled faults or outages, ensuring the system can recover and remain available.</div></div>
 </section>
+<section class="content-section" id="cybersecurity">
+  <h2 class="section-title">Cybersecurity Interview Questions and Answers</h2>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">1</span>What is cybersecurity?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Cybersecurity is the practice of protecting systems, networks, and data from digital attacks, unauthorized access, or damage.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">2</span>What are the main types of cybersecurity threats?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Common threats include malware, phishing, ransomware, Denial of Service (DoS), Man-in-the-Middle, data breaches, and insider threats.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">3</span>What is malware?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Malware is any software designed to damage, disrupt, or gain unauthorized access to computer systems—examples: viruses, worms, trojans, spyware.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">4</span>What is the difference between a virus and a worm?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A virus attaches to programs/files and requires user action to activate; a worm is self-replicating and spreads without user intervention.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">5</span>What is ransomware?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Ransomware is malware that encrypts data or locks devices, demanding a ransom for restoration.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">6</span>What is phishing?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Phishing is a social engineering attack where attackers trick users into providing sensitive information or downloading malicious software.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">7</span>What is a firewall?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A firewall is a network security device/software that monitors and filters incoming and outgoing network traffic based on predetermined rules.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">8</span>What is an IDS and how does it differ from an IPS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An Intrusion Detection System (IDS) monitors network or systems for malicious activity; an Intrusion Prevention System (IPS) detects and also blocks threats in real time.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">9</span>Describe multi-factor authentication (MFA).</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">MFA requires users to present two or more credentials (e.g., password plus OTP or biometric) to verify their identity.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">10</span>What is encryption?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Encryption scrambles data into ciphertext using algorithms and keys, ensuring only authorized parties can read it.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">11</span>What is symmetric vs. asymmetric encryption?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Symmetric uses the same key for encryption and decryption; asymmetric uses key pairs (public/private) for secure communication (e.g., RSA).</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">12</span>What is a digital certificate?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A digital certificate is an electronic document verifying the identity of a website or user, used in SSL/TLS for secure communication.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">13</span>What is SQL injection?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">SQL injection is an attack where malicious SQL code is inserted into a query, compromising databases through poorly sanitized input.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">14</span>How do you defend against SQL injection?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use prepared statements, parameterized queries, stored procedures, and input validation to prevent injection attacks.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">15</span>What is XSS (Cross-Site Scripting)?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">XSS occurs when attackers inject malicious scripts into web pages viewed by others, potentially stealing cookies or credentials.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">16</span>What is a vulnerability scan?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A vulnerability scan automatically checks systems and networks for known security weaknesses that could be exploited by attackers.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">17</span>What is penetration testing?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Penetration testing is a simulated attack on systems or applications to find vulnerabilities before malicious actors do.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">18</span>What is the least privilege principle?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Give users and systems only the access and permissions they need to perform their jobs—no more, no less.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">19</span>What is a Zero Trust security model?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Zero Trust assumes no implicit trust within or outside networks. Each request is authenticated, authorized, and continuously validated.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">20</span>What is patch management?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Patch management is the process of applying updates and fixes to software and systems to close security gaps.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">21</span>What is DDoS (Distributed Denial of Service)?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">DDoS is an attack where multiple compromised systems overwhelm a target (network, service, or server), causing disruption.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">22</span>What is social engineering?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Social engineering manipulates people into performing actions or revealing confidential information rather than attacking systems directly.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">23</span>What is a security policy?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A security policy is a documented set of rules outlining how a company protects its digital and physical assets.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">24</span>What is SOC (Security Operations Center)?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">SOC is a centralized unit monitoring, detecting, and responding to security incidents in real time.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">25</span>What does SOC 2 compliance mean?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">SOC 2 is a framework ensuring organizations securely manage data to protect privacy and interests of their clients.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">26</span>What is an SSL/TLS certificate?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">SSL/TLS certificates enable encrypted, authenticated communication over the web, securing HTTP traffic (HTTPS).</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">27</span>What is a man-in-the-middle attack?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An attacker intercepts and possibly alters communications between two parties who believe they are directly connected.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">28</span>How do you protect against man-in-the-middle attacks?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use encryption (TLS/SSL), strong authentication, secure Wi-Fi, and certificate validation.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">29</span>What is a vulnerability management program?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">It is an ongoing process to identify, evaluate, treat, and report on security vulnerabilities in systems and software.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">30</span>What is an endpoint and how do you secure it?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An endpoint is any user device connected to a network. Secure endpoints through antivirus, patching, device management, and least privilege.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">31</span>What is SIEM?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Security Information and Event Management (SIEM) collects, analyzes, and reports on security events from various sources, helping detect threats.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">32</span>What is a honeypot?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A honeypot is a decoy system or resource intended to be targeted by attackers, capturing methods and techniques for analysis.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">33</span>What is data exfiltration?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Unauthorized transfer of data out of an organization, often as part of data breaches.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">34</span>What is MFA and why is it important?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Multi-factor authentication (MFA) uses two or more verification mechanisms, strengthening access security even if one method is compromised.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">35</span>What are common cloud security risks?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Data breaches, insecure interfaces/APIs, misconfigurations, lack of visibility, account hijacking, and poor identity management.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">36</span>What is DevSecOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">DevSecOps integrates security practices into DevOps pipelines, automating code reviews, security tests, and policy enforcement.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">37</span>What is a zero-day vulnerability?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A software flaw unknown to developers or vendors, exploited by attackers before a fix becomes available.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">38</span>What is a DMZ (Demilitarized Zone)?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A network segment that acts as a buffer zone between internal and external networks, providing extra security for public services.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">39</span>How do you perform risk assessment in cybersecurity?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Identify assets, threats, and vulnerabilities, evaluate potential impacts and likelihood, then prioritize and mitigate risks.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">40</span>What is GDPR?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The General Data Protection Regulation (GDPR) is a European Union regulation governing the processing and protection of personal data.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">41</span>What is access control?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Mechanisms ensuring only authorized users and systems can access resources, implemented through authentication and authorization.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">42</span>Name three types of access control models.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Discretionary Access Control (DAC), Mandatory Access Control (MAC), Role-Based Access Control (RBAC).</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">43</span>What is tokenization?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The replacement of sensitive data with unique tokens preserving data format, increasing security and compliance.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">44</span>What is social engineering awareness training?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Training employees to recognize, block, and report social engineering tactics (like phishing emails and phone scams).</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">45</span>What is a patch and why is it important?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A patch is an update to fix bugs or security vulnerabilities. Applying patches prevents exploitation of known flaws.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">46</span>What is network segmentation?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Dividing a network into smaller parts to reduce attack surface, contain breaches, and improve performance and monitoring.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">47</span>What are security logs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Records of system events and activities, crucial for auditing, monitoring, and investigating security incidents.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">48</span>What is a brute-force attack?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An attempt to gain unauthorized access by systematically trying all possible passwords or keys.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">49</span>What is BYOD security?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Securing "Bring Your Own Device" practices through policy, device management, application controls, and network segmentation.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">50</span>What is the principle of defense in depth?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Using multiple layers of security controls—technical, physical, and administrative—for comprehensive protection against threats.</div>
+  </div>
+</section>
+<section class="content-section" id="mlops">
+  <h2 class="section-title">MLOps (AI/ML Operations) Interview Questions and Answers</h2>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">1</span>What is MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">MLOps (Machine Learning Operations) is a set of practices for managing the end-to-end lifecycle of machine learning models—including development, deployment, monitoring, and governance—to ensure scalability, reliability, and collaboration between data science and IT teams.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">2</span>What are the main components of an MLOps pipeline?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Components include data ingestion, data validation, feature engineering, model training, model validation, model deployment, monitoring, and CI/CD automation.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">3</span>What is model versioning?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Model versioning is the process of tracking and managing different versions of models and their associated metadata, data, and code to enable reproducibility and rollback.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">4</span>What tools are commonly used for MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">MLflow, Kubeflow, TensorFlow Extended (TFX), SageMaker, Vertex AI, Azure ML, DVC, and Metaflow.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">5</span>What is the difference between model deployment and model serving?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Model deployment is the act of moving a trained model to a production environment; model serving means exposing the model as an API or endpoint to handle real-time or batch prediction requests.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">6</span>How do you monitor a deployed machine learning model?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">By tracking metrics like prediction accuracy, data drift, model latency, request volumes, and system health using monitoring stacks and alerting systems.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">7</span>What is data drift?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Data drift occurs when the statistical properties of input data change over time, potentially degrading model performance if not detected and addressed.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">8</span>What is concept drift?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Concept drift refers to changes in the relationship between input variables and the target variable, requiring retraining or adaptation of the model.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">9</span>How do you automate the retraining of models?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Set up scheduled jobs or trigger retraining pipelines based on performance thresholds, data drift detection, or periodic intervals in orchestration tools.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">10</span>What is a feature store?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A feature store is a centralized repository to manage, store, and reuse features for model training and inference.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">11</span>What is a model registry?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A model registry is a system to catalog, version, stage, and manage machine learning models for control and discoverability.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">12</span>What is a pipeline in MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An MLOps pipeline is a sequence of automated processes for preprocessing data, training, evaluating, and deploying models, managed with orchestration frameworks.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">13</span>What is end-to-end reproducibility in MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Reproducibility means any ML experiment can be re-run with the same code, data, and configuration to produce the same results—facilitated by tracking code, parameters, and environments.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">14</span>What is model governance?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Model governance ensures compliance, traceability, auditability, and responsible use of ML models in production.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">15</span>What is canary deployment in model serving?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Deploying a new model version to a small subset of users/requests for evaluation before full rollout, minimizing risk from faulty models.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">16</span>What is A/B testing in ML deployments?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A/B testing serves multiple model versions to different user subsets, comparing their performance to choose the best approach.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">17</span>What is CI/CD in the context of MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Continuous Integration and Continuous Delivery/Deployment (CI/CD) in ML automates testing, validation, and release of models and pipeline code to production upon changes.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">18</span>What is inference in ML?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Inference is the process of using a trained model to make predictions on new, unseen data.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">19</span>How is model explainability achieved in production?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Using tools and techniques such as SHAP, LIME, or integrated system explanations to interpret and present reasons for model predictions.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">20</span>What is a data pipeline and how does it relate to MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A data pipeline automates the steps of collecting, cleaning, transforming, and loading data for downstream ML tasks, forming the foundation for reliable MLOps.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">21</span>What is a training pipeline?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">It is an automated sequence for feature engineering, model training, evaluation, and output of artifacts ready for deployment.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">22</span>What is a prediction pipeline?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Sequence of steps performed during inference, including data preprocessing, feature extraction, and model prediction.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">23</span>How do you ensure scalability of model serving?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use container orchestration (Kubernetes), auto-scaling APIs, serverless inference, and load balancing for horizontal scaling of prediction services.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">24</span>What challenges are unique to MLOps versus DevOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Managing data and model versioning, reproducibility, monitoring for drift, explainability, experimentation tracking, and higher variability in production workloads.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">25</span>What is experiment tracking?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Recording metadata, parameters, code versions, and results for each model experiment to compare and reproduce workflows.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">26</span>Name some tools for experiment tracking.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">MLflow Tracking, Weights & Biases, Neptune.ai, DVC Experiments, TensorBoard.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">27</span>How can you monitor for model bias in production?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Implement monitoring for prediction distributions, fairness metrics, unintended correlations, and alerting on anomalies on live data.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">28</span>What is model rollback?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Model rollback means reverting to a previous model version in production if the new version causes regressions or failures.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">29</span>What are common model performance metrics tracked in MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Accuracy, precision, recall, F1 score, ROC-AUC, mean absolute error, latency, throughput, and resource utilization.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">30</span>What is model packaging?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Packaging a model means encapsulating it (with dependencies) into a deployable artifact, such as a Docker container or serialized file.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">31</span>How is security handled in MLOps pipelines?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use role-based access, audit logging, data encryption, secrets management, compliance controls, and secure API/auth mechanisms across pipelines.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">32</span>What is a notebook in the MLOps context?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Interactive computing files (Jupyter or similar) used for data exploration, prototyping, and sharing experiments—tracked as artifacts in MLOps.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">33</span>What is model caching?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Caching stores frequently used model outputs or intermediate computations to speed up repeated predictions or pipeline stages.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">34</span>What role do containers play in MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Containers package code, dependencies, and models together for reproducible deployment and scaling across different environments.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">35</span>What is ML model lifecycle management?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Managing stages from data prep, development, validation, deployment, monitoring, retraining, and archiving/decommissioning of models.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">36</span>What compliance challenges can exist in MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Personal data usage (PII, GDPR), audit trails, model lineage tracking, reproducibility requirements, and security reviews.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">37</span>What is batch inference?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Processing large volumes of data in groups (batches) for predictions, typically using scheduled jobs or data pipelines.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">38</span>What is online (real-time) inference?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Making instantaneous predictions for each request, often integrated with web or mobile applications through REST APIs.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">39</span>What are LLMOps or GenAIOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">LLMOps and GenAIOps apply MLOps principles specifically for large language models and generative AI, dealing with prompt versioning, model fine-tuning, hallucination detection, and responsible AI concerns.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">40</span>What is shadow deployment in the ML context?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A new model is deployed alongside the production model, silently receiving the same requests but without impacting users, enabling evaluation under real traffic.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">41</span>What is model lineage?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Model lineage traces the data, code, and changes that led to a given model version, enabling transparency and accountability.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">42</span>How do you handle secret management in ML pipelines?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Store sensitive credentials and keys in a secrets manager integrated with pipeline orchestration, with access control and encryption.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">43</span>What is the importance of data validation in MLOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Data validation ensures input data meets quality standards, preventing pipeline and model errors before deployed in production.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">44</span>What is hyperparameter tuning?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Automated process of searching for the best values of model parameters (like learning rate, tree depth) to optimize model performance.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">45</span>Name frameworks for automated hyperparameter tuning.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Optuna, Hyperopt, Ray Tune, Google Vizier, MLflow HyperOpt.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">46</span>What is a model artifact?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A model artifact is any file or object produced as output of training, including model binaries, weights, metrics, logs, and metadata.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">47</span>What is the LLM prompt registry and why is it needed?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A prompt registry catalogs, versions, and documents prompt templates for LLMs, supporting reproducibility and compliance.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">48</span>What is responsible AI and how does MLOps facilitate it?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Responsible AI practices include fairness, transparency, robustness, privacy, and accountability—MLOps enforces these via automated checks, monitors, and audit trails.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">49</span>What is model staleness?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Model staleness happens when a deployed model is out of sync with current data or underlying phenomena, requiring retraining or updates.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">50</span>How do you manage model access and authorization?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use authenticated endpoints, API gateways, and RBAC policies in serving platforms to control who can run, update, or see models.</div>
+  </div>
+</section>
+<section class="content-section" id="generativeai">
+  <h2 class="section-title">Generative AI & LLMs Interview Questions and Answers</h2>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">1</span>What is Generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Generative AI refers to machine learning systems that create new content—such as text, images, audio, or code—based on patterns learned from data.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">2</span>What is a Large Language Model (LLM)?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An LLM is a type of AI model trained on massive text corpora to understand and generate human-like language; examples include GPT, PaLM, Gemini, Llama.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">3</span>Give examples of applications of generative AI.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Chatbots, code generation, text summarization, translation, creative writing, synthetic image generation (e.g., DALL-E), music composition, and content recommendation.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">4</span>What is “prompt engineering”?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Prompt engineering is the practice of designing and refining user inputs to AI models to guide desired outputs, especially for LLMs.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">5</span>What is model “fine-tuning”?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Fine-tuning adapts a pre-trained model to perform specific tasks or understand domain-specific language using a smaller, curated dataset.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">6</span>Explain Retrieval-Augmented Generation (RAG).</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">RAG is an approach that combines LLMs with external retrieval systems so models generate answers grounded in updated or external documents.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">7</span>What is a “hallucination” in generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A hallucination is when a generative model outputs inaccurate or fabricated information that appears plausible but is not factual.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">8</span>How do you mitigate LLM hallucinations?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use retrieval-augmentation, fact-checking, prompt constraints, post-generation validation, and model fine-tuning with high-quality data.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">9</span>What is “chain-of-thought” prompting?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Chain-of-thought prompting instructs models to reason step-by-step, improving performance on complex questions and logical tasks.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">10</span>What is in-context learning?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">In-context learning lets LLMs use examples and instructions in the prompt without parameter updates, enabling task adaptation on the fly.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">11</span>What safety risks are associated with generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Risks include misinformation, copyright violation, bias amplification, toxic outputs, and misuse for generating malicious content.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">12</span>What are “guardrails” in AI systems?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Guardrails are controls and policies put in place to restrict unsafe, biased, or undesired model outputs.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">13</span>How do LLMs tokenize input text?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">LLMs break input text into smaller units (tokens)—words, subwords, or characters—using a tokenizer optimized for their architecture.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">14</span>What is RLHF (Reinforcement Learning from Human Feedback)?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">RLHF is a training approach where human feedback on outputs trains a reward model, which then helps fine-tune an LLM to align with human preferences.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">15</span>Name some popular open-source LLMs.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Llama (Meta), Falcon, Mistral, T5, and Bloom.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">16</span>What is parameter size in LLMs, and why does it matter?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Parameter size indicates the number of trainable weights; larger models generally possess greater capacity, but may require more data, compute, and care to avoid overfitting.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">17</span>What is model quantization and why is it used?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Quantization reduces the precision of model weights (e.g., from 32-bit to 8-bit), decreasing model size and speed requirements while trading off nominal accuracy.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">18</span>What is prompt injection?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Prompt injection is a security risk where malicious input alters the intended behavior of an LLM, potentially bypassing restrictions or leaking sensitive data.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">19</span>What does “context window” mean in LLMs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The context window is the maximum amount of input text (tokens) the LLM can process at once, affecting how much information is retained for generating responses.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">20</span>How do you evaluate generative model outputs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Common metrics include BLEU, ROUGE, METEOR for text; human evaluation for relevance and factuality; classifier tests for harmful content; and dataset-specific metrics.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">21</span>What is semantic search in the context of LLMs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Semantic search retrieves information based on meaning and context (not just keyword matching), often using vector embeddings from LLMs.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">22</span>What is “embedding” in generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An embedding is a high-dimensional vector representation of words, sentences, or even images, capturing semantic relationships for LLM processing and similarity search.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">23</span>What is temperature in text generation?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Temperature is a parameter controlling randomness; high values produce more diverse outputs, while low values make the model deterministic.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">24</span>What is the difference between zero-shot, one-shot, and few-shot learning?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Zero-shot: no examples given; One-shot: one example; Few-shot: a few examples in the prompt to condition the LLM's responses.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">25</span>How do you deploy LLMs at scale?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Deploy with container orchestration, distributed inference engines, cloud APIs, serverless platforms, GPU/TPU acceleration, and autoscaling infrastructure.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">26</span>What is instruction-tuning?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Instruction-tuning is supervised fine-tuning of LLMs on a dataset comprising instructions and expected outputs, aligning models with user intent.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">27</span>Explain the concept of “prompt chaining.”</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Prompt chaining links together multiple LLM prompts and responses to solve complex tasks through intermediate reasoning and multiple steps.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">28</span>What are vector databases and their use in LLMs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Vector DBs store and search high-dimensional embeddings for similarity search, enabling fast retrieval of context documents for RAG and semantic applications.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">29</span>What is knowledge grounding in LLM generation?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Grounding integrates external knowledge into model outputs, ensuring they reference verifiable facts or context, reducing hallucinations.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">30</span>What are system prompts in LLMs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">System prompts set behavioral guidelines for the model, defining tone, persona, safety constraints, or output format before user requests are seen.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">31</span>What is watermarking in generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Watermarking embeds subtle signals in generated content to identify origin (human vs AI), aiding detection and attribution.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">32</span>What is a diffusion model in generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Diffusion models create content (often images) by iteratively refining random noise toward an intended output using learned guidance.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">33</span>How do you control bias in LLM outputs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Address through curated training datasets, regular bias audits, reinforcement learning with feedback, and output filters or guardrails.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">34</span>What is multi-modality in generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Multi-modal models process and generate more than one type of data—such as text, images, audio, or video—simultaneously.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">35</span>Name some leading multimodal generative models.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">OpenAI GPT-4o, Gemini, LLaVA, and Google’s Gemini family (Gemini Pro, Ultra).</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">36</span>What are safety layers in LLM deployment?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Additional checks (e.g., classifiers for toxicity, policy enforcement, output filtering, user authentication) to prevent harmful or noncompliant outputs.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">37</span>What is the role of alignment in generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Alignment focuses on ensuring model behavior meets human values and norms, reducing risk of misuse or negative impact.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">38</span>What is a context window overflow in LLMs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">If input (including prompt and conversation history) exceeds the model’s maximum context window, earliest tokens are truncated or lost, risking omitted context.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">39</span>Explain open-source vs closed-source LLMs.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Open-source LLMs (e.g., Llama, Mistral) have accessible weights and code, allowing custom use, while closed-source LLMs (e.g., GPT-4, Claude) are proprietary.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">40</span>What is a safety and alignment evaluation benchmark?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Benchmarks like HELM, Holistic Evaluation of Language Models, and custom red-teaming scripts, measure LLMs for bias, toxicity, factuality, and safety.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">41</span>What is LLMOps?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">LLMOps applies MLOps principles to large language models, covering prompt versioning, deployment, monitoring, cost optimization, and compliance.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">42</span>How do LLMs support code generation?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">LLMs are trained on code and natural language, enabling them to generate, explain, refactor, and autocomplete code snippets in many programming languages.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">43</span>What is synthetic data generation, and why is it important?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Generative AI creates synthetic (artificial) datasets for training, testing, or privacy, useful when real data is limited or sensitive.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">44</span>What is red teaming in the context of AI safety?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Red teaming is systematically probing AI models for unsafe, biased, or false outputs using adversarial inputs and evaluation scripts.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">45</span>What does “function calling” mean in LLMs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Function calling allows LLMs to trigger external APIs or software functions based on prompt analysis, enabling AI agents and integrations.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">46</span>What is the impact of context length on LLM performance?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Longer context windows allow richer information for reasoning, but may increase compute needs and pose challenges for model scaling.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">47</span>What are “jailbreaks” in generative AI?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Jailbreaks are prompts or exploits designed to make AI systems bypass safety features, revealing restricted or harmful information.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">48</span>What are Responsible AI practices for generative models?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Practices include transparency, fairness, ongoing monitoring, clear communication of limitations, informed consent, and mitigation of harms.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">49</span>What is a “consistency check” in LLM evaluation?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Consistency checks validate that model answers are stable and repeatable under similar input conditions, revealing brittleness or randomness in outputs.</div>
+  </div>
+
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">50</span>How can organizations reduce cost and latency with LLM APIs?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use prompt optimization, batching requests, model distillation, local fine-tuning for smaller models, and selecting right-sized APIs depending on use case.</div>
+  </div>
+</section>
          
 <script>
     // Hamburger menu for mobile navigation
