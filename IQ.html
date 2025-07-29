@@ -5,191 +5,371 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Top Interview Questions and Answers | Besant Technologies</title>
 <style>
-  /* Reset some basics */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    max-width: 900px;
-    margin: 20px auto;
-    background: #f9f9f9;
-    color: #333;
-    padding: 20px;
-    line-height: 1.6;
-  }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  /* Header */
-  h1 {
-    color: #0056b3;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
 
-  /* Navigation styles */
-  nav {
-    background: #0056b3;
-    position: sticky;
-    top: 0;
-    z-index: 10000;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-  nav .nav-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 10px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-  nav .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-  }
+        .header h1 {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
 
-  nav .nav-links a {
-    color: white;
-    margin-right: 15px;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 6px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-  }
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.5)); }
+            to { filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.8)); }
+        }
 
-  nav .nav-links a:hover,
-  nav .nav-links a:focus {
-    text-decoration: underline;
-    background-color: #003e7e;
-    outline: none;
-  }
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
 
-  /* Hamburger menu button */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-  }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
 
-  .menu-toggle span {
-    height: 3px;
-    background: white;
-    margin: 4px 0;
-    border-radius: 2px;
-    transition: 0.3s;
-  }
+        .stat-item {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
 
-  /* Transform hamburger to X when active */
-  .menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
 
-  /* Responsive nav: hides links by default on mobile */
-  @media (max-width: 768px) {
-    nav .nav-links {
-      display: none;
-      flex-direction: column;
-      background: #0056b3;
-      position: absolute;
-      top: 58px; /* height of nav */
-      left: 0;
-      width: 100%;
-      padding: 10px 0;
-      border-radius: 0 0 8px 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
+        nav {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    nav .nav-links.show {
-      display: flex;
-    }
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    nav .nav-links a {
-      margin: 8px 20px;
-      padding: 10px 15px;
-      font-size: 1.1rem;
-    }
+        nav .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-    .menu-toggle {
-      display: flex;
-    }
-  }
+        nav .nav-links a {
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
 
-  /* Questions & Answers */
-  .question {
-    font-weight: 700;
-    margin-top: 1.2em;
-    color: #222;
-  }
+        nav .nav-links a:hover,
+        nav .nav-links a:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+            transform: translateY(-2px);
+            outline: none;
+        }
 
-  .answer {
-    margin-left: 1em;
-    margin-bottom: 1em;
-    color: #555;
-  }
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
 
-  ul {
-    margin-left: 2em;
-    color: #555;
-    margin-bottom: 1em;
-  }
+        .menu-toggle span {
+            height: 3px;
+            background: white;
+            margin: 4px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
 
-  /* Smooth scroll */
-  html {
-    scroll-behavior: smooth;
-  }
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 768px) {
+            nav .nav-links {
+                display: none;
+                flex-direction: column;
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                position: absolute;
+                top: 58px;
+                left: 0;
+                width: 100%;
+                padding: 10px 0;
+                border-radius: 0 0 8px 8px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+
+            nav .nav-links.show {
+                display: flex;
+            }
+
+            nav .nav-links a {
+                margin: 8px 20px;
+                padding: 10px 15px;
+                font-size: 1.1rem;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .question-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .question-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+        }
+
+        .question {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .question-number {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 15px;
+        }
+
+        .toggle-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .answer {
+            color: #555;
+            line-height: 1.8;
+            display: none;
+            padding-top: 15px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        .answer.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .answer ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .answer li {
+            margin-bottom: 8px;
+        }
+
+        .answer code {
+            background: #f8f9fa;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e83e8c;
+        }
+
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            animation: glow 2s ease-in-out infinite alternate;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        ul {
+            margin-left: 20px;
+            color: #555;
+            margin-bottom: 1em;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
 </style>
 </head>
 <body>
-
-<h1>Top Interview Questions and Answers</h1>
-
-<nav>
-  <div class="nav-container">
-    <div class="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0" aria-expanded="false" aria-controls="nav-links">
-      <span></span>
-      <span></span>
-      <span></span>
+<div class="container">
+    <div class="header">
+        <h1>Top Interview Questions and Answers</h1>
+        <p>Your comprehensive guide to acing technical interviews across various domains. Prepared by SridharSwiss!</p>
+        <div class="stats">
+            <div class="stat-item">200+ Questions</div>
+            <div class="stat-item">Updated 2025</div>
+            <div class="stat-item">Expert Reviewed</div>
+            <div class="stat-item">Free Access</div>
+        </div>
     </div>
-    <div class="nav-links" id="nav-links">
-      <a href="#pyspark">PySpark</a>
-      <a href="#sql">SQL</a>
-      <a href="#css">CSS</a>
-      <a href="#ai">Artificial Intelligence</a>
-      <a href="#salesforce">Salesforce</a>
-      <a href="#python">Python</a>
-      <a href="#java">Java</a>
-      <a href="#wordpress">WordPress</a>
-      <a href="#ibmwmq">IBM WMQ</a>
-      <a href="#datascience">Data Science with Python</a>
-      <a href="#ccnp">CCNP</a>
-      <a href="#informatica">Informatica MDM</a>
-      <a href="#flutterdart">Flutter and Dart</a>
-      <a href="#msdynamicscrm">Microsoft Dynamics CRM</a>
-      <a href="#apitesting">API Testing</a>
-      <a href="#cloudcomputing">Cloud Computing</a>
-      <a href="#devops">DevOps</a>  
-      <a href="#cybersecurity">Cyber Security</a>
-      <a href="#mlops">ML Ops</a>
-      <a href="#generativeai">Generative AI</a>
-      <a href="#frontendframeworks">Frontend Frameworks</a>
-      <a href="#blockchainweb3">Block Chain</a>
-      <a href="#dataengineering">Data Engineering</a>
-      <a href="#edgeiot">Edge IOT</a>
-    </div>
-  </div>
-</nav>
+    <nav>
+        <div class="nav-container">
+            <div class="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0" aria-expanded="false" aria-controls="nav-links">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="#pyspark">PySpark</a>
+                <a href="#sql">SQL</a>
+                <a href="#css">CSS</a>
+                <a href="#ai">AI</a>
+                <a href="#salesforce">Salesforce</a>
+                <a href="#python">Python</a>
+                <a href="#java">Java</a>
+                <a href="#wordpress">WordPress</a>
+                <a href="#ibmwmq">IBM WMQ</a>
+                <a href="#datascience">Data Science</a>
+                <a href="#ccnp">CCNP</a>
+                <a href="#informatica">Informatica MDM</a>
+                <a href="#flutterdart">Flutter & Dart</a>
+                <a href="#msdynamicscrm">MS Dynamics CRM</a>
+                <a href="#apitesting">API Testing</a>
+                <a href="#cloudcomputing">Cloud Computing</a>
+                <a href="#devops">DevOps</a>
+                <a href="#cybersecurity">Cyber Security</a>
+                <a href="#mlops">ML Ops</a>
+                <a href="#generativeai">Generative AI</a>
+                <a href="#frontendframeworks">Frontend Frameworks</a>
+                <a href="#blockchainweb3">Blockchain</a>
+                <a href="#dataengineering">Data Engineering</a>
+                <a href="#edgeiot">Edge IOT</a>
+            </div>
+        </div>
+    </nav>
 <section id="pyspark">
   <h2>PySpark Interview Questions and Answers</h2>
 
@@ -5725,40 +5905,36 @@
   </div>
 </section>
 <script>
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.getElementById('nav-links');
+    // Hamburger menu for mobile navigation
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.onclick = function() {
+        navLinks.classList.toggle('show');
+        menuToggle.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('show'));
+    };
 
-  function toggleMenu() {
-    const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-    menuToggle.setAttribute('aria-expanded', !expanded);
-    menuToggle.classList.toggle('active');
-    navLinks.classList.toggle('show');
-  }
-
-  menuToggle.addEventListener('click', toggleMenu);
-  menuToggle.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleMenu();
-    }
-  });
-
-  // Close menu when a nav link is clicked (on mobile)
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navLinks.classList.contains('show')) {
-        toggleMenu();
-      }
+    // Accessibility: allow keyboard toggle
+    menuToggle.addEventListener('keydown', function(e) {
+        if (e.key === " " || e.key === "Enter") {
+            navLinks.classList.toggle('show');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('show'));
+        }
     });
-  });
-</script>
-<footer style="background:#222;color:#fff;padding:20px 0;text-align:center;margin-top:40px;">
-  <div>
-    &copy; 2025 TechMaster | Crafted with &#10084; by SridharSwiss
-  </div>
-  <div style="margin-top:8px;font-size:0.9em;">
 
-  </div>
-</footer>
+    // Collapse/expand Q&A
+    function toggleAnswer(el) {
+        const answer = el.nextElementSibling;
+        const icon = el.querySelector('.toggle-icon');
+        if (answer.classList.contains('show')) {
+            answer.classList.remove('show');
+            icon.style.transform = 'rotate(0deg)';
+        } else {
+            answer.classList.add('show');
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+</script>
 </body>
 </html>
