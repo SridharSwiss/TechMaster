@@ -60,12 +60,21 @@
         .timeline {
             position: relative;
             padding: 2rem 0;
+            width: 100%; /* Ensure it takes full width on smaller screens */
+            max-width: 100%; /* Default max-width for mobile */
+            margin-left: auto; /* Center on mobile if max-width is applied */
+            margin-right: auto; /* Center on mobile if max-width is applied */
+        }
+        @media (min-width: 768px) {
+            .timeline {
+                max-width: 400px; /* Limit width on desktop for readability, roughly half of a typical grid column */
+            }
         }
         .timeline::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 30px; /* Adjusted: Fixed position for the vertical line */
+            left: 30px; /* Adjusted: Fixed position for the vertical line relative to the timeline container */
             transform: translateX(-50%);
             width: 3px;
             height: 100%;
@@ -73,12 +82,11 @@
         }
         .timeline-item {
             position: relative;
-            width: calc(100% - 60px); /* Adjusted: Take full width minus margin/padding for line */
-            margin-left: 60px; /* Adjusted: Push all items to the right of the line */
+            width: calc(100% - 60px); /* Take full width of its parent (.timeline) minus offset */
+            margin-left: 60px; /* Push all items to the right of the line */
             padding: 1rem 1rem 1rem 2rem; /* Consistent padding */
             box-sizing: border-box;
         }
-        /* Removed nth-child(odd/even) specific positioning as all items are now on one side */
         .timeline-content {
             padding: 1.5rem;
             background-color: #ffffff;
@@ -90,7 +98,7 @@
             content: '';
             position: absolute;
             top: 50%;
-            left: -10px; /* Adjusted: Position relative to the timeline-item to align with the line */
+            left: -10px; /* Position relative to the timeline-item to align with the line */
             transform: translateY(-50%);
             width: 1.5rem;
             height: 1.5rem;
@@ -99,18 +107,16 @@
             border: 4px solid #075985;
             z-index: 10;
         }
-        /* Removed nth-child(odd/even) specific dot positioning */
         .timeline-content::after {
             content: '';
             position: absolute;
             top: 50%;
-            left: -1rem; /* Adjusted: Arrow points left towards the line */
+            left: -1rem; /* Arrow points left towards the line */
             transform: translateY(-50%);
             border-width: 0.5rem;
             border-style: solid;
             border-color: transparent #ffffff transparent transparent; /* Arrow points right */
         }
-        /* Removed nth-child(odd/even) specific arrow positioning */
     </style>
 </head>
 <body class="antialiased">
