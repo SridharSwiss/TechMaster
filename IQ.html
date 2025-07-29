@@ -1184,413 +1184,611 @@
     <div class="answer">EXPLAIN shows the execution plan of a SQL statement, helping optimize queries and understand their behavior.</div>
   </div>
 </section>
-<section id="css">
-  <h2>CSS Interview Questions and Answers</h2>
+<section class="content-section" id="css">
+  <h2 class="section-title">CSS Interview Questions and Answers</h2>
 
-  <div class="question">1. What is CSS?</div>
-  <div class="answer">CSS (Cascading Style Sheets) is a language used for describing the look and formatting of documents written in HTML.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">1</span>What is CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">CSS (Cascading Style Sheets) is a language used for describing the look and formatting of documents written in HTML.</div>
+  </div>
 
-  <div class="question">2. What are the different types of CSS?</div>
-  <div class="answer">Inline, internal (embedded), and external CSS.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">2</span>What are the different types of CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Inline, internal (embedded), and external CSS.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">3</span>What is the difference between class selectors and ID selectors?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Class selectors are reusable and start with a dot (.), while ID selectors are unique for a page and start with a hash (#).</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">4</span>What is the CSS box model?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The box model includes content, padding, border, and margin around HTML elements.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">5</span>How do you center a div horizontally?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Set <code>margin: 0 auto;</code> and a width for the div.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">6</span>What is the default position value in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>static</code> is the default position value for all elements.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">7</span>What is z-index and when is it effective?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">z-index controls stacking order of positioned elements (position other than static).</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">8</span>What is the difference between em and rem units?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">em is relative to the parent font-size, rem is relative to the root element (<code>html</code>) font-size.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">9</span>How do you add a background image in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>background-image: url('image.jpg');</code></div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">10</span>What is specificity in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Specificity determines which CSS rule is applied when multiple rules could apply to the same element, based on selectors' types.</div>
+  </div>
 
-  <div class="question">3. What is the difference between class selectors and ID selectors?</div>
-  <div class="answer">Class selectors are reusable and start with a dot (.), while ID selectors are unique for a page and start with a hash (#).</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">11</span>How do you make a list horizontal?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Set <code>display: inline;</code> or use <code>float: left;</code> or <code>display: flex;</code> on the list items.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">12</span>What is Flexbox?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Flexbox is a layout model in CSS3 that allows responsive alignment and distribution of space among items in a container.</div>
+  </div>
 
-  <div class="question">4. What is the CSS box model?</div>
-  <div class="answer">The box model includes content, padding, border, and margin around HTML elements.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">13</span>Explain the difference between visibility: hidden and display: none.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>visibility: hidden</code> makes the element invisible but preserves its space; <code>display: none</code> removes it from layout and flow.</div>
+  </div>
 
-  <div class="question">5. How do you center a div horizontally?</div>
-  <div class="answer">Set <code>margin: 0 auto;</code> and a width for the div.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">14</span>How do you set a custom font in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>@font-face</code> rule or <code>font-family</code> referencing web fonts or local fonts.</div>
+  </div>
 
-  <div class="question">6. What is the default position value in CSS?</div>
-  <div class="answer"><code>static</code> is the default position value for all elements.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">15</span>What does the float property do?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">float lets elements move to the left or right, allowing text and inline elements to wrap around them.</div>
+  </div>
 
-  <div class="question">7. What is z-index and when is it effective?</div>
-  <div class="answer">z-index controls stacking order of positioned elements (position other than static).</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">16</span>What is a pseudo-class?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A pseudo-class defines a special state of an element, such as <code>:hover</code>, <code>:active</code>, <code>:nth-child()</code>.</div>
+  </div>
 
-  <div class="question">8. What is the difference between em and rem units?</div>
-  <div class="answer">em is relative to the parent font-size, rem is relative to the root element (<code>html</code>) font-size.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">17</span>What is a pseudo-element?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A pseudo-element styles specified parts of an element, like <code>::before</code> or <code>::after</code>.</div>
+  </div>
 
-  <div class="question">9. How do you add a background image in CSS?</div>
-  <div class="answer">Use <code>background-image: url('image.jpg');</code></div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">18</span>How can you make rounded corners?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use the <code>border-radius</code> property, e.g., <code>border-radius: 10px;</code></div>
+  </div>
 
-  <div class="question">10. What is specificity in CSS?</div>
-  <div class="answer">Specificity determines which CSS rule is applied when multiple rules could apply to the same element, based on selectors' types.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">19</span>How do you create a transition effect?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use the <code>transition</code> property, e.g., <code>transition: background 0.5s ease;</code></div>
+  </div>
 
-  <div class="question">11. How do you make a list horizontal?</div>
-  <div class="answer">Set <code>display: inline;</code> or use <code>float: left;</code> or <code>display: flex;</code> on the list items.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">20</span>How do you use CSS Grid?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Define a grid container with <code>display: grid;</code> and specify columns/rows using <code>grid-template-columns</code> and <code>grid-template-rows</code>.</div>
+  </div>
 
-  <div class="question">12. What is Flexbox?</div>
-  <div class="answer">Flexbox is a layout model in CSS3 that allows responsive alignment and distribution of space among items in a container.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">21</span>How do you select all direct children of an element?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use the child combinator <code>&gt;</code>, e.g., <code>div &gt; p</code></div>
+  </div>
 
-  <div class="question">13. Explain the difference between visibility: hidden and display: none.</div>
-  <div class="answer">visibility: hidden makes the element invisible but preserves its space; display: none removes it from layout and flow.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">22</span>What is important in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>!important</code> increases the specificity and overrides all previous declarations.</div>
+  </div>
 
-  <div class="question">14. How do you set a custom font in CSS?</div>
-  <div class="answer">Use <code>@font-face</code> rule or <code>font-family</code> referencing web fonts or local fonts.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">23</span>How do you prevent a CSS file from being cached?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Append a query string version to the file, e.g., <code>style.css?v=2</code>.</div>
+  </div>
 
-  <div class="question">15. What does the float property do?</div>
-  <div class="answer">float lets elements move to the left or right, allowing text and inline elements to wrap around them.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">24</span>How do you style the first letter or first line in text?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use the <code>::first-letter</code> and <code>::first-line</code> pseudo-elements.</div>
+  </div>
 
-  <div class="question">16. What is a pseudo-class?</div>
-  <div class="answer">A pseudo-class defines a special state of an element, such as <code>:hover</code>, <code>:active</code>, <code>:nth-child()</code>.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">25</span>What is CSS Sprites?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">CSS Sprites combine multiple images into a single image to reduce HTTP requests; background-position is used to display portions.</div>
+  </div>
 
-  <div class="question">17. What is a pseudo-element?</div>
-  <div class="answer">A pseudo-element styles specified parts of an element, like <code>::before</code> or <code>::after</code>.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">26</span>What is a media query?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A media query applies styles based on device characteristics like width, height, or orientation, enabling responsive web design.</div>
+  </div>
 
-  <div class="question">18. How can you make rounded corners?</div>
-  <div class="answer">Use the <code>border-radius</code> property, e.g., <code>border-radius: 10px;</code></div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">27</span>What is the difference between inline and block elements?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Inline elements don’t start on a new line and only occupy the necessary width, while block elements begin on a new line and take full width available.</div>
+  </div>
 
-  <div class="question">19. How do you create a transition effect?</div>
-  <div class="answer">Use the <code>transition</code> property, e.g., <code>transition: background 0.5s ease;</code></div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">28</span>What does <code>overflow: hidden</code> do?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">It cuts off content that exceeds an element’s box instead of letting it spill out.</div>
+  </div>
 
-  <div class="question">20. How do you use CSS Grid?</div>
-  <div class="answer">Define a grid container with <code>display: grid;</code> and specify columns/rows using <code>grid-template-columns</code> and <code>grid-template-rows</code>.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">29</span>How do you vertically align an element in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>vertical-align</code> for inline/inline-block or <code>align-items: center</code> with Flexbox, or <code>display: table-cell</code> and <code>vertical-align:middle</code>.</div>
+  </div>
 
-  <div class="question">21. How do you select all direct children of an element?</div>
-  <div class="answer">Use the child combinator <code>></code>, e.g., <code>div > p</code></div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">30</span>What is the difference between absolute and fixed positioning?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>absolute</code> positions an element relative to the nearest positioned ancestor; <code>fixed</code> positions it relative to the browser window.</div>
+  </div>
 
-  <div class="question">22. What is important in CSS?</div>
-  <div class="answer"><code>!important</code> increases the specificity and overrides all previous declarations.</div>
-
-  <div class="question">23. How do you prevent a CSS file from being cached?</div>
-  <div class="answer">Append a query string version to the file, e.g., <code>style.css?v=2</code>.</div>
-
-  <div class="question">24. How do you style the first letter or first line in text?</div>
-  <div class="answer">Use the <code>::first-letter</code> and <code>::first-line</code> pseudo-elements.</div>
-
-  <div class="question">25. What is CSS Sprites?</div>
-  <div class="answer">CSS Sprites combine multiple images into a single image to reduce HTTP requests; background-position is used to display portions.</div>
-
-  <div class="question">26. What is a media query?</div>
-  <div class="answer">A media query applies styles based on device characteristics like width, height, or orientation, enabling responsive web design.</div>
-
-  <div class="question">27. What is the difference between inline and block elements?</div>
-  <div class="answer">Inline elements don’t start on a new line and only occupy the necessary width, while block elements begin on a new line and take full width available.</div>
-
-  <div class="question">28. What does <code>overflow: hidden</code> do?</div>
-  <div class="answer">It cuts off content that exceeds an element’s box instead of letting it spill out.</div>
-
-  <div class="question">29. How do you vertically align an element in CSS?</div>
-  <div class="answer">Use <code>vertical-align</code> for inline/inline-block or <code>align-items: center</code> with Flexbox, or <code>display: table-cell</code> and <code>vertical-align:middle</code>.</div>
-
-  <div class="question">30. What is the difference between absolute and fixed positioning?</div>
-  <div class="answer">absolute positions an element relative to the nearest positioned ancestor; fixed positions it relative to the browser window.</div>
-
-  <div class="question">31. Explain opacity in CSS.</div>
-  <div class="answer">The <code>opacity</code> property sets the transparency level of an element, between 0 (transparent) and 1 (opaque).</div>
-
-  <div class="question">32. What is the default value of the z-index property?</div>
-  <div class="answer">The default is <code>auto</code>.</div>
-
-  <div class="question">33. How do you hide elements in CSS?</div>
-  <div class="answer">Use <code>display: none;</code> or <code>visibility: hidden;</code></div>
-
-  <div class="question">34. What properties are inherited by default?</div>
-  <div class="answer">Properties like color, font-family, and font-size are inherited; layout properties like margin are usually not.</div>
-
-  <div class="question">35. What is @import in CSS?</div>
-  <div class="answer">@import allows you to import style rules from other style sheets into a CSS file.</div>
-
-  <div class="question">36. What are vendor prefixes in CSS?</div>
-  <div class="answer">Vendor prefixes (e.g., -webkit-, -moz-, -ms-, -o-) ensure compatibility with different browser engines for new features.</div>
-
-  <div class="question">37. Explain the use of calc() in CSS.</div>
-  <div class="answer">calc() lets you perform calculations to determine CSS property values, e.g., width: calc(100% - 80px);</div>
-
-  <div class="question">38. What is a combinator selector?</div>
-  <div class="answer">Combinators are used to combine two or more selectors, such as descendant (space), child (>), adjacent sibling (+), and general sibling (~).</div>
-
-  <div class="question">39. How do you create a responsive image?</div>
-  <div class="answer">Set <code>max-width: 100%;</code> and <code>height: auto;</code> on the img element.</div>
-
-  <div class="question">40. What is the use of box-sizing property?</div>
-  <div class="answer">box-sizing controls how the total width and height of an element is calculated. border-box includes padding and border in the element’s width and height.</div>
-
-  <div class="question">41. How do you clear floats?</div>
-  <div class="answer">Use <code>clear: both;</code> on a following element or use a clearfix hack.</div>
-
-  <div class="question">42. What is shadow DOM in CSS?</div>
-  <div class="answer">Shadow DOM allows encapsulation of CSS and markup so that styles are scoped to a specific element and not affected by external styles.</div>
-
-  <div class="question">43. What is remapping in CSS?</div>
-  <div class="answer">Remapping generally refers to reassignment of values or typography scale within the root element using rem units.</div>
-
-  <div class="question">44. How do you animate elements in CSS?</div>
-  <div class="answer">Use keyframes and the <code>animation</code> or <code>transition</code> properties.</div>
-
-  <div class="question">45. How do you make a triangle in CSS?</div>
-  <div class="answer">Use the <code>border</code> property: set three borders to transparent and one to a color, with zero width or height on the element.</div>
-
-  <div class="question">46. What is the clamp() function in CSS?</div>
-  <div class="answer">clamp() allows you to set a value between a specified minimum and maximum, e.g., <code>font-size: clamp(1rem, 2vw, 2rem);</code></div>
-
-  <div class="question">47. How do you make text overflow ellipsis?</div>
-  <div class="answer">Use <code>white-space: nowrap;</code> <code>overflow: hidden;</code> and <code>text-overflow: ellipsis;</code></div>
-
-  <div class="question">48. What is the minmax() function in CSS Grid?</div>
-  <div class="answer">minmax() defines the size range of a grid track, e.g., <code>grid-template-columns: minmax(100px, 1fr);</code></div>
-
-  <div class="question">49. What is CSS isolation?</div>
-  <div class="answer">The isolation property creates a new stacking context, preventing elements from overlapping incorrectly.</div>
-
-  <div class="question">50. What is the difference between :nth-child() and :nth-of-type()?</div>
-  <div class="answer">:nth-child() selects the nth child regardless of type; :nth-of-type() only matches elements of the specified type.</div>
-
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">31</span>Explain opacity in CSS.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The <code>opacity</code> property sets the transparency level of an element, between 0 (transparent) and 1 (opaque).</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">32</span>What is the default value of the z-index property?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The default is <code>auto</code>.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">33</span>How do you hide elements in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>display: none;</code> or <code>visibility: hidden;</code></div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">34</span>What properties are inherited by default?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Properties like color, font-family, and font-size are inherited; layout properties like margin are usually not.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">35</span>What is @import in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>@import</code> allows you to import style rules from other style sheets into a CSS file.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">36</span>What are vendor prefixes in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Vendor prefixes (e.g., -webkit-, -moz-, -ms-, -o-) ensure compatibility with different browser engines for new features.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">37</span>Explain the use of calc() in CSS.</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>calc()</code> lets you perform calculations to determine CSS property values, e.g., width: calc(100% - 80px);</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">38</span>What is a combinator selector?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Combinators are used to combine two or more selectors, such as descendant (space), child (&gt;), adjacent sibling (+), and general sibling (~).</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">39</span>How do you create a responsive image?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Set <code>max-width: 100%;</code> and <code>height: auto;</code> on the img element.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">40</span>What is the use of box-sizing property?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>box-sizing</code> controls how the total width and height of an element is calculated. border-box includes padding and border in the element’s width and height.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">41</span>How do you clear floats?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>clear: both;</code> on a following element or use a clearfix hack.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">42</span>What is shadow DOM in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Shadow DOM allows encapsulation of CSS and markup so that styles are scoped to a specific element and not affected by external styles.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">43</span>What is remapping in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Remapping generally refers to reassignment of values or typography scale within the root element using rem units.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">44</span>How do you animate elements in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use keyframes and the <code>animation</code> or <code>transition</code> properties.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">45</span>How do you make a triangle in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use the <code>border</code> property: set three borders to transparent and one to a color, with zero width or height on the element.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">46</span>What is the clamp() function in CSS?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>clamp()</code> allows you to set a value between a specified minimum and maximum, e.g., <code>font-size: clamp(1rem, 2vw, 2rem);</code></div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">47</span>How do you make text overflow ellipsis?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>white-space: nowrap;</code> <code>overflow: hidden;</code> and <code>text-overflow: ellipsis;</code></div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">48</span>What is the minmax() function in CSS Grid?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>minmax()</code> defines the size range of a grid track, e.g., <code>grid-template-columns: minmax(100px, 1fr);</code></div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">49</span>What is CSS isolation?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The isolation property creates a new stacking context, preventing elements from overlapping incorrectly.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">50</span>What is the difference between :nth-child() and :nth-of-type()?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>:nth-child()</code> selects the nth child regardless of type; <code>:nth-of-type()</code> only matches elements of the specified type.</div>
+  </div>
 </section>
-<section id="ai"> <h2>Artificial Intelligence Interview Questions and Answers</h2> <div class="question">1. What is Artificial Intelligence (AI)?</div> <div class="answer">Artificial Intelligence is the capability of a machine to imitate intelligent human behavior, including learning, reasoning, problem-solving, and perception.</div> <div class="question">2. What are the different types of AI?</div> <div class="answer">Types of AI include Narrow AI (Weak AI), General AI, and Superintelligent AI; based on functionalities: Reactive Machines, Limited Memory, Theory of Mind, and Self-aware AI.</div> <div class="question">3. What is the Turing Test?</div> <div class="answer">The Turing Test, developed by Alan Turing, measures a machine’s ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human.</div> <div class="question">4. Define machine learning.</div> <div class="answer">Machine Learning is a subfield of AI that enables machines to learn from data and improve performance without explicit programming.</div> <div class="question">5. What are neural networks?</div> <div class="answer">Neural networks are computing systems inspired by the human brain’s interconnected neuron structure, used to model complex patterns and prediction problems.</div> <div class="question">6. Explain supervised vs. unsupervised learning.</div> <div class="answer">Supervised learning uses labeled data to map input to output; unsupervised learning finds patterns or groupings in unlabeled data.</div> <div class="question">7. What is deep learning?</div> <div class="answer">Deep learning is a subset of machine learning utilizing multi-layered neural networks to model complex patterns in data.</div> <div class="question">8. What are common applications of AI?</div> <div class="answer">AI is used in natural language processing, computer vision, robotics, expert systems, speech recognition, and recommendation engines.</div> <div class="question">9. What is reinforcement learning?</div> <div class="answer">Reinforcement learning is a learning paradigm where agents learn to take actions to maximize cumulative rewards in an environment.</div> <div class="question">10. What is natural language processing (NLP)?</div> <div class="answer">NLP is an AI field focused on enabling machines to understand, interpret, and generate human language.</div> <div class="question">11. What is computer vision?</div> <div class="answer">Computer vision is an AI branch that enables computers to interpret and process visual information from the world, such as images and videos.</div> <div class="question">12. What are expert systems?</div> <div class="answer">Expert systems are computer programs that emulate the decision-making abilities of human experts in specific domains using rules and knowledge bases.</div> <div class="question">13. What is a chatbot?</div> <div class="answer">A chatbot is an AI-powered software program that conducts online chats via text or voice, simulating human conversation.</div> <div class="question">14. Explain the term "overfitting" in machine learning.</div> <div class="answer">Overfitting refers to a model that learns both data and noise, performing well on training data but poorly on unseen data.</div> <div class="question">15. What is underfitting in machine learning?</div> <div class="answer">Underfitting means the model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test sets.</div> <div class="question">16. What is transfer learning?</div> <div class="answer">Transfer learning leverages knowledge from a model trained on one task to improve learning on a related task.</div> <div class="question">17. Describe a confusion matrix.</div> <div class="answer">A confusion matrix is a table used to evaluate classification models, showing true positives, true negatives, false positives, and false negatives.</div> <div class="question">18. What is accuracy in machine learning?</div> <div class="answer">Accuracy is the ratio of correctly predicted observations to the total observations, often used as a metric for classification models.</div> <div class="question">19. What is precision and recall?</div> <div class="answer">Precision is the ratio of true positives to all positive predictions; recall is the ratio of true positives to all actual positives.</div> <div class="question">20. What is F1 score?</div> <div class="answer">The F1 score is the harmonic mean of precision and recall, providing a balance between them for model evaluation.</div> <div class="question">21. What is regularization?</div> <div class="answer">Regularization is a technique in machine learning that discourages model complexity to prevent overfitting, using methods like L1 and L2 regularization.</div> <div class="question">22. What are the differences between AI and ML?</div> <div class="answer">AI is a broader concept for developing smart machines; ML is a subset of AI that allows systems to learn from data automatically.</div> <div class="question">23. What is the difference between strong AI and weak AI?</div> <div class="answer">Strong AI possesses genuine intelligence and consciousness; weak AI specializes in specific tasks without human-like understanding.</div> <div class="question">24. Explain generative adversarial networks (GANs).</div> <div class="answer">GANs are neural architectures consisting of a generator and a discriminator competing in a zero-sum game to produce realistic synthetic data.</div> <div class="question">25. What is feature engineering?</div> <div class="answer">Feature engineering involves creating new input variables or transforming existing ones to improve model performance.</div> <div class="question">26. Define dimensionality reduction.</div> <div class="answer">Dimensionality reduction reduces the number of input variables in a dataset, often using methods like PCA or t-SNE, for simpler, faster models.</div> <div class="question">27. What is a decision tree?</div> <div class="answer">A decision tree is a supervised learning algorithm used for classification and regression, representing decisions with branching nodes.</div> <div class="question">28. What is ensemble learning?</div> <div class="answer">Ensemble learning combines multiple models to improve accuracy and robustness over a single model, e.g., bagging, boosting, stacking.</div> <div class="question">29. What is bias-variance tradeoff?</div> <div class="answer">It refers to the balance between a model’s simplicity (bias) and its sensitivity to fluctuations in the training data (variance).</div> <div class="question">30. What is the role of activation functions in neural networks?</div> <div class="answer">Activation functions introduce non-linearity into neural networks, enabling them to learn and perform complex tasks. Examples: ReLU, sigmoid, tanh.</div> <div class="question">31. What is dropout in deep learning?</div> <div class="answer">Dropout is a regularization method where randomly selected neurons are ignored during training, reducing overfitting.</div> <div class="question">32. What is backpropagation?</div> <div class="answer">Backpropagation is a training algorithm for neural networks that computes gradients to update model parameters, enabling learning.</div> <div class="question">33. Define convolutional neural networks (CNNs).</div> <div class="answer">CNNs are deep learning models effective for image processing, utilizing convolutional layers to extract spatial data features.</div> <div class="question">34. What are recurrent neural networks (RNNs)?</div> <div class="answer">RNNs are neural networks suitable for sequential data, like time series or text, as they maintain internal memory over input sequences.</div> <div class="question">35. What is reinforcement signal (reward)?</div> <div class="answer">A reinforcement signal or reward is feedback provided to an agent in reinforcement learning to guide its actions toward desired outcomes.</div> <div class="question">36. What is unsupervised clustering?</div> <div class="answer">Clustering is grouping unlabeled data points based on similarity using algorithms like K-means or hierarchical clustering.</div> <div class="question">37. What is K-means clustering?</div> <div class="answer">K-means is an unsupervised algorithm that partitions data into K clusters by minimizing intra-cluster variance.</div> <div class="question">38. What is a confusion matrix used for?</div> <div class="answer">It's used for evaluating classification model performance by comparing predicted and actual values across all classes.</div> <div class="question">39. What is a loss function?</div> <div class="answer">A loss function measures the difference between predicted and actual outputs, guiding model optimization.</div> <div class="question">40. Explain the difference between shallow and deep networks.</div> <div class="answer">Shallow networks have one or two hidden layers; deep networks have many, enabling them to learn complex representations.</div> <div class="question">41. What are support vector machines (SVM)?</div> <div class="answer">SVMs are supervised learning models for classification and regression, finding the hyperplane that best divides classes.</div> <div class="question">42. What is a perceptron?</div> <div class="answer">A perceptron is the basic unit of a neural network that performs binary classification using a linear function and activation.</div> <div class="question">43. What is data augmentation?</div> <div class="answer">Data augmentation artificially increases the size of training data by creating modified versions, improving model generalization.</div> <div class="question">44. What is an epoch in deep learning?</div> <div class="answer">An epoch is one complete pass through the entire training dataset during model training.</div> <div class="question">45. Define transfer learning.</div> <div class="answer">Transfer learning is applying knowledge from one trained model to a new problem, often by reusing weights or layers.</div> <div class="question">46. What is natural language understanding (NLU)?</div> <div class="answer">NLU is a subfield of NLP focused on machine comprehension and interpretation of human language.</div> <div class="question">47. What is natural language generation (NLG)?</div> <div class="answer">NLG is the process of generating meaningful phrases and sentences in human language from machine representations.</div> <div class="question">48. What are ethical concerns in AI?</div> <div class="answer">Ethical concerns include bias, transparency, accountability, privacy, consent, and the potential societal impact of AI decisions.</div> <div class="question">49. What are decision boundaries in classification?</div> <div class="answer">Decision boundaries are lines or surfaces that separate different classes in feature space, created by classifiers.</div> <div class="question">50. What is model interpretability?</div> <div class="answer">Model interpretability is the degree to which a human can understand the cause of a decision made by an AI model.</div> </section>
-  <section id="salesforce">
-  <h2>Salesforce Interview Questions and Answers</h2>
+<section class="content-section" id="ai">
+  <h2 class="section-title">Artificial Intelligence Interview Questions and Answers</h2>
 
-  <div class="question">1. What is Salesforce?</div>
-  <div class="answer">
-    Salesforce is a cloud-based customer relationship management (CRM) platform used to manage sales, customer service, marketing automation, analytics, and application development.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">1</span>What is Artificial Intelligence (AI)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Artificial Intelligence is the capability of a machine to imitate intelligent human behavior, including learning, reasoning, problem-solving, and perception.</div></div>
 
-  <div class="question">2. What are the different types of Salesforce clouds?</div>
-  <div class="answer">
-    Salesforce Clouds include Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, and Community Cloud.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">2</span>What are the different types of AI?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Types of AI include Narrow AI (Weak AI), General AI, and Superintelligent AI; based on functionalities: Reactive Machines, Limited Memory, Theory of Mind, and Self-aware AI.</div></div>
 
-  <div class="question">3. What is Apex?</div>
-  <div class="answer">
-    Apex is a strongly typed, object-oriented programming language used on the Salesforce platform for executing flow and transaction control statements on Salesforce servers.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">3</span>What is the Turing Test?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">The Turing Test, developed by Alan Turing, measures a machine’s ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human.</div></div>
 
-  <div class="question">4. What is a trigger in Salesforce?</div>
-  <div class="answer">
-    A trigger is Apex code that executes before or after record operations like insert, update, delete, or undelete to perform custom actions.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">4</span>Define machine learning.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Machine Learning is a subfield of AI that enables machines to learn from data and improve performance without explicit programming.</div></div>
 
-  <div class="question">5. What are governor limits in Salesforce?</div>
-  <div class="answer">
-    Governor limits are runtime limits enforced by Salesforce to ensure efficient resource usage and to prevent monopolization of shared resources.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">5</span>What are neural networks?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Neural networks are computing systems inspired by the human brain’s interconnected neuron structure, used to model complex patterns and prediction problems.</div></div>
 
-  <div class="question">6. What is a Workflow in Salesforce?</div>
-  <div class="answer">
-    Workflow is an automation tool that performs automated actions like field updates, email alerts, task creation, or outbound messages based on defined criteria.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">6</span>Explain supervised vs. unsupervised learning.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Supervised learning uses labeled data to map input to output; unsupervised learning finds patterns or groupings in unlabeled data.</div></div>
 
-  <div class="question">7. Explain the difference between a Role and Profile in Salesforce.</div>
-  <div class="answer">
-    Profiles define user permissions and access to objects and fields; Roles control record-level access through the role hierarchy.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">7</span>What is deep learning?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Deep learning is a subset of machine learning utilizing multi-layered neural networks to model complex patterns in data.</div></div>
 
-  <div class="question">8. What is a Salesforce Object?</div>
-  <div class="answer">
-    Objects are database tables in Salesforce that store data; standard objects are provided by Salesforce, while custom objects are user-defined.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">8</span>What are common applications of AI?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">AI is used in natural language processing, computer vision, robotics, expert systems, speech recognition, and recommendation engines.</div></div>
 
-  <div class="question">9. What is SOQL?</div>
-  <div class="answer">
-    SOQL (Salesforce Object Query Language) is a Salesforce database query language similar to SQL, used to query Salesforce objects.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">9</span>What is reinforcement learning?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Reinforcement learning is a learning paradigm where agents learn to take actions to maximize cumulative rewards in an environment.</div></div>
 
-  <div class="question">10. What is SOSL?</div>
-  <div class="answer">
-    SOSL (Salesforce Object Search Language) is used to perform text searches across multiple objects and fields.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">10</span>What is natural language processing (NLP)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">NLP is an AI field focused on enabling machines to understand, interpret, and generate human language.</div></div>
 
-  <div class="question">11. What are Governor Limits and why are they important?</div>
-  <div class="answer">
-    Governor Limits prevent excessive consumption of shared resources in a multi-tenant environment to maintain system performance.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">11</span>What is computer vision?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Computer vision is an AI branch that enables computers to interpret and process visual information from the world, such as images and videos.</div></div>
 
-  <div class="question">12. How can you handle exceptions in Apex?</div>
-  <div class="answer">
-    Use try-catch blocks to handle exceptions in Apex code and use custom exceptions for specific error handling scenarios.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">12</span>What are expert systems?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Expert systems are computer programs that emulate the decision-making abilities of human experts in specific domains using rules and knowledge bases.</div></div>
 
-  <div class="question">13. What is a Visualforce page?</div>
-  <div class="answer">
-    Visualforce is a framework for building custom user interfaces in Salesforce using a tag-based markup language and Apex controllers.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">13</span>What is a chatbot?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A chatbot is an AI-powered software program that conducts online chats via text or voice, simulating human conversation.</div></div>
 
-  <div class="question">14. What is Lightning Component Framework?</div>
-  <div class="answer">
-    Lightning Framework is a UI framework for developing dynamic web apps for desktop and mobile devices in Salesforce using components.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">14</span>Explain the term "overfitting" in machine learning.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Overfitting refers to a model that learns both data and noise, performing well on training data but poorly on unseen data.</div></div>
 
-  <div class="question">15. What is a Custom Metadata Type?</div>
-  <div class="answer">
-    Custom Metadata Types allow developers to define metadata records that can be packaged and deployed and accessed similar to custom settings.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">15</span>What is underfitting in machine learning?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Underfitting means the model is too simple to capture the underlying patterns in the data, resulting in poor performance on both training and test sets.</div></div>
 
-  <div class="question">16. Explain the difference between Public Groups and Queues in Salesforce.</div>
-  <div class="answer">
-    Public Groups are collections of users used for sharing rules and visibility, while Queues are used to prioritize, distribute, and assign records to teams.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">16</span>What is transfer learning?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Transfer learning leverages knowledge from a model trained on one task to improve learning on a related task.</div></div>
 
-  <div class="question">17. What is a Lightning Web Component (LWC)?</div>
-  <div class="answer">
-    LWC is a modern, lightweight framework for building fast web components on Salesforce using standard web technologies.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">17</span>Describe a confusion matrix.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A confusion matrix is a table used to evaluate classification models, showing true positives, true negatives, false positives, and false negatives.</div></div>
 
-  <div class="question">18. What is Sharing Rule?</div>
-  <div class="answer">
-    Sharing Rules are used to extend record access to users based on role, public groups, or territories beyond organization-wide defaults.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">18</span>What is accuracy in machine learning?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Accuracy is the ratio of correctly predicted observations to the total observations, often used as a metric for classification models.</div></div>
 
-  <div class="question">19. What is SOQL and can you perform queries on multiple objects?</div>
-  <div class="answer">
-    SOQL queries a single object and related objects using relationships, but it cannot perform a full join across unrelated objects.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">19</span>What is precision and recall?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Precision is the ratio of true positives to all positive predictions; recall is the ratio of true positives to all actual positives.</div></div>
 
-  <div class="question">20. What is the difference between Upsert and Merge in Salesforce?</div>
-  <div class="answer">
-    Upsert inserts or updates records based on a field match; Merge combines up to three duplicate records into one.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">20</span>What is F1 score?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">The F1 score is the harmonic mean of precision and recall, providing a balance between them for model evaluation.</div></div>
 
-  <div class="question">21. Explain what is a trigger handler pattern.</div>
-  <div class="answer">
-    Trigger handler pattern separates business logic from triggers into Apex classes for cleaner, reusable, and testable code.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">21</span>What is regularization?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Regularization is a technique in machine learning that discourages model complexity to prevent overfitting, using methods like L1 and L2 regularization.</div></div>
 
-  <div class="question">22. What is a sandbox in Salesforce?</div>
-  <div class="answer">
-    A sandbox is a copy of the production environment used for development, testing, and training without affecting production data.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">22</span>What are the differences between AI and ML?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">AI is a broader concept for developing smart machines; ML is a subset of AI that allows systems to learn from data automatically.</div></div>
 
-  <div class="question">23. What types of sandboxes exist in Salesforce?</div>
-  <div class="answer">
-    Developer, Developer Pro, Partial Copy, and Full sandboxes varying in storage size and data they contain.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">23</span>What is the difference between strong AI and weak AI?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Strong AI possesses genuine intelligence and consciousness; weak AI specializes in specific tasks without human-like understanding.</div></div>
 
-  <div class="question">24. What is a Junction Object?</div>
-  <div class="answer">
-    A junction object is a custom object with two master-detail relationships used to create many-to-many relationships.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">24</span>Explain generative adversarial networks (GANs).</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">GANs are neural architectures consisting of a generator and a discriminator competing in a zero-sum game to produce realistic synthetic data.</div></div>
 
-  <div class="question">25. What are formula fields?</div>
-  <div class="answer">
-    Formula fields automatically calculate a value based on other fields using formulas; they are read-only and updated dynamically.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">25</span>What is feature engineering?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Feature engineering involves creating new input variables or transforming existing ones to improve model performance.</div></div>
 
-  <div class="question">26. Explain the Order of Execution in Salesforce.</div>
-  <div class="answer">
-    The order includes: triggers, workflow rules, processes, escalation rules, roll-up summary fields, and commit to database.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">26</span>Define dimensionality reduction.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Dimensionality reduction reduces the number of input variables in a dataset, often using methods like PCA or t-SNE, for simpler, faster models.</div></div>
 
-  <div class="question">27. How can you deploy metadata from Sandbox to Production?</div>
-  <div class="answer">
-    Using Change Sets, ANT Migration Tool, Salesforce DX, or third-party deployment tools.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">27</span>What is a decision tree?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A decision tree is a supervised learning algorithm used for classification and regression, representing decisions with branching nodes.</div></div>
 
-  <div class="question">28. What is a Roll-Up Summary Field?</div>
-  <div class="answer">
-    A roll-up summary field calculates values (SUM, COUNT, MIN, MAX) from related child records on a master record.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">28</span>What is ensemble learning?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Ensemble learning combines multiple models to improve accuracy and robustness over a single model, e.g., bagging, boosting, stacking.</div></div>
 
-  <div class="question">29. What are Salesforce Objects and their types?</div>
-  <div class="answer">
-    Objects store data in Salesforce; types include Standard Objects (Accounts, Contacts), Custom Objects, and External Objects.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">29</span>What is bias-variance tradeoff?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">It refers to the balance between a model’s simplicity (bias) and its sensitivity to fluctuations in the training data (variance).</div></div>
 
-  <div class="question">30. What is a permission set?</div>
-  <div class="answer">
-    Permission sets extend user permissions without changing the user's profile.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">30</span>What is the role of activation functions in neural networks?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Activation functions introduce non-linearity into neural networks, enabling them to learn and perform complex tasks. Examples: ReLU, sigmoid, tanh.</div></div>
 
-  <div class="question">31. What is a Lightning App Builder?</div>
-  <div class="answer">
-    A point-and-click tool to build custom pages for Lightning Experience and mobile apps.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">31</span>What is dropout in deep learning?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Dropout is a regularization method where randomly selected neurons are ignored during training, reducing overfitting.</div></div>
 
-  <div class="question">32. What is a governor limit and give examples?</div>
-  <div class="answer">
-    Limits to protect multi-tenant architecture, e.g., maximum number of SOQL queries (100), maximum CPU time.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">32</span>What is backpropagation?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Backpropagation is a training algorithm for neural networks that computes gradients to update model parameters, enabling learning.</div></div>
 
-  <div class="question">33. What are workflows and process builders?</div>
-  <div class="answer">
-    Workflow rules automate simple business processes; Process Builder can automate more complex processes with multiple steps.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">33</span>Define convolutional neural networks (CNNs).</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">CNNs are deep learning models effective for image processing, utilizing convolutional layers to extract spatial data features.</div></div>
 
-  <div class="question">34. What is the difference between Process Builder and Flow?</div>
-  <div class="answer">
-    Process Builder handles linear flows; Flow supports complex logic, screens, and can call sub-flows.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">34</span>What are recurrent neural networks (RNNs)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">RNNs are neural networks suitable for sequential data, like time series or text, as they maintain internal memory over input sequences.</div></div>
 
-  <div class="question">35. How do you test Apex code?</div>
-  <div class="answer">
-    Write test methods using @isTest annotation that cover positive and negative cases with assertions.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">35</span>What is reinforcement signal (reward)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A reinforcement signal or reward is feedback provided to an agent in reinforcement learning to guide its actions toward desired outcomes.</div></div>
 
-  <div class="question">36. What are the types of relationships in Salesforce?</div>
-  <div class="answer">
-    Lookup, master-detail, and hierarchical relationships.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">36</span>What is unsupervised clustering?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Clustering is grouping unlabeled data points based on similarity using algorithms like K-means or hierarchical clustering.</div></div>
 
-  <div class="question">37. What is the difference between Lookup and Master-Detail relationships?</div>
-  <div class="answer">
-    Master-detail tightly links objects with cascade delete; lookup is looser linkage without cascade delete.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">37</span>What is K-means clustering?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">K-means is an unsupervised algorithm that partitions data into K clusters by minimizing intra-cluster variance.</div></div>
 
-  <div class="question">38. What is Visual Workflow?</div>
-  <div class="answer">
-    Visual Workflow (Flow Builder) allows admins to create automated workflows with user interaction via drag-and-drop.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">38</span>What is a confusion matrix used for?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">It's used for evaluating classification model performance by comparing predicted and actual values across all classes.</div></div>
 
-  <div class="question">39. What tools are available for Salesforce integration?</div>
-  <div class="answer">
-    REST API, SOAP API, Bulk API, Streaming API, and Apex callouts.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">39</span>What is a loss function?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A loss function measures the difference between predicted and actual outputs, guiding model optimization.</div></div>
 
-  <div class="question">40. What is a report type?</div>
-  <div class="answer">
-    Defines which objects and fields are available in Salesforce reports.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">40</span>Explain the difference between shallow and deep networks.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Shallow networks have one or two hidden layers; deep networks have many, enabling them to learn complex representations.</div></div>
 
-  <div class="question">41. What is a Lightning Record Page?</div>
-  <div class="answer">
-    A customizable UI page for standard or custom objects in Lightning Experience.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">41</span>What are support vector machines (SVM)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">SVMs are supervised learning models for classification and regression, finding the hyperplane that best divides classes.</div></div>
 
-  <div class="question">42. How do you control record visibility?</div>
-  <div class="answer">
-    Using Organization-Wide Defaults, roles, sharing rules, manual sharing, and profiles/permission sets.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">42</span>What is a perceptron?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A perceptron is the basic unit of a neural network that performs binary classification using a linear function and activation.</div></div>
 
-  <div class="question">43. Explain batch Apex.</div>
-  <div class="answer">
-    Batch Apex allows processing of large records asynchronously in batches to avoid governor limits.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">43</span>What is data augmentation?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Data augmentation artificially increases the size of training data by creating modified versions, improving model generalization.</div></div>
 
-  <div class="question">44. What is dynamic Apex?</div>
-  <div class="answer">
-    Dynamic Apex enables querying and interacting with metadata and sObjects at runtime.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">44</span>What is an epoch in deep learning?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">An epoch is one complete pass through the entire training dataset during model training.</div></div>
 
-  <div class="question">45. What is the Lightning Design System?</div>
-  <div class="answer">
-    A CSS framework to build consistent, responsive, and accessible Salesforce apps.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">45</span>Define transfer learning.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Transfer learning is applying knowledge from one trained model to a new problem, often by reusing weights or layers.</div></div>
 
-  <div class="question">46. What happens if you exceed governor limits?</div>
-  <div class="answer">
-    The transaction fails with a runtime exception, rolling back database changes.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">46</span>What is natural language understanding (NLU)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">NLU is a subfield of NLP focused on machine comprehension and interpretation of human language.</div></div>
 
-  <div class="question">47. What is a Connected App?</div>
-  <div class="answer">
-    An app that integrates external applications with Salesforce using APIs and authentication protocols.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">47</span>What is natural language generation (NLG)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">NLG is the process of generating meaningful phrases and sentences in human language from machine representations.</div></div>
 
-  <div class="question">48. How do you schedule Apex code?</div>
-  <div class="answer">
-    Implement the Schedulable interface and use the System.schedule method.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">48</span>What are ethical concerns in AI?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Ethical concerns include bias, transparency, accountability, privacy, consent, and the potential societal impact of AI decisions.</div></div>
 
-  <div class="question">49. What is Platform Events?</div>
-  <div class="answer">
-    Platform Events are part of the event-driven architecture, allowing apps to communicate asynchronously via event messages.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">49</span>What are decision boundaries in classification?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Decision boundaries are lines or surfaces that separate different classes in feature space, created by classifiers.</div></div>
 
-  <div class="question">50. What is the use of @future annotation?</div>
-  <div class="answer">
-    To run methods asynchronously in a separate thread for operations such as callouts or long-running processes.
-  </div>
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">50</span>What is model interpretability?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Model interpretability is the degree to which a human can understand the cause of a decision made by an AI model.</div></div>
+</section>
+
+<section class="content-section" id="salesforce">
+  <h2 class="section-title">Salesforce Interview Questions and Answers</h2>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">1</span>What is Salesforce?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Salesforce is a cloud-based customer relationship management (CRM) platform used to manage sales, customer service, marketing automation, analytics, and application development.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">2</span>What are the different types of Salesforce clouds?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Salesforce Clouds include Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, and Community Cloud.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">3</span>What is Apex?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Apex is a strongly typed, object-oriented programming language used on the Salesforce platform for executing flow and transaction control statements on Salesforce servers.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">4</span>What is a trigger in Salesforce?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A trigger is Apex code that executes before or after record operations like insert, update, delete, or undelete to perform custom actions.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">5</span>What are governor limits in Salesforce?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Governor limits are runtime limits enforced by Salesforce to ensure efficient resource usage and to prevent monopolization of shared resources.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">6</span>What is a Workflow in Salesforce?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Workflow is an automation tool that performs automated actions like field updates, email alerts, task creation, or outbound messages based on defined criteria.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">7</span>Explain the difference between a Role and Profile in Salesforce.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Profiles define user permissions and access to objects and fields; Roles control record-level access through the role hierarchy.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">8</span>What is a Salesforce Object?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Objects are database tables in Salesforce that store data; standard objects are provided by Salesforce, while custom objects are user-defined.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">9</span>What is SOQL?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">SOQL (Salesforce Object Query Language) is a Salesforce database query language similar to SQL, used to query Salesforce objects.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">10</span>What is SOSL?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">SOSL (Salesforce Object Search Language) is used to perform text searches across multiple objects and fields.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">11</span>What are Governor Limits and why are they important?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Governor Limits prevent excessive consumption of shared resources in a multi-tenant environment to maintain system performance.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">12</span>How can you handle exceptions in Apex?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Use try-catch blocks to handle exceptions in Apex code and use custom exceptions for specific error handling scenarios.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">13</span>What is a Visualforce page?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Visualforce is a framework for building custom user interfaces in Salesforce using a tag-based markup language and Apex controllers.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">14</span>What is Lightning Component Framework?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Lightning Framework is a UI framework for developing dynamic web apps for desktop and mobile devices in Salesforce using components.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">15</span>What is a Custom Metadata Type?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Custom Metadata Types allow developers to define metadata records that can be packaged and deployed and accessed similar to custom settings.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">16</span>Explain the difference between Public Groups and Queues in Salesforce.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Public Groups are collections of users used for sharing rules and visibility, while Queues are used to prioritize, distribute, and assign records to teams.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">17</span>What is a Lightning Web Component (LWC)?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">LWC is a modern, lightweight framework for building fast web components on Salesforce using standard web technologies.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">18</span>What is Sharing Rule?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Sharing Rules are used to extend record access to users based on role, public groups, or territories beyond organization-wide defaults.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">19</span>What is SOQL and can you perform queries on multiple objects?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">SOQL queries a single object and related objects using relationships, but it cannot perform a full join across unrelated objects.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">20</span>What is the difference between Upsert and Merge in Salesforce?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Upsert inserts or updates records based on a field match; Merge combines up to three duplicate records into one.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">21</span>Explain what is a trigger handler pattern.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Trigger handler pattern separates business logic from triggers into Apex classes for cleaner, reusable, and testable code.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">22</span>What is a sandbox in Salesforce?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A sandbox is a copy of the production environment used for development, testing, and training without affecting production data.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">23</span>What types of sandboxes exist in Salesforce?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Developer, Developer Pro, Partial Copy, and Full sandboxes varying in storage size and data they contain.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">24</span>What is a Junction Object?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A junction object is a custom object with two master-detail relationships used to create many-to-many relationships.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">25</span>What are formula fields?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Formula fields automatically calculate a value based on other fields using formulas; they are read-only and updated dynamically.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">26</span>Explain the Order of Execution in Salesforce.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">The order includes: triggers, workflow rules, processes, escalation rules, roll-up summary fields, and commit to database.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">27</span>How can you deploy metadata from Sandbox to Production?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Using Change Sets, ANT Migration Tool, Salesforce DX, or third-party deployment tools.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">28</span>What is a Roll-Up Summary Field?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A roll-up summary field calculates values (SUM, COUNT, MIN, MAX) from related child records on a master record.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">29</span>What are Salesforce Objects and their types?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Objects store data in Salesforce; types include Standard Objects (Accounts, Contacts), Custom Objects, and External Objects.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">30</span>What is a permission set?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Permission sets extend user permissions without changing the user's profile.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">31</span>What is a Lightning App Builder?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A point-and-click tool to build custom pages for Lightning Experience and mobile apps.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">32</span>What is a governor limit and give examples?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Limits to protect multi-tenant architecture, e.g., maximum number of SOQL queries (100), maximum CPU time.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">33</span>What are workflows and process builders?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Workflow rules automate simple business processes; Process Builder can automate more complex processes with multiple steps.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">34</span>What is the difference between Process Builder and Flow?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Process Builder handles linear flows; Flow supports complex logic, screens, and can call sub-flows.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">35</span>How do you test Apex code?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Write test methods using @isTest annotation that cover positive and negative cases with assertions.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">36</span>What are the types of relationships in Salesforce?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Lookup, master-detail, and hierarchical relationships.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">37</span>What is the difference between Lookup and Master-Detail relationships?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Master-detail tightly links objects with cascade delete; lookup is looser linkage without cascade delete.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">38</span>What is Visual Workflow?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Visual Workflow (Flow Builder) allows admins to create automated workflows with user interaction via drag-and-drop.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">39</span>What tools are available for Salesforce integration?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">REST API, SOAP API, Bulk API, Streaming API, and Apex callouts.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">40</span>What is a report type?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Defines which objects and fields are available in Salesforce reports.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">41</span>What is a Lightning Record Page?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A customizable UI page for standard or custom objects in Lightning Experience.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">42</span>How do you control record visibility?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Using Organization-Wide Defaults, roles, sharing rules, manual sharing, and profiles/permission sets.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">43</span>Explain batch Apex.</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Batch Apex allows processing of large records asynchronously in batches to avoid governor limits.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">44</span>What is dynamic Apex?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">Dynamic Apex enables querying and interacting with metadata and sObjects at runtime.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">45</span>What is the Lightning Design System?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">A CSS framework to build consistent, responsive, and accessible Salesforce apps.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">46</span>What happens if you exceed governor limits?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">The transaction fails with a runtime exception, rolling back database changes.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">47</span>What is a Connected App?</span><span class="toggle-icon">&#x25BC;</span></div><div class="answer">An app that integrates external applications with Salesforce using APIs and authentication protocols.</div></div>
+
+  <div class="question-card"><div class="question" onclick="toggleAnswer(this)"><span><span class="question-number">48</span>How do you schedule Apex code?</span><
 </section>
 <section id="python">
   <h2>Python Interview Questions and Answers</h2>
