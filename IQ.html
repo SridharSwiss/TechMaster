@@ -781,160 +781,408 @@
     <div class="answer">Use techniques like salting keys, broadcasting small tables, leveraging custom partitioning, or applying map-side reductions to manage data skew.</div>
   </div>
 
-</section>
-<section id="sql">
-  <h2>SQL Interview Questions and Answers</h2>
+<section class="content-section" id="sql">
+  <h2 class="section-title">SQL Interview Questions and Answers</h2>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">1</span>What is SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">SQL stands for Structured Query Language, designed for managing and manipulating relational databases.</div>
+  </div>
 
-  <div class="question">1. What is SQL?</div>
-  <div class="answer">SQL stands for Structured Query Language, designed for managing and manipulating relational databases.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">2</span>What are the different types of SQL statements?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">DDL (Data Definition Language), DML (Data Manipulation Language), DCL (Data Control Language), TCL (Transaction Control Language).</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">3</span>What is a primary key?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A primary key uniquely identifies each row in a table and cannot contain NULL values.</div>
+  </div>
 
-  <div class="question">2. What are the different types of SQL statements?</div>
-  <div class="answer">DDL (Data Definition Language), DML (Data Manipulation Language), DCL (Data Control Language), TCL (Transaction Control Language).</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">4</span>What is a foreign key?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A foreign key is a field in one table that refers to the primary key in another table, establishing a relationship between tables.</div>
+  </div>
 
-  <div class="question">3. What is a primary key?</div>
-  <div class="answer">A primary key uniquely identifies each row in a table and cannot contain NULL values.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">5</span>What are joins in SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Joins combine rows from two or more tables based on a related column. Types include INNER, LEFT, RIGHT, and FULL OUTER JOIN.</div>
+  </div>
 
-  <div class="question">4. What is a foreign key?</div>
-  <div class="answer">A foreign key is a field in one table that refers to the primary key in another table, establishing a relationship between tables.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">6</span>What is normalization?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Normalization is the process of organizing data in a database to minimize redundancy and improve data integrity.</div>
+  </div>
 
-  <div class="question">5. What are joins in SQL?</div>
-  <div class="answer">Joins combine rows from two or more tables based on a related column. Types include INNER, LEFT, RIGHT, and FULL OUTER JOIN.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">7</span>What is denormalization?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Denormalization is the process of adding redundant data to speed up read operations, sometimes at the cost of write performance and storage.</div>
+  </div>
 
-  <div class="question">6. What is normalization?</div>
-  <div class="answer">Normalization is the process of organizing data in a database to minimize redundancy and improve data integrity.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">8</span>What is an index in SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An index is a database object that improves the speed of data retrieval operations on a table at the cost of additional writes and storage.</div>
+  </div>
 
-  <div class="question">7. What is denormalization?</div>
-  <div class="answer">Denormalization is the process of adding redundant data to speed up read operations, sometimes at the cost of write performance and storage.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">9</span>What are the differences between clustered and non-clustered indexes?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A clustered index sorts and stores the data rows physically in the table, while a non-clustered index creates a separate structure for the index with pointers to the data rows.</div>
+  </div>
 
-  <div class="question">8. What is an index in SQL?</div>
-  <div class="answer">An index is a database object that improves the speed of data retrieval operations on a table at the cost of additional writes and storage.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">10</span>What is a view in SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A view is a virtual table based on the result of a SELECT query, stored in the database without holding actual data.</div>
+  </div>
 
-  <div class="question">9. What are the differences between clustered and non-clustered indexes?</div>
-  <div class="answer">A clustered index sorts and stores the data rows physically in the table, while a non-clustered index creates a separate structure for the index with pointers to the data rows.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">11</span>What is a stored procedure?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A stored procedure is a precompiled collection of one or more SQL statements that can be executed as a program.</div>
+  </div>
 
-  <div class="question">10. What is a view in SQL?</div>
-  <div class="answer">A view is a virtual table based on the result of a SELECT query, stored in the database without holding actual data.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">12</span>What is a trigger?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A trigger is a procedural code that is automatically executed in response to certain events on a particular table or view, such as INSERT, UPDATE, or DELETE.</div>
+  </div>
 
-  <div class="question">11. What is a stored procedure?</div>
-  <div class="answer">A stored procedure is a precompiled collection of one or more SQL statements that can be executed as a program.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">13</span>What is a subquery?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A subquery is a query nested within another SQL query, often used in WHERE or HAVING clauses.</div>
+  </div>
 
-  <div class="question">12. What is a trigger?</div>
-  <div class="answer">A trigger is a procedural code that is automatically executed in response to certain events on a particular table or view, such as INSERT, UPDATE, or DELETE.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">14</span>What is a correlated subquery?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A correlated subquery depends on values from the outer query and is evaluated for each row processed by the outer query.</div>
+  </div>
 
-  <div class="question">13. What is a subquery?</div>
-  <div class="answer">A subquery is a query nested within another SQL query, often used in WHERE or HAVING clauses.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">15</span>What is the difference between WHERE and HAVING?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">WHERE filters rows before grouping, HAVING filters groups after aggregation.</div>
+  </div>
 
-  <div class="question">14. What is a correlated subquery?</div>
-  <div class="answer">A correlated subquery depends on values from the outer query and is evaluated for each row processed by the outer query.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">16</span>What does GROUP BY do?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">GROUP BY groups rows that have the same values in specified columns for aggregate functions like COUNT, SUM, AVG, etc.</div>
+  </div>
 
-  <div class="question">15. What is the difference between WHERE and HAVING?</div>
-  <div class="answer">WHERE filters rows before grouping, HAVING filters groups after aggregation.</div>
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">17</span>What is an aggregate function?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Aggregate functions perform calculations on multiple values to return a single value, e.g., COUNT(), SUM(), AVG(), MAX(), MIN().</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">18</span>How do you retrieve unique records in SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use the DISTINCT keyword in your SELECT statement.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">19</span>What is a transaction?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A transaction is a unit of work performed within a database management system against a database, treated as a single logical operation.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">20</span>What are the ACID properties?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Atomicity, Consistency, Isolation, and Durability—properties that guarantee reliable processing of database transactions.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">21</span>What is a constraint?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A constraint enforces rules at the table level, e.g., NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">22</span>How do you prevent SQL injection?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use prepared statements, parameterized queries, and input validation to prevent SQL injection.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">23</span>What is UNION in SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">UNION is used to combine the result sets of two or more SELECT statements, removing duplicates.</div>
+  </div>
 
-  <div class="question">16. What does GROUP BY do?</div>
-  <div class="answer">GROUP BY groups rows that have the same values in specified columns for aggregate functions like COUNT, SUM, AVG, etc.</div>
-
-  <div class="question">17. What is an aggregate function?</div>
-  <div class="answer">Aggregate functions perform calculations on multiple values to return a single value, e.g., COUNT(), SUM(), AVG(), MAX(), MIN().</div>
-
-  <div class="question">18. How do you retrieve unique records in SQL?</div>
-  <div class="answer">Use the DISTINCT keyword in your SELECT statement.</div>
-
-  <div class="question">19. What is a transaction?</div>
-  <div class="answer">A transaction is a unit of work performed within a database management system against a database, treated as a single logical operation.</div>
-
-  <div class="question">20. What are the ACID properties?</div>
-  <div class="answer">Atomicity, Consistency, Isolation, and Durability—properties that guarantee reliable processing of database transactions.</div>
-
-  <div class="question">21. What is a constraint?</div>
-  <div class="answer">A constraint enforces rules at the table level, e.g., NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, DEFAULT.</div>
-
-  <div class="question">22. How do you prevent SQL injection?</div>
-  <div class="answer">Use prepared statements, parameterized queries, and input validation to prevent SQL injection.</div>
-
-  <div class="question">23. What is UNION in SQL?</div>
-  <div class="answer">UNION is used to combine the result sets of two or more SELECT statements, removing duplicates.</div>
-
-  <div class="question">24. What is UNION ALL?</div>
-  <div class="answer">UNION ALL combines the result sets of two or more SELECT statements, including duplicates.</div>
-
-  <div class="question">25. What is the difference between DELETE and TRUNCATE?</div>
-  <div class="answer">DELETE removes rows one at a time and can use a WHERE clause; TRUNCATE removes all rows and cannot be rolled back in some databases.</div>
-
-  <div class="question">26. What is a self-join?</div>
-  <div class="answer">A self-join is a query in which a table is joined with itself, useful for hierarchical or recursive data relationships.</div>
-
-  <div class="question">27. What is a cross join?</div>
-  <div class="answer">A cross join returns the Cartesian product of two tables, combining all rows from the first table with all rows from the second.</div>
-
-  <div class="question">28. How do you add a new column to an existing table?</div>
-  <div class="answer">Use <code>ALTER TABLE table_name ADD column_name datatype</code>.</div>
-
-  <div class="question">29. How do you update data in a table?</div>
-  <div class="answer">Use the UPDATE command with a SET clause: <code>UPDATE table SET column = value WHERE condition</code>.</div>
-
-  <div class="question">30. How do you delete a table?</div>
-  <div class="answer">Use <code>DROP TABLE table_name</code> to remove the entire table structure and its data.</div>
-
-  <div class="question">31. What is a composite key?</div>
-  <div class="answer">A composite key is a primary key composed of two or more columns to uniquely identify a row.</div>
-
-  <div class="question">32. What is an alias in SQL?</div>
-  <div class="answer">An alias is a temporary name given to a table or column for the purpose of a particular SQL query, using the AS keyword.</div>
-
-  <div class="question">33. How can you limit the number of rows returned?</div>
-  <div class="answer">Use the LIMIT or TOP keyword depending on the database (e.g., LIMIT 10 in MySQL/Postgres, TOP 10 in SQL Server).</div>
-
-  <div class="question">34. What is NULL in SQL?</div>
-  <div class="answer">NULL represents missing or unknown data in a table cell.</div>
-
-  <div class="question">35. How do you test for NULL values?</div>
-  <div class="answer">Use IS NULL or IS NOT NULL operators, e.g., <code>WHERE column IS NULL</code>.</div>
-
-  <div class="question">36. What is the difference between CHAR and VARCHAR?</div>
-  <div class="answer">CHAR is a fixed-length string, while VARCHAR is variable-length. VARCHAR is more space efficient for varying-length data.</div>
-
-  <div class="question">37. What is a CTE (Common Table Expression)?</div>
-  <div class="answer">A CTE is a temporary result set defined within the execution scope of a single SQL statement using the WITH clause.</div>
-
-  <div class="question">38. What are window functions?</div>
-  <div class="answer">Window functions perform calculations across a set of rows related to the current row within the query result set.</div>
-
-  <div class="question">39. How do you get the second highest salary from an Employee table?</div>
-  <div class="answer">Use a subquery: <code>SELECT MAX(salary) FROM employee WHERE salary &lt; (SELECT MAX(salary) FROM employee)</code>.</div>
-
-  <div class="question">40. What does the CASE statement do?</div>
-  <div class="answer">The CASE statement provides conditional logic similar to if-else in SQL, returning values based on conditions.</div>
-
-  <div class="question">41. What is a materialized view?</div>
-  <div class="answer">A materialized view is a database object containing the results of a query that are stored physically and can be refreshed periodically.</div>
-
-  <div class="question">42. What is the difference between SFW and SFWR (SELECT-FROM-WHERE[-RETURN]) queries?</div>
-  <div class="answer">SFW is used in most relational SQL queries; SFWR is a logical extension in some systems for returning complex data.</div>
-
-  <div class="question">43. How can you copy data from one table to another?</div>
-  <div class="answer"><code>INSERT INTO table2 (columns) SELECT ... FROM table1 WHERE ...</code>.</div>
-
-  <div class="question">44. What is the difference between union and join?</div>
-  <div class="answer">UNION combines result sets vertically (same columns), while JOIN combines tables horizontally based on relationships between them.</div>
-
-  <div class="question">45. How do you rename a table?</div>
-  <div class="answer">Use <code>ALTER TABLE old_name RENAME TO new_name</code>.</div>
-
-  <div class="question">46. What are scalar vs. aggregate functions?</div>
-  <div class="answer">Scalar functions return a single value per row, aggregate functions compute a single value from multiple rows.</div>
-
-  <div class="question">47. How do you find duplicate rows?</div>
-  <div class="answer">Use GROUP BY with HAVING COUNT(*) > 1 on the relevant columns.</div>
-
-  <div class="question">48. What are the advantages of using indexes?</div>
-  <div class="answer">Indexes speed up data retrieval but can slow down write operations and consume disk space.</div>
-
-  <div class="question">49. What is database schema?</div>
-  <div class="answer">A schema is the organizational blueprint of the database structure, including tables, columns, relationships, indexes, and views.</div>
-
-  <div class="question">50. What does the EXPLAIN keyword do?</div>
-  <div class="answer">EXPLAIN shows the execution plan of a SQL statement, helping optimize queries and understand their behavior.</div>
-
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">24</span>What is UNION ALL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">UNION ALL combines the result sets of two or more SELECT statements, including duplicates.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">25</span>What is the difference between DELETE and TRUNCATE?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">DELETE removes rows one at a time and can use a WHERE clause; TRUNCATE removes all rows and cannot be rolled back in some databases.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">26</span>What is a self-join?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A self-join is a query in which a table is joined with itself, useful for hierarchical or recursive data relationships.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">27</span>What is a cross join?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A cross join returns the Cartesian product of two tables, combining all rows from the first table with all rows from the second.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">28</span>How do you add a new column to an existing table?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>ALTER TABLE table_name ADD column_name datatype</code>.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">29</span>How do you update data in a table?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use the UPDATE command with a SET clause: <code>UPDATE table SET column = value WHERE condition</code>.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">30</span>How do you delete a table?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>DROP TABLE table_name</code> to remove the entire table structure and its data.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">31</span>What is a composite key?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A composite key is a primary key composed of two or more columns to uniquely identify a row.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">32</span>What is an alias in SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">An alias is a temporary name given to a table or column for the purpose of a particular SQL query, using the AS keyword.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">33</span>How can you limit the number of rows returned?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use the LIMIT or TOP keyword depending on the database (e.g., LIMIT 10 in MySQL/Postgres, TOP 10 in SQL Server).</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">34</span>What is NULL in SQL?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">NULL represents missing or unknown data in a table cell.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">35</span>How do you test for NULL values?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use IS NULL or IS NOT NULL operators, e.g., <code>WHERE column IS NULL</code>.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">36</span>What is the difference between CHAR and VARCHAR?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">CHAR is a fixed-length string, while VARCHAR is variable-length. VARCHAR is more space efficient for varying-length data.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">37</span>What is a CTE (Common Table Expression)?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A CTE is a temporary result set defined within the execution scope of a single SQL statement using the WITH clause.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">38</span>What are window functions?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Window functions perform calculations across a set of rows related to the current row within the query result set.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">39</span>How do you get the second highest salary from an Employee table?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use a subquery: <code>SELECT MAX(salary) FROM employee WHERE salary &lt; (SELECT MAX(salary) FROM employee)</code>.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">40</span>What does the CASE statement do?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">The CASE statement provides conditional logic similar to if-else in SQL, returning values based on conditions.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">41</span>What is a materialized view?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A materialized view is a database object containing the results of a query that are stored physically and can be refreshed periodically.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">42</span>What is the difference between SFW and SFWR (SELECT-FROM-WHERE[-RETURN]) queries?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">SFW is used in most relational SQL queries; SFWR is a logical extension in some systems for returning complex data.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">43</span>How can you copy data from one table to another?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer"><code>INSERT INTO table2 (columns) SELECT ... FROM table1 WHERE ...</code>.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">44</span>What is the difference between union and join?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">UNION combines result sets vertically (same columns), while JOIN combines tables horizontally based on relationships between them.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">45</span>How do you rename a table?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use <code>ALTER TABLE old_name RENAME TO new_name</code>.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">46</span>What are scalar vs. aggregate functions?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Scalar functions return a single value per row, aggregate functions compute a single value from multiple rows.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">47</span>How do you find duplicate rows?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Use GROUP BY with HAVING COUNT(*) &gt; 1 on the relevant columns.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">48</span>What are the advantages of using indexes?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">Indexes speed up data retrieval but can slow down write operations and consume disk space.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">49</span>What is database schema?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">A schema is the organizational blueprint of the database structure, including tables, columns, relationships, indexes, and views.</div>
+  </div>
+  
+  <div class="question-card">
+    <div class="question" onclick="toggleAnswer(this)">
+      <span><span class="question-number">50</span>What does the EXPLAIN keyword do?</span>
+      <span class="toggle-icon">&#x25BC;</span>
+    </div>
+    <div class="answer">EXPLAIN shows the execution plan of a SQL statement, helping optimize queries and understand their behavior.</div>
+  </div>
 </section>
 <section id="css">
   <h2>CSS Interview Questions and Answers</h2>
