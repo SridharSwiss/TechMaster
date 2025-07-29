@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Python Mastery Pathway Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals (e.g., Beige, Taupe, Soft Gray) with a calming Blue accent -->
+    <!-- Application Structure Plan: An interactive "Course Explorer" SPA. The core is a visual, clickable pathway diagram (Pre-course -> Beginner -> Intermediate -> Advanced). Clicking a stage dynamically updates a content area with its modules, objectives, and a Chart.js visualization of learning hours. The Advanced stage includes a sub-selector for the three specialization tracks. This structure transforms the report into an engaging, user-driven exploration tool, prioritizing curriculum flow over the original document's linear structure. -->
+    <!-- Visualization & Content Choices: 1. Curriculum Pathway (Report Info: Course Structure -> Goal: Organize/Navigate -> Viz: Interactive HTML/CSS Diagram -> Interaction: Click to reveal stage details -> Justification: Visual, intuitive navigation). 2. Learning Hours (Report Info: Table 2 & implicit hours -> Goal: Compare -> Viz: Bar Chart -> Interaction: Updates on stage selection -> Justification: Quick visual comparison of module effort -> Library: Chart.js). 3. Advanced Tracks (Report Info: 3 specialization tracks -> Goal: Organize/Compare -> Viz: Button Group/Tabs -> Interaction: Click to filter content -> Justification: Standard UI for selecting views). 4. Module Details (Report Info: Chapter descriptions -> Goal: Inform -> Viz: Styled content cards -> Interaction: Displayed on stage selection -> Justification: Clear, organized presentation of detailed information). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #374151;
+        }
+        .pathway-item {
+            transition: all 0.3s ease-in-out;
+        }
+        .pathway-item.active {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            background-color: #3B82F6;
+            color: white;
+        }
+        .pathway-item.active .pathway-level {
+            color: #BFDBFE;
+        }
+        .pathway-connector {
+            flex-grow: 1;
+            height: 2px;
+            background-color: #D1D5DB;
+        }
+        .track-btn.active {
+            background-color: #1D4ED8;
+            color: white;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">The Python Mastery Pathway</h1>
+            <p class="mt-4 text-lg text-gray-600">An Interactive Explorer for Your 360-Degree Journey in Python</p>
+        </header>
+
+        <main>
+            <section id="pathway-navigation" class="mb-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-semibold text-gray-700">Explore the Curriculum</h2>
+                    <p class="mt-2 text-gray-500">This is the main navigation for the course. Click on any stage in the pathway below to reveal its detailed curriculum, learning objectives, and a breakdown of the time commitment. This interactive diagram is designed to give you a clear overview of the entire learning journey.</p>
+                </div>
+                <div class="flex items-center justify-center flex-wrap">
+                    <div id="path-precourse" data-path="precourse" class="pathway-item active cursor-pointer bg-white border border-gray-200 rounded-lg shadow-md p-4 m-2 text-center w-48">
+                        <p class="text-sm font-medium text-blue-500 pathway-level">Pre-Course</p>
+                        <h3 class="text-lg font-semibold">Python Readiness</h3>
+                    </div>
+                    <div class="pathway-connector hidden sm:block"></div>
+                    <div id="path-beginner" data-path="beginner" class="pathway-item cursor-pointer bg-white border border-gray-200 rounded-lg shadow-md p-4 m-2 text-center w-48">
+                        <p class="text-sm font-medium text-blue-500 pathway-level">Level 1</p>
+                        <h3 class="text-lg font-semibold">Essentials</h3>
+                    </div>
+                    <div class="pathway-connector hidden sm:block"></div>
+                    <div id="path-intermediate" data-path="intermediate" class="pathway-item cursor-pointer bg-white border border-gray-200 rounded-lg shadow-md p-4 m-2 text-center w-48">
+                        <p class="text-sm font-medium text-blue-500 pathway-level">Level 2</p>
+                        <h3 class="text-lg font-semibold">Practical Applications</h3>
+                    </div>
+                    <div class="pathway-connector hidden sm:block"></div>
+                    <div id="path-advanced" data-path="advanced" class="pathway-item cursor-pointer bg-white border border-gray-200 rounded-lg shadow-md p-4 m-2 text-center w-48">
+                        <p class="text-sm font-medium text-blue-500 pathway-level">Level 3</p>
+                        <h3 class="text-lg font-semibold">Specialization</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="content-display" class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-100 min-h-[500px]">
+                <div id="level-header" class="mb-8">
+                    <h2 id="level-title" class="text-3xl font-bold text-gray-800"></h2>
+                    <p id="level-description" class="mt-2 text-gray-600"></p>
+                </div>
+
+                <div id="advanced-track-selector" class="hidden mb-8 text-center">
+                    <p class="text-gray-600 mb-4">This advanced level offers three distinct career-focused tracks. Select a specialization to explore its unique curriculum and capstone project.</p>
+                    <div class="inline-flex rounded-md shadow-sm" role="group">
+                        <button type="button" data-track="data_science" class="track-btn active px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700">
+                            Data Science & ML
+                        </button>
+                        <button type="button" data-track="web_dev" class="track-btn px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700">
+                            Web Development
+                        </button>
+                        <button type="button" data-track="it_automation" class="track-btn px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700">
+                            IT Automation
+                        </button>
+                    </div>
+                </div>
+
+                <div id="chapters-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+                
+                <div id="capstone-project" class="hidden mt-8 bg-blue-50 p-6 rounded-lg">
+                    <h3 id="capstone-title" class="text-xl font-semibold text-blue-800"></h3>
+                    <p id="capstone-description" class="mt-2 text-blue-700"></p>
+                </div>
+
+                <div id="visualization" class="mt-12">
+                     <div class="text-center mb-4">
+                        <h3 class="text-2xl font-semibold text-gray-700">Estimated Learning Hours</h3>
+                        <p class="mt-2 text-gray-500">This chart provides a visual comparison of the estimated time commitment for each chapter in the selected level. Use it to plan your learning journey effectively.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="hoursChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="brochure" class="mt-16 bg-gray-50 p-8 rounded-xl border border-gray-200">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Unlock Your Potential with Python: The Mastery Pathway</h2>
+                <div class="max-w-4xl mx-auto text-gray-600 space-y-4">
+                    <p class="text-lg text-center">From Novice to Specialist – Your 360-Degree Journey in Python Programming.</p>
+                    <p>Are you ready to master the world's most versatile programming language? "The Python Mastery Pathway" is a uniquely designed, comprehensive training program that takes you on an immersive journey from the absolute basics of computational thinking to highly specialized, advanced applications in high-demand fields. Whether you're a complete beginner or looking to elevate your existing skills, our pathway is meticulously crafted to empower your career.</p>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-700 mt-6 mb-2">Why Choose The Python Mastery Pathway?</h3>
+                        <ul class="list-disc list-inside space-y-2">
+                            <li><strong>360-Degree Comprehensive Coverage:</strong> Our program is structured across a preparatory module and three progressive levels: Beginner, Intermediate, and Advanced.</li>
+                            <li><strong>Project-Based Learning (PBL) Core:</strong> You won't just learn syntax; you'll build a diverse portfolio of real-world applications.</li>
+                            <li><strong>Career-Aligned Specializations:</strong> Our Advanced level offers dedicated tracks in Data Science & Machine Learning, Web Development, and IT Automation.</li>
+                            <li><strong>Industry-Ready Skills:</strong> We integrate professional tools like Git for version control from day one.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-16 text-gray-500 text-sm">
+            <p>Interactive Curriculum Explorer. Data sourced from "The Python Mastery Pathway" report.</p>
+            <p>&copy; 2025 Python Training Initiative. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        const courseData = {
+            precourse: {
+                title: 'Python Readiness: Foundations for Success',
+                description: 'This foundational module is meticulously designed to ensure all learners, regardless of prior exposure, possess the essential mindset and technical setup required for success in the main pathway.',
+                chapters: [
+                    { title: 'Computational Thinking & Logic', concepts: 'Algorithms, Problem Decomposition, Pattern Recognition, Abstraction, Flowcharts, Pseudocode.', hours: 3 },
+                    { title: 'Development Environment Setup', concepts: 'Python Installation, IDEs (PyCharm/VS Code), Jupyter Notebooks, Google Colab, Command line basics.', hours: 4 },
+                    { title: 'Basic Syntax & First Programs', concepts: 'print(), comments, variables, basic arithmetic, input() function, "Hello World".', hours: 3 },
+                ]
+            },
+            beginner: {
+                title: 'Level 1: Python Essentials',
+                description: 'This level builds upon the foundational "Python Readiness" module, solidifying core Python syntax and fundamental programming constructs.',
+                chapters: [
+                    { title: 'Data Structures Deep Dive', concepts: 'Lists, Dictionaries, Tuples, Sets, Nesting, Slicing, List Comprehensions.', hours: 6 },
+                    { title: 'Control Flow & Iteration', concepts: 'if/elif/else, logical operators, nested conditionals, for/while loops, break/continue.', hours: 6 },
+                    { title: 'Functions & Modularity', concepts: 'Defining functions, parameters, return values, scope, lambda, map, filter, modules.', hours: 7 },
+                    { title: 'Error Handling & Debugging', concepts: 'Syntax/Type/Index errors, try-except-finally blocks, debugging strategies.', hours: 5 },
+                    { title: 'Intro to OOP', concepts: 'Classes, objects, attributes, methods, __init__, basic inheritance.', hours: 6 },
+                    { title: 'File I/O', concepts: 'Reading/writing text files, with open(), handling CSV files.', hours: 4 },
+                ]
+            },
+            intermediate: {
+                title: 'Level 2: Python for Practical Applications',
+                description: 'This level transitions learners from foundational understanding to practical application, focusing on leveraging Python\'s extensive ecosystem for common real-world tasks.',
+                chapters: [
+                    { title: 'Advanced OOP & Design Patterns', concepts: 'Inheritance, Polymorphism, Encapsulation, Decorators, Generators, Singleton/Factory patterns.', hours: 8 },
+                    { title: 'Libraries & Package Management', concepts: 'pip, virtual environments, requests, BeautifulSoup, Tkinter.', hours: 6 },
+                    { title: 'Web Scraping & API Interaction', concepts: 'requests, BeautifulSoup, RESTful APIs, JSON data, Authentication.', hours: 8 },
+                    { title: 'Intro to Databases', concepts: 'Relational databases, SQL, SQLite, CRUD operations.', hours: 7 },
+                    { title: 'Version Control with Git & GitHub', concepts: 'Git commands (commit, branch, merge), GitHub for collaboration.', hours: 8 },
+                    { title: 'Basic Web Dev with Flask', concepts: 'Request-response cycle, routing, Jinja2 templates, handling forms.', hours: 9 },
+                ]
+            },
+            advanced: {
+                title: 'Level 3: Python for Specialization',
+                description: 'This level offers specialized pathways, allowing learners to delve deeply into high-demand areas where Python excels.',
+                tracks: {
+                    data_science: {
+                        chapters: [
+                            { title: 'Advanced Data Manipulation', concepts: 'Pandas, NumPy, Time series analysis, EDA techniques.', hours: 10 },
+                            { title: 'Data Visualization', concepts: 'Matplotlib, Seaborn, Plotly, Interactive dashboards, Data storytelling.', hours: 8 },
+                            { title: 'Intro to Machine Learning', concepts: 'Scikit-learn, Supervised/Unsupervised learning, Regression, Classification.', hours: 12 },
+                            { title: 'Deep Learning Fundamentals', concepts: 'PyTorch/TensorFlow, Neural networks, Backpropagation.', hours: 10 },
+                        ],
+                        capstone: {
+                            title: 'Data Science Capstone Project',
+                            description: 'Develop a complete data science project, from data acquisition and cleaning to model building, evaluation, and visualization. Examples include predictive analytics for a business case or a recommendation system.'
+                        }
+                    },
+                    web_dev: {
+                        chapters: [
+                            { title: 'Advanced Flask & RESTful APIs', concepts: 'Blueprints, User authentication, WTForms, Flask-RESTful.', hours: 10 },
+                            { title: 'Introduction to Django', concepts: 'MVT architecture, Django ORM, Project setup.', hours: 12 },
+                            { title: 'User Auth & Security', concepts: 'Password hashing, Session management, SQL injection/XSS protection.', hours: 8 },
+                            { title: 'Deployment & Scaling', concepts: 'Heroku/AWS, Gunicorn, Docker for containerization.', hours: 10 },
+                        ],
+                        capstone: {
+                            title: 'Web Development Capstone Project',
+                            description: 'Develop a full-stack web application (e.g., a blog, e-commerce site) using Django or a complex Flask application, including user authentication, database integration, and deployment.'
+                        }
+                    },
+                    it_automation: {
+                        chapters: [
+                            { title: 'Advanced OS Interaction', concepts: 'File/process manipulation, Advanced regex, System monitoring scripts.', hours: 10 },
+                            { title: 'Network Programming & Automation', concepts: 'TCP/IP, paramiko (SSH), netmiko, Basic socket programming.', hours: 10 },
+                            { title: 'Cloud Automation (AWS/Azure/GCP)', concepts: 'Boto3 (AWS), Automating resource provisioning.', hours: 12 },
+                            { title: 'Config Management & IaC', concepts: 'Ansible/Puppet integration, Infrastructure as Code principles.', hours: 8 },
+                        ],
+                        capstone: {
+                            title: 'IT Automation Capstone Project',
+                            description: 'Design and implement an automation solution for a real-world IT problem, such as automated server provisioning, log analysis and alerting, or a network device configuration script.'
+                        }
+                    }
+                }
+            }
+        };
+
+        let myChart;
+        let currentPath = 'precourse';
+        let currentTrack = 'data_science';
+
+        const pathwayItems = document.querySelectorAll('.pathway-item');
+        const trackButtons = document.querySelectorAll('.track-btn');
+        const contentDisplay = document.getElementById('content-display');
+        const levelTitle = document.getElementById('level-title');
+        const levelDescription = document.getElementById('level-description');
+        const chaptersGrid = document.getElementById('chapters-grid');
+        const advancedTrackSelector = document.getElementById('advanced-track-selector');
+        const capstoneProject = document.getElementById('capstone-project');
+        const capstoneTitle = document.getElementById('capstone-title');
+        const capstoneDescription = document.getElementById('capstone-description');
+
+        function renderContent() {
+            const data = courseData[currentPath];
+            levelTitle.textContent = data.title;
+            levelDescription.textContent = data.description;
+            chaptersGrid.innerHTML = '';
+            
+            let chaptersToShow = [];
+            
+            if (currentPath === 'advanced') {
+                advancedTrackSelector.classList.remove('hidden');
+                chaptersToShow = data.tracks[currentTrack].chapters;
+                const capstoneData = data.tracks[currentTrack].capstone;
+                capstoneTitle.textContent = capstoneData.title;
+                capstoneDescription.textContent = capstoneData.description;
+                capstoneProject.classList.remove('hidden');
+            } else {
+                advancedTrackSelector.classList.add('hidden');
+                capstoneProject.classList.add('hidden');
+                chaptersToShow = data.chapters;
+            }
+
+            chaptersToShow.forEach(chapter => {
+                const chapterEl = document.createElement('div');
+                chapterEl.className = 'bg-gray-50 p-4 rounded-lg border border-gray-200';
+                chapterEl.innerHTML = `
+                    <h4 class="font-semibold text-lg text-gray-800">${chapter.title}</h4>
+                    <p class="text-sm text-gray-600 mt-2">${chapter.concepts}</p>
+                    <p class="text-sm font-bold text-blue-600 mt-3">${chapter.hours} Estimated Hours</p>
+                `;
+                chaptersGrid.appendChild(chapterEl);
+            });
+            
+            updateChart(chaptersToShow);
+        }
+
+        function updateChart(chapters) {
+            const ctx = document.getElementById('hoursChart').getContext('2d');
+            const labels = chapters.map(c => c.title.split(' '));
+            const data = chapters.map(c => c.hours);
+
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Estimated Hours',
+                        data: data,
+                        backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Hours'
+                            }
+                        },
+                        x: {
+                           ticks: {
+                                autoSkip: false,
+                                maxRotation: 0,
+                                minRotation: 0
+                           }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    return context[0].label.replace(/,/g, ' ');
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        pathwayItems.forEach(item => {
+            item.addEventListener('click', () => {
+                currentPath = item.dataset.path;
+                pathwayItems.forEach(p => p.classList.remove('active'));
+                item.classList.add('active');
+                renderContent();
+            });
+        });
+
+        trackButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                currentTrack = button.dataset.track;
+                trackButtons.forEach(b => b.classList.remove('active'));
+                button.classList.add('active');
+                renderContent();
+            });
+        });
+
+        window.onload = () => {
+            renderContent();
+        };
+    </script>
+</body>
+</html>
