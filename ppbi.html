@@ -612,23 +612,21 @@
             let app, db, auth;
             let isFirebaseReady = false;
 
-            if (Object.keys(firebaseConfig).length > 0) {
-                app = initializeApp(firebaseConfig);
-                db = getFirestore(app);
-                auth = getAuth(app);
+            // Initialize Firebase directly without checking Object.keys(firebaseConfig).length
+            app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            auth = getAuth(app);
 
-                signInAnonymously(auth)
-                    .then(() => {
-                        isFirebaseReady = true;
-                        console.log("Firebase authenticated anonymously.");
-                    })
-                    .catch((error) => {
-                        console.error("Firebase anonymous authentication failed:", error);
-                        // Fallback or disable form if critical
-                    });
-            } else {
-                console.warn("Firebase config not found. Enrollment data will not be saved to Firestore.");
-            }
+            signInAnonymously(auth)
+                .then(() => {
+                    isFirebaseReady = true;
+                    console.log("Firebase authenticated anonymously.");
+                })
+                .catch((error) => {
+                    console.error("Firebase anonymous authentication failed:", error);
+                    // Handle error, e.g., disable form or show a message
+                });
+
 
             // Handle enrollment form submission
             const enrollmentForm = document.getElementById('enrollmentForm');
@@ -650,7 +648,7 @@
                 const message = document.getElementById('message').value;
 
                 if (!isFirebaseReady) {
-                    formMessage.textContent = 'Error: Firebase not initialized. Cannot submit enrollment.';
+                    formMessage.textContent = 'Error: Firebase is not ready. Please try again in a moment.';
                     formMessage.classList.remove('hidden');
                     formMessage.classList.add('text-red-600');
                     submitButton.disabled = false;
