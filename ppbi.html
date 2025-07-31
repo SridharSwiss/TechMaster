@@ -237,7 +237,51 @@
                 <p class="text-lg max-w-3xl mx-auto mb-8 text-gray-200">
                     Join a new generation of data professionals. With our integrated pre-course, deep dive into enterprise governance, and a comprehensive capstone project, you'll gain the job-ready skills needed to excel in the data-driven economy.
                 </p>
-                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
+                
+                <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-xl text-gray-800">
+                    <h3 class="text-2xl font-bold mb-6 text-primary">Enroll Now!</h3>
+                    <form id="enrollmentForm" class="space-y-4">
+                        <div>
+                            <label for="fullName" class="block text-left text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-left text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-left text-sm font-medium text-gray-700 mb-1">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="desiredTrack" class="block text-left text-sm font-medium text-gray-700 mb-1">Desired Track</label>
+                            <select id="desiredTrack" name="desiredTrack" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                                <option value="">Select a track</option>
+                                <option value="Pre-Course">Pre-Course (Data Essentials)</option>
+                                <option value="Beginner">Beginner Track</option>
+                                <option value="Intermediate">Intermediate Track</option>
+                                <option value="Advanced">Advanced Track</option>
+                                <option value="Full Program">Full Program (All Tracks)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-left text-sm font-medium text-gray-700 mb-1">Your Message/Questions (Optional)</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-accent text-primary font-bold py-3 px-6 rounded-lg shadow-lg hover:opacity-90 transition-transform transform hover:scale-105">
+                            Submit Enrollment Request
+                        </button>
+                        <div id="formMessage" class="mt-4 text-sm text-green-600 hidden"></div>
+                    </form>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left mt-12">
                     <div class="bg-white/10 p-6 rounded-lg">
                         <h3 class="font-bold text-xl mb-2 text-accent">✓ 360-Degree Coverage</h3>
                         <p class="text-gray-300">From Excel basics to enterprise-level security and governance, we cover it all.</p>
@@ -251,9 +295,6 @@
                         <p class="text-gray-300">Build a portfolio with hands-on mini-projects and a comprehensive capstone project.</p>
                     </div>
                 </div>
-                <button class="mt-12 bg-accent text-primary font-bold py-4 px-10 rounded-lg shadow-lg hover:opacity-90 transition-transform transform hover:scale-105">
-                    Enroll Now
-                </button>
             </div>
         </section>
     </main>
@@ -542,6 +583,43 @@
 
             // Initial render
             renderComparisonTable();
+
+            // Handle enrollment form submission
+            const enrollmentForm = document.getElementById('enrollmentForm');
+            const formMessage = document.getElementById('formMessage');
+
+            enrollmentForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const fullName = document.getElementById('fullName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const desiredTrack = document.getElementById('desiredTrack').value;
+                const message = document.getElementById('message').value;
+
+                const subject = encodeURIComponent(`PowerUp BI Enrollment: ${fullName} - ${desiredTrack}`);
+                const body = encodeURIComponent(
+                    `Full Name: ${fullName}\n` +
+                    `Email: ${email}\n` +
+                    `Phone: ${phone || 'N/A'}\n` +
+                    `Desired Track: ${desiredTrack}\n\n` +
+                    `Message: \n${message || 'N/A'}`
+                );
+
+                const mailtoLink = `mailto:info@techmaster.training?subject=${subject}&body=${body}`;
+                window.location.href = mailtoLink;
+
+                // Display confirmation message
+                formMessage.textContent = 'Thank you for your interest! Your email client should open shortly with your enrollment details. Please send the email to complete your request.';
+                formMessage.classList.remove('hidden');
+                formMessage.classList.add('text-green-600'); // Ensure it's green for success
+
+                // Optionally clear the form after a short delay
+                setTimeout(() => {
+                    enrollmentForm.reset();
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            });
         });
     </script>
 </body>
