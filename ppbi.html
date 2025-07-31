@@ -289,7 +289,7 @@
                             <textarea id="message" name="message" rows="4"
                                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
                         </div>
-                        <button type="submit" id="submitButton"
+                        <button type="submit" id="submitButton" disabled
                             class="w-full bg-accent text-primary font-bold py-3 px-6 rounded-lg shadow-lg hover:opacity-90 transition-transform transform hover:scale-105 flex items-center justify-center">
                             Submit Enrollment Request
                             <span id="loadingSpinner" class="loading-spinner hidden"></span>
@@ -612,34 +612,40 @@
             let app, db, auth;
             let isFirebaseReady = false;
 
-            // Initialize Firebase directly without checking Object.keys(firebaseConfig).length
+            const submitButton = document.getElementById('submitButton');
+            const formMessage = document.getElementById('formMessage');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            // Initialize Firebase directly
             app = initializeApp(firebaseConfig);
             db = getFirestore(app);
             auth = getAuth(app);
 
+            // Sign in anonymously and enable button on success
             signInAnonymously(auth)
                 .then(() => {
                     isFirebaseReady = true;
-                    console.log("Firebase authenticated anonymously.");
+                    submitButton.disabled = false; // Enable the button
+                    console.log("Firebase authenticated anonymously and ready.");
                 })
                 .catch((error) => {
                     console.error("Firebase anonymous authentication failed:", error);
-                    // Handle error, e.g., disable form or show a message
+                    formMessage.textContent = 'Error: Failed to connect to enrollment service. Please try refreshing the page.';
+                    formMessage.classList.remove('hidden');
+                    formMessage.classList.add('text-red-600');
+                    submitButton.disabled = true; // Keep button disabled on failure
                 });
 
 
             // Handle enrollment form submission
             const enrollmentForm = document.getElementById('enrollmentForm');
-            const formMessage = document.getElementById('formMessage');
-            const submitButton = document.getElementById('submitButton');
-            const loadingSpinner = document.getElementById('loadingSpinner');
 
             enrollmentForm.addEventListener('submit', async function(event) {
                 event.preventDefault(); // Prevent default form submission
 
                 submitButton.disabled = true;
                 loadingSpinner.classList.remove('hidden');
-                formMessage.classList.add('hidden');
+                formMessage.classList.add('hidden'); // Hide previous messages
 
                 const fullName = document.getElementById('fullName').value;
                 const email = document.getElementById('email').value;
@@ -648,7 +654,7 @@
                 const message = document.getElementById('message').value;
 
                 if (!isFirebaseReady) {
-                    formMessage.textContent = 'Error: Firebase is not ready. Please try again in a moment.';
+                    formMessage.textContent = 'Error: Enrollment service is not ready. Please refresh the page and try again.';
                     formMessage.classList.remove('hidden');
                     formMessage.classList.add('text-red-600');
                     submitButton.disabled = false;
